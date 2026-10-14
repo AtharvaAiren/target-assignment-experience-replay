@@ -1,0 +1,13 @@
+{
+  "bundle_sha256": "00acaa25cc7374dac11c2c07db6afeb5559aefd81ee47b8a8a2714cb8b345e60",
+  "files": {
+    "configs/finite_horizon_beijing.json": "1b58ced6873b6c31c168fac14115e4626d665a7bc4513c5020d191cc1e56e743",
+    "docs/finite_horizon_preprocessing_portability_20260913_v3.md": "fd214657e1267ee9d15f0602f041c0995669ebd2e855053760b3f739ac36bde8",
+    "experiments/__init__.py": "a7a75debd0bf3e0c0fc1b388605323013217ffda0c0fb840d980d7c0dfd96cdd",
+    "experiments/gradient_reuse_finite_horizon/__init__.py": "c2eb70b6a29b66e65034905895d06854f10c4410a6303bfd3b33bd2a254b6878",
+    "experiments/gradient_reuse_finite_horizon/beijing.py": "47d27804e145dd90e34e426ea7256dcf31ee2ab9f4de412d8ab2180f264d78b5",
+    "experiments/gradient_reuse_finite_horizon/study.py": "e5a411d6a351a281540cd7f441251b91e649a2a3bf715a8cc2fd5461d011c303"
+  },
+  "schema_version": "gradient_reuse.finite_horizon_source.v3",
+  "status": "LOCKED_BEFORE_FINITE_HORIZON_OUTCOMES"
+}

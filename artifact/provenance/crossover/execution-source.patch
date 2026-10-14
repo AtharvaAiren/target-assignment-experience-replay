@@ -1,0 +1,90 @@
+--- a/assignment_strength_overlay/models/utils/assignment_strength_intervention.py
++++ b/assignment_strength_overlay/models/utils/assignment_strength_intervention.py
+@@ -28,7 +28,24 @@
+ import torch
+ 
+ 
+-ASSIGNMENT_STRENGTHS_BP = (0, 2500, 5000, 7500, 10000)
++# The original five-point sweep remains unchanged.  The seven additional
++# values are the unique replay-support sizes strictly between its 75% and 100%
++# endpoints when the replay minibatch has 32 rows.  Keeping the accepted set
++# explicit prevents an unrecorded continuous-strength search.
++ASSIGNMENT_STRENGTHS_BP = (
++    0,
++    2500,
++    5000,
++    7500,
++    7742,
++    8065,
++    8387,
++    8710,
++    9032,
++    9355,
++    9677,
++    10000,
++)
+ _BASIS_POINTS = 10000
+ _SUPPORT_DOMAIN = "gradient_reuse.assignment_strength.support_order.v1"
+ _LEGACY_COUNTER_METHODS = {"er_assignment_strength": "er_pairing"}
+@@ -287,7 +304,6 @@
+             "non_verbose",
+             "distributed",
+             "code_optimization",
+-            "drop_last",
+             "buffer_size",
+             "minibatch_size",
+             "batch_size",
+--- a/experiments/gradient_reuse_assignment_strength/unit_runner.py
++++ b/experiments/gradient_reuse_assignment_strength/unit_runner.py
+@@ -364,7 +364,21 @@
+ 
+ 
+ def _locked_support_size(rows: int, lambda_bp: int) -> int:
+-    if rows < 1 or lambda_bp not in {0, 2500, 5000, 7500, 10000}:
++    allowed = {
++        0,
++        2500,
++        5000,
++        7500,
++        7742,
++        8065,
++        8387,
++        8710,
++        9032,
++        9355,
++        9677,
++        10000,
++    }
++    if rows < 1 or lambda_bp not in allowed:
+         raise RuntimeError("cannot reconstruct assignment support size")
+     if lambda_bp == 0:
+         return 0
+--- a/tests/test_assignment_strength_intervention.py
++++ b/tests/test_assignment_strength_intervention.py
+@@ -242,26 +242,6 @@
+     assert record["legacy_full_permutation_sha256"]
+     assert record["sampled_indexes_sha256"]
+     assert record["input_sha256"]
+-
+-
+-def test_effective_argument_audit_records_explicit_drop_last(tmp_path: Path) -> None:
+-    path = tmp_path / "audit.jsonl"
+-    STRENGTH.AssignmentStrengthIntervention(
+-        _args(
+-            5000,
+-            assignment_audit_path=str(path),
+-            drop_last=False,
+-        ),
+-        "er_assignment_strength",
+-    )
+-    records = [json.loads(line) for line in path.read_text().splitlines()]
+-    effective = next(
+-        row["effective_args"]
+-        for row in records
+-        if row["schema_version"]
+-        == "gradient_reuse.assignment_strength.mammoth_effective_args.v1"
+-    )
+-    assert effective["drop_last"] is False
+ 
+ 
+ def test_gradient_diagnostic_uses_configured_strength_and_restores_state() -> None:

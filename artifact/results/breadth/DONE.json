@@ -1,0 +1,16 @@
+{
+  "completed_units": 8,
+  "finished_unix": 1787593545.5606527,
+  "outputs": {
+    "LOCK_SNAPSHOT.json": "1fc88fea098337c7d87797595fa3ee5c8e6bcee84e24e62fc6e78bbbaa37048a",
+    "PAPER_DOMAIN_SUMMARY.csv": "2115993ab18fafe078099550dc32c999b45f27352381835f2ba9cad56454697b",
+    "PAPER_SEED_SUMMARY.csv": "ac4a9e34270095a0114f11f1430f085ca9773e43e105cca8d03183418a3ebc02",
+    "PAPER_SUMMARY.csv": "337ab7a6ba0cc31034b35fba51f47fc55c22969f7a62ffbe5eb1e9a904bb50ca",
+    "PAPER_SUMMARY.json": "96a18625bea0234f9396a07f4acfe4923e2619b27445d405f7204d19f40eccff",
+    "PAPER_SUMMARY.md": "ce05ec3c9e841a1bfa43465fd46426ae7f8be11b18257c107bec9af83d617189",
+    "RUN_MANIFEST.json": "be4fe56a55cacc4ffb7a760d631210295f7f6b2b6b4ffba184ef23755f01852a"
+  },
+  "paper_evidence_eligible": true,
+  "schema_version": "fmmt.iclr_breadth.done.v1",
+  "status": "PASS"
+}

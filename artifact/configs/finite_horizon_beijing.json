@@ -1,0 +1,69 @@
+{
+  "schema_version": "gradient_reuse.finite_horizon_beijing_lock.v3",
+  "status": "OUTCOME_INFORMED_THEORY_FOLLOWUP_BIT_PATTERN_PORTABILITY_CORRECTED_BEFORE_NEW_OUTCOMES",
+  "dataset": {
+    "name": "BEIJING",
+    "archive_sha256": "b04da438b2f331ac0ffd45aebdfec0d20d2367feb5f6948c4b1f7ce1191e33c4",
+    "archive_bytes": 8192212,
+    "rows": 412029,
+    "raw_dimension": 42,
+    "features_sha256": "74ee3db5542d9cba9dc9834e1f5475f17d3f841b474c1f74ea322000033b06eb",
+    "targets_sha256": "161835ffcdb21647064ca242995551f6825041c80f8032c98d525bf396c0d5b7",
+    "scoring_calibration_rows": 20610
+  },
+  "design": {
+    "schedule_seeds": [3601, 3602, 3603, 3604, 3605, 3606, 3607, 3608, 3609, 3610, 3611, 3612],
+    "requested_lambda_basis_points": [0, 2500, 5000, 7500, 10000],
+    "replay_batch_rows": 6,
+    "current_batch_rows": 6,
+    "warmup_rows": 512,
+    "updates": 128,
+    "evaluation_rows": 2048,
+    "projection_calibration_rows": 4096,
+    "projection_rank": 12,
+    "ensemble_trajectories": 1024,
+    "step_size_fraction_of_inverse_batch_curvature": 0.25,
+    "replay_schedule": "uniform_without_replacement_from_already_revealed_rows_counter_keyed_by_schedule_seed_and_step",
+    "partial_assignment_law": "uniform_support_then_uniform_permutation_with_fixed_points_retained",
+    "mean_target": "Q_lambda_y_equals_one_minus_realized_lambda_times_y_plus_realized_lambda_times_batch_mean",
+    "initial_parameters": "all_zero",
+    "loss": "sum_of_current_and_replay_half_mean_squared_losses",
+    "evaluation": "held_out_chronological_half_mean_squared_loss"
+  },
+  "theory_validation": {
+    "assignment_law_enumerated_exhaustively_at_every_update": true,
+    "mean_recursion_has_no_fitted_parameters": true,
+    "covariance_recursion_has_no_fitted_parameters": true,
+    "terminal_risk_prediction_has_no_fitted_parameters": true,
+    "stochastic_draws_are_independent_across_updates_and_ensemble_trajectories": true,
+    "analytic_identity": "E_R_theta_T_equals_R_E_theta_T_plus_one_half_trace_Hstar_S_T"
+  },
+  "inference": {
+    "independent_unit": "disjoint_chronological_schedule_block",
+    "all_schedules_strengths_and_trajectories_required": true,
+    "no_optional_stopping": true,
+    "all_outcomes_reported": true,
+    "monte_carlo_validation_is_descriptive_not_a_scientific_pass_gate": true,
+    "primary_summary": "analytic_noise_penalty_and_empirical_minus_predicted_terminal_risk_by_realized_strength"
+  },
+  "interpretation": {
+    "purpose": "validate_the_exact_finite_horizon_linear_squared_loss_consequence_of_assignment_noise_on_real_cached_inputs",
+    "not_a_claim_about_nonlinear_or_adamw_training": true,
+    "not_a_replacement_for_the_continual_learning_experiment": true,
+    "benchmark_selection_informed_by_prior_results": true,
+    "no_terminal_coefficient_is_estimated_from_ensemble_outcomes": true
+  },
+  "preprocessing_portability_correction": {
+    "schema_version": "gradient_reuse.finite_horizon_target_reduction_portability.v2",
+    "v1_failure_was_preoutcome": true,
+    "v2_failure_was_preoutcome": true,
+    "scientific_design_changed": false,
+    "feature_identity_changed": false,
+    "target_mean_float32_bits": "0x407de83e",
+    "target_std_float32_bits": "0x3f8ff2d3",
+    "expected_target_sha256": "161835ffcdb21647064ca242995551f6825041c80f8032c98d525bf396c0d5b7",
+    "numpy_2_5_default_target_sha256": "62795bbeeee33ffd73f882cc4f760403ecefc2228df239fbed21c6e1dfefa243",
+    "numpy_2_5_explicit_float32_target_sha256": "62795bbeeee33ffd73f882cc4f760403ecefc2228df239fbed21c6e1dfefa243",
+    "diagnosis": "NumPy 2.5.1 retained the frozen feature identity but its standard-deviation reduction rounded one float32 ULP above the historical locked value even when dtype=float32 was explicit; storing the historical IEEE-754 mean and standard-deviation bit patterns makes the frozen preprocessing byte-exact."
+  }
+}

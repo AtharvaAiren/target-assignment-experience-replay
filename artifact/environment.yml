@@ -1,0 +1,28 @@
+name: anonymous-gradient-audit
+channels:
+  - pytorch
+  - conda-forge
+dependencies:
+  - python=3.12
+  - numpy
+  - pandas
+  - scipy
+  - pytorch
+  - torchvision
+  - pyyaml
+  - pillow
+  - matplotlib
+  - pytest
+  - pip
+  - pip:
+      - quadprog
+      - opencv-python-headless
+      - kornia
+      - timm
+      - tqdm
+      - setproctitle
+      - transformers
+      - huggingface-hub
+      - pyarrow
+      - safetensors
+      - tokenizers

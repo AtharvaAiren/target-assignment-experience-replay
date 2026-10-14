@@ -1,0 +1,10 @@
+{
+  "aggregate_sha256": "3745e8127d6319391e8a877b513ea9ff6278599c407bdf2bad831c1c844128e5",
+  "campaign": "cifar",
+  "campaign_binding_sha256": "0605e9f4426b40cc93f961845c9d68eb1ad646943bbf2e57366bcc1d34831c8d",
+  "completed_units": 336,
+  "required_units": 336,
+  "schema_version": "gradient_reuse.crossover_queue_done.v1",
+  "status": "PASS",
+  "unit_ids_sha256": "4751b483b931764528538eefa2094a3e05d3c8cb20d8a42ecbb8a5e0bb82d3dd"
+}

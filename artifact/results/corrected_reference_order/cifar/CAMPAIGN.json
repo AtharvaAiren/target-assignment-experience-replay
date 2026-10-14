@@ -1,0 +1,14 @@
+{
+  "campaign": "cifar",
+  "data_bundle_sha256": "f92cb3c229f210d363ec7dbf8a8fda8e49b758fbff2819b05882017a49c347fa",
+  "environment_bundle_sha256": "985b3f67268b7c871807d0b36523439e766b663ef9ba33ed2bdc10c80f905524",
+  "expected_units": 504,
+  "lock_sha256": "5f5a55439fbaed36f1092a1df747f8f68ae0f0f6f9bd4c80c76ab8aa11721db8",
+  "mammoth_commit": "e75a491c69fd729edeb01431afb753d9157d9a81",
+  "python_sha256": "e50d468e8b0adfb05733f5b87b3cff34829c4a8c1aea50c865aa8bdfe4bb150f",
+  "schema_version": "gradient_reuse.corrected_reference_order_queue_binding.v1",
+  "source_bundle_sha256": "2d03778d876fa53481756a739c8dda0ed7fa1c535138540d9b077e94a0f65bbd",
+  "source_manifest_sha256": "9baf8c13506f9a53210e5ff79a78fba130013e9fe91e5bd505b246ec17552ca1",
+  "status": "LOCKED",
+  "unit_ids_sha256": "e95b508f9dcfde05c78cf11bbddb32b6facd611eb8be2a3728ea7d7fb78e410a"
+}

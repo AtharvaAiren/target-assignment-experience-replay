@@ -1,0 +1,221 @@
+{
+  "schema_version": "gradient_reuse.reviewer_extension_lock.v1",
+  "status": "LOCKED_BEFORE_EXTENSION_OUTCOMES",
+  "profile_id": "iclr_reviewer_extension_v1",
+  "scientific_question": "Do assignment-sensitive replay effects persist away from accuracy floors, and do state-matched local effects explain the path-level continual-learning contrasts?",
+  "parent_campaign": {
+    "profile_id": "rtx_7day_v1",
+    "completion_schema": "gradient_reuse.iclr_rtx_7day_queue_done.v1",
+    "completion_sha256": "0d70f00a55641b6fee21f32666edd245e05c9fd1017aa5b6eca22e4d553007a9",
+    "mechanism_units": 288,
+    "mechanism_aggregate_sha256": "14316b3c1b5ae2bac509aa4e75c3fd255020f0e97f8072b0247260625c08e1f3"
+  },
+  "intervention": {
+    "paired": "retain the realized replay input-target correspondence",
+    "permuted": "uniformly permute the realized replay targets within the sampled replay batch while preserving their exact multiset",
+    "current_stream_targets_always_correct": true,
+    "permutation_replicas": [0, 1, 2, 3],
+    "permutation_replicas_are_nested_monte_carlo": true
+  },
+  "statistics": {
+    "independent_unit": "run_seed",
+    "confidence_interval": "two_sided_student_t_over_run_seeds_with_nested_permutation_monte_carlo",
+    "primary_estimand": "V_pair=accuracy_paired-mean_replica_accuracy_permuted",
+    "decomposition": "V_total=V_perm+V_pair",
+    "e2_holm_family": "15 assignment-only benchmark-by-method task-IL V_pair contrasts",
+    "der_excluded_from_e2_holm_family": true,
+    "state_matched_primary_endpoint": "old_task_union_cross_entropy",
+    "state_matched_inference": "seed_level_summary_with_task_boundaries_repeated_within_seed",
+    "e5_reporting": "post_hoc_five_seed_sensitivity_reported_separately_from_the_frozen_three_seed_analysis",
+    "e6_reporting": "exploratory_seed_level_effect_sizes_without_per-component_null-hypothesis testing",
+    "e7_reporting": "streams_reported_separately; packet blocks are not corpus replications"
+  },
+  "state_matched_definition": {
+    "trajectory": "paired experience replay under the original one-epoch profile",
+    "probe_boundaries": "after each completed task t for t>=2",
+    "replay_gradient": "cross-entropy gradient on one naturally sampled replay minibatch only",
+    "normalization": "U(g)=g/max(||g||_2,1e-12)",
+    "radius": "median of the preceding 16 realized full ER SGD update norms",
+    "reference_branch": "no_step",
+    "branches": ["no_step", "paired_step", "permuted_step_replica_0", "permuted_step_replica_1", "permuted_step_replica_2", "permuted_step_replica_3"],
+    "risk_gradient": "gradient of mean cross-entropy on the exact union of test sets for tasks 1 through t-1 at the shared checkpoint",
+    "old_task_union": "all test examples from tasks 1 through t-1; the most recently completed task t is excluded",
+    "accuracy_value_sign": "after_step_accuracy-no_step_accuracy",
+    "cross_entropy_value_sign": "no_step_cross_entropy-after_step_cross_entropy",
+    "first_order_term": "radius*dot(h,U(g_paired)-mean_replica_U(g_permuted))",
+    "branch_updates_discarded": true,
+    "live_rng_restored_after_probe": true,
+    "target_multiset_verified_for_every_probe": true
+  },
+  "secondary_endpoints": {
+    "task_il": "Mammoth task-masked accuracy matrix for class-incremental benchmarks",
+    "old_task_only_accuracy": "mean of the final accuracy-matrix row over tasks 1 through T-1",
+    "domain_il_old_task_only_accuracy": "mean final accuracy over domain test loaders 1 through T-1",
+    "cifar_confusion": [
+      "correct_old_class_fraction",
+      "other_old_class_fraction",
+      "newest_task_class_fraction",
+      "other_unseen_class_fraction",
+      "mean_correct_old_logit",
+      "mean_other_old_logit",
+      "mean_newest_task_logit"
+    ],
+    "permuted_mnist_confusion": [
+      "accuracy",
+      "mean_correct_label_logit",
+      "mean_incorrect_label_logit",
+      "mean_predictive_entropy",
+      "incorrect_prediction_label_entropy"
+    ]
+  },
+  "runtime": {
+    "device": "cuda:0",
+    "cuda_visible_devices": "0",
+    "num_workers": 4,
+    "numerical_threads": 1,
+    "deterministic_algorithms": true,
+    "scheduler": {
+      "resource_capacity": 16,
+      "maximum_parallel_processes": 6,
+      "poll_seconds": 10,
+      "minimum_free_disk_gib_before_campaign": 100,
+      "minimum_free_gpu_mib_before_campaign": 28000,
+      "minimum_free_gpu_mib_before_launch": 1800,
+      "resource_weight_mib": 1800,
+      "minimum_free_gpu_mib_before_pythia": 28000,
+      "pythia_runs_exclusively": true,
+      "pythia_exclusive_start_requires_zero_compute_processes": true
+    }
+  },
+  "benchmarks": {
+    "split_cifar100": {
+      "mammoth_dataset": "seq-cifar100",
+      "dataset_config": "20tasks",
+      "tasks": 20,
+      "setting": "class-il",
+      "backbone": "resnet18",
+      "batch_size": 32,
+      "lr": 0.03
+    },
+    "split_miniimagenet": {
+      "mammoth_dataset": "seq-miniimg",
+      "dataset_config": "20tasks",
+      "tasks": 20,
+      "setting": "class-il",
+      "backbone": "resnet18",
+      "batch_size": 32,
+      "lr": 0.03
+    },
+    "permuted_mnist": {
+      "mammoth_dataset": "perm-mnist",
+      "dataset_config": null,
+      "tasks": 20,
+      "setting": "domain-il",
+      "backbone": "mnistmlp",
+      "batch_size": 128,
+      "lr": 0.1
+    }
+  },
+  "experiments": {
+    "E1_off_floor_cifar50": {
+      "priority": 1,
+      "benchmark": "split_cifar100",
+      "epochs": 50,
+      "buffer_size": 500,
+      "seeds": [3401, 3402, 3403],
+      "methods": ["naive_sgd", "experience_replay"],
+      "arms": "shared_sgd_plus_paired_and_four_permuted_per_replay_method",
+      "state_matched_probe": false,
+      "final_confusion": false,
+      "resource_weight": 6,
+      "expected_units": 18,
+      "primary_endpoint": "final_class_il_average_accuracy",
+      "secondary_endpoints": ["final_task_il_average_accuracy", "class_il_accuracy_matrix", "task_il_accuracy_matrix"]
+    },
+    "E3_E6_state_matched_bridge": {
+      "priority": 2,
+      "benchmark": ["split_cifar100", "permuted_mnist"],
+      "epochs": 1,
+      "buffer_size": 500,
+      "seeds": [3401, 3402, 3403],
+      "methods": ["experience_replay"],
+      "arms": "paired_and_four_permuted_per_replay_method",
+      "state_matched_probe": "paired_trajectory_only",
+      "final_confusion": true,
+      "resource_weight_by_benchmark": {"split_cifar100": 8, "permuted_mnist": 2},
+      "expected_units": 30,
+      "primary_endpoint": "state_matched_old_task_union_cross_entropy_V_pair",
+      "secondary_endpoints": ["state_matched_accuracy_V_pair", "first_order_alignment", "final_logit_confusion"]
+    },
+    "E4_buffer2000": {
+      "priority": 3,
+      "benchmark": ["split_cifar100", "permuted_mnist"],
+      "epochs": 1,
+      "buffer_size": 2000,
+      "seeds": [3401, 3402, 3403],
+      "methods": ["naive_sgd", "experience_replay"],
+      "arms": "shared_sgd_plus_paired_and_four_permuted_per_replay_method",
+      "state_matched_probe": false,
+      "final_confusion": false,
+      "resource_weight_by_benchmark": {"split_cifar100": 5, "permuted_mnist": 1},
+      "expected_units": 36,
+      "primary_endpoint": "final_average_accuracy",
+      "secondary_endpoints": ["task_il_accuracy", "old_task_only_accuracy"]
+    },
+    "E5_pmnist_seed_extension": {
+      "priority": 4,
+      "benchmark": "permuted_mnist",
+      "epochs": 1,
+      "buffer_size": 500,
+      "seeds": [3404, 3405],
+      "methods": ["naive_sgd", "mer_current_only", "experience_replay", "gem", "agem", "mer", "pcgrad_replay"],
+      "arms": "one_shared_sgd_plus_one_mer_matched_current_only_control_plus_paired_and_four_permuted_per_assignment_method",
+      "state_matched_probe": false,
+      "final_confusion": false,
+      "resource_weight": 1,
+      "expected_units": 54,
+      "primary_endpoint": "five_seed_sensitivity_final_average_accuracy_V_pair",
+      "secondary_endpoints": ["backward_transfer", "average_incremental_accuracy"]
+    },
+    "E8_miniimagenet10": {
+      "priority": 6,
+      "benchmark": "split_miniimagenet",
+      "epochs": 10,
+      "buffer_size": 500,
+      "seeds": [3401, 3402, 3403],
+      "methods": ["naive_sgd", "experience_replay"],
+      "arms": "shared_sgd_plus_paired_and_four_permuted_per_replay_method",
+      "state_matched_probe": false,
+      "final_confusion": false,
+      "resource_weight": 6,
+      "expected_units": 18,
+      "primary_endpoint": "final_class_il_average_accuracy",
+      "secondary_endpoints": ["final_task_il_average_accuracy", "class_il_accuracy_matrix", "task_il_accuracy_matrix"]
+    }
+  },
+  "e2_existing_run_reanalysis": {
+    "priority": 0,
+    "expected_units": 288,
+    "gpu_required": false,
+    "raw_logs_required": true,
+    "endpoints": ["task_il_final_average_accuracy", "old_task_only_accuracy"],
+    "holm_scope": "assignment_only_V_pair_task_il_15_cells"
+  },
+  "e7_second_pythia_stream": {
+    "priority": 5,
+    "expected_trajectories": 1,
+    "parent_config": "configs/transformer.json",
+    "selection": "latest_required_eligible_articles_strictly_before_parent_cutoff_after_parent_id_and_text_exclusion",
+    "historical_cutoff_utc": "2021-01-01T00:00:00+00:00",
+    "required_examples": 12288,
+    "warmup_examples": 4096,
+    "online_examples": 8192,
+    "overlap_with_parent": 0,
+    "parent_stream_rebuilt_and_authenticated": true,
+    "reporting": "separate_historical_stream_not_a_replication",
+    "checkpoint_and_optimizer_protocol_unchanged": true,
+    "resource_weight": 16
+  },
+  "expected_continual_learning_units": 156,
+  "expected_new_transformer_trajectories": 1
+}

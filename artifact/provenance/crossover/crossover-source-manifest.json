@@ -1,0 +1,185 @@
+{
+  "campaigns": {
+    "cifar": {
+      "expected_new_units": 336
+    },
+    "pmnist": {
+      "expected_new_units": 336
+    }
+  },
+  "configuration_path": "configs/crossover_threshold_followup.json",
+  "configuration_sha256": "f134be622383afa8015c80295b1ede10febd7420e3580fb3b3f7c1b774e52cc1",
+  "files": [
+    {
+      "path": "assignment_strength_overlay/models/er_assignment_strength.py",
+      "sha256": "bfb204605bcb24cd7476c1a27964df5dde8fdb4b73014a14f25d0b4e3decd089"
+    },
+    {
+      "path": "assignment_strength_overlay/models/utils/assignment_strength_intervention.py",
+      "sha256": "225a4cad894597134e872cee6ff16432f19452e86fca7c971c91b562664dda5f"
+    },
+    {
+      "path": "configs/assignment_strength_sweep.json",
+      "sha256": "f8227a9f2248bd96bd88ddcf340acf7ae2514185cdbf80117e7ceebf596e808d"
+    },
+    {
+      "path": "configs/corrected_reference_order_audit.json",
+      "sha256": "100a1428f26860e0ef129b298192b05ccabc5c781ff1126b4528c5f4ddbcddec"
+    },
+    {
+      "path": "configs/crossover_threshold_followup.json",
+      "sha256": "f134be622383afa8015c80295b1ede10febd7420e3580fb3b3f7c1b774e52cc1"
+    },
+    {
+      "path": "docs/CROSSOVER_THRESHOLD_FOLLOWUP_LOCK.md",
+      "sha256": "9cf7e0310fac4d45974a6508db896f6250383d9a13e58cb02af86baaced78b92"
+    },
+    {
+      "path": "docs/crossover_analysis_plan.md",
+      "sha256": "42808a7a86cad11562f63c120539dc7fcb87e2656f3e5554620e98ac6c5ab457"
+    },
+    {
+      "path": "experiments/__init__.py",
+      "sha256": "a7a75debd0bf3e0c0fc1b388605323013217ffda0c0fb840d980d7c0dfd96cdd"
+    },
+    {
+      "path": "experiments/gradient_reuse_assignment_strength/__init__.py",
+      "sha256": "2c7a1fb9663b4eab0a2741872637a476719000992032fdb9a536fb80f98a494a"
+    },
+    {
+      "path": "experiments/gradient_reuse_assignment_strength/integrity.py",
+      "sha256": "214746665a040e2186138751762b961ce480f50ebada974c527c83bfe88d35dc"
+    },
+    {
+      "path": "experiments/gradient_reuse_assignment_strength/mammoth_bootstrap.py",
+      "sha256": "56f00ecf45a3fb139065d1f341a779d6283b7ba6f6deaf2d69679cfca91291cc"
+    },
+    {
+      "path": "experiments/gradient_reuse_assignment_strength/protocol.py",
+      "sha256": "94e9dacb27be99b883fca9785fa3cd59f6a4e81ff710e5c94284dcb225eada45"
+    },
+    {
+      "path": "experiments/gradient_reuse_assignment_strength/source.py",
+      "sha256": "6bb106bf758dfba384f39f4f589236eb3ad581cae5016166e383f83af7fdf655"
+    },
+    {
+      "path": "experiments/gradient_reuse_assignment_strength/unit_runner.py",
+      "sha256": "1136a27630c0c1de0130d1f8a61d57345cf5b88d847b9ef0ae9c5db7209e008d"
+    },
+    {
+      "path": "experiments/gradient_reuse_corrected_reference_order/__init__.py",
+      "sha256": "c12504c302e04bebd5b6c43460a23a5cb57f9cf053d97fd1b141bd77fcc0d4e1"
+    },
+    {
+      "path": "experiments/gradient_reuse_corrected_reference_order/bank.py",
+      "sha256": "5119aed6c674aa7e3d6e6447d7e29d6571121d5b2b46f2ac61f06910e070257e"
+    },
+    {
+      "path": "experiments/gradient_reuse_corrected_reference_order/cifar_protocol.py",
+      "sha256": "f78313a5dc1e4a222aa4cbde0d320b1827098f2d358a2ff9e86ad75c6927e7f7"
+    },
+    {
+      "path": "experiments/gradient_reuse_corrected_reference_order/mammoth_bootstrap.py",
+      "sha256": "0db4b1295c663d0680d9badd24b9a57b3bcc98953a9ca54995829070784871d0"
+    },
+    {
+      "path": "experiments/gradient_reuse_corrected_reference_order/order_overlay.py",
+      "sha256": "896764ecfece6d46e81dd9f04787f59392973d21bff105f79007435eb10d37e9"
+    },
+    {
+      "path": "experiments/gradient_reuse_corrected_reference_order/protocol.py",
+      "sha256": "2841bc86ea13980c5114d397016257095eb2a52cd67fa93e002b0efc717e31f1"
+    },
+    {
+      "path": "experiments/gradient_reuse_corrected_reference_order/source.py",
+      "sha256": "50d70ef8a3e3351ccc651f6831d190c9be7418e021a465a28718d98241c1da9d"
+    },
+    {
+      "path": "experiments/gradient_reuse_corrected_reference_order/unit_runner.py",
+      "sha256": "54d93e0cfab66bcfc2ad921bbba2c1e70ec856f19e67df8c35ad6a7f36c80347"
+    },
+    {
+      "path": "experiments/gradient_reuse_crossover/__init__.py",
+      "sha256": "156a14b719230ec0d7ddfca05c3272dbace6c31e8a9c8143d7d627d43784cc2f"
+    },
+    {
+      "path": "experiments/gradient_reuse_crossover/aggregate.py",
+      "sha256": "43f4d83e054eb8fbbb1dad5815716e0ddb87ad38601d52b12c245391855dfc0b"
+    },
+    {
+      "path": "experiments/gradient_reuse_crossover/protocol.py",
+      "sha256": "90872e21817803ffdf998b6cfac0901a02c1aad4cf8ad5d26eb6526ea5cea393"
+    },
+    {
+      "path": "experiments/gradient_reuse_crossover/queue.py",
+      "sha256": "badc213e6890824685533d8160dd044450e53500156f1140fe3b6f03a039a67e"
+    },
+    {
+      "path": "experiments/gradient_reuse_crossover/source.py",
+      "sha256": "e4ceef2bc7d4c684601572929409cecc209fdcb1259b391109bc1e17fc66cad1"
+    },
+    {
+      "path": "experiments/gradient_reuse_crossover/unit_runner.py",
+      "sha256": "bbd61b05a3b9e885cc32b1d167fa9c80c9ecaa325ea753e1a731c59429ddd50d"
+    },
+    {
+      "path": "experiments/gradient_reuse_crossover_analysis/__init__.py",
+      "sha256": "d7074a814ad4975f39c631afc144b579846652c9023564334911f2534781eab6"
+    },
+    {
+      "path": "experiments/gradient_reuse_crossover_analysis/analysis.py",
+      "sha256": "c757f80d880a72e2731a87b54c582f9fa62a0b680d11304c87eaee8d1a8672a5"
+    },
+    {
+      "path": "results/assignment_strength/aggregate.json",
+      "sha256": "da00d91c03a1954eaa10b53e34815f92b937cf66e9874d3e49c6e9b2f71ce4f8"
+    },
+    {
+      "path": "results/assignment_strength/done.json",
+      "sha256": "cb6ae04d1575580f2f983fa2fad97d65f3fbb0447854871537c3e6062c7931a0"
+    },
+    {
+      "path": "results/corrected_reference_order/pmnist/AGGREGATE.json",
+      "sha256": "7d7cae877fc12e3b072b8c8a30ca0d3762947bf2f9ccea46dd09b99b5f575def"
+    },
+    {
+      "path": "results/corrected_reference_order/pmnist/CAMPAIGN.json",
+      "sha256": "ed97e50e8e158771a455e87e6c64bffe8964219f2e3bd31550a9beade6f0c80e"
+    },
+    {
+      "path": "results/corrected_reference_order/pmnist/DONE.json",
+      "sha256": "1c97cb811bf84a843331ea6539a781b90af9fb7130ca140dabd25e36fd1cfc06"
+    },
+    {
+      "path": "scripts/build_crossover_manifest.py",
+      "sha256": "133d3d010fa299b47ca3e57b5c7914be565c9016cf10387f432a0ef5031c56c1"
+    },
+    {
+      "path": "tests/test_assignment_strength_intervention.py",
+      "sha256": "e13f42cf119cf754e752f436b4279c3b233382e47ac0a64f8572019127a1d2e8"
+    },
+    {
+      "path": "tests/test_crossover_aggregate.py",
+      "sha256": "10ffd1da09faabf749c60b18c3c16429112f7222e6f053934116ac51d75c689a"
+    },
+    {
+      "path": "tests/test_crossover_analysis.py",
+      "sha256": "d174ed0072731561400f714031751b949276027d5fc1e209624e3562796a3cbf"
+    },
+    {
+      "path": "tests/test_crossover_protocol.py",
+      "sha256": "7e727277790fbb931a6643705e5b81364e1fd05e9dad26b6c492075d9e1cab22"
+    },
+    {
+      "path": "tests/test_crossover_queue.py",
+      "sha256": "03f878b304a8707018b48d6e3144c9accc5bf17e65536f4b2ab7e300eec87b92"
+    },
+    {
+      "path": "tests/test_crossover_unit_runner.py",
+      "sha256": "1f3097cf12541bda07cd1e2b3a2be8d5689ecd3bb69aa211d0309865343a725e"
+    }
+  ],
+  "schema_version": "gradient_reuse.crossover_source_manifest.v1",
+  "source_bundle_sha256": "b39f1df91d3209b9f04eb2c2ef194ad58242d90b4c4337c39deb785dfbabdd53",
+  "status": "LOCKED_BEFORE_CROSSOVER_FOLLOWUP_OUTCOMES"
+}

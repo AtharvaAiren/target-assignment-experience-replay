@@ -1,0 +1,130 @@
+{
+  "schema_version": "fmmt.gradient_reuse_transformer.lock.v1",
+  "status": "LOCKED_BEFORE_TRANSFORMER_RUN",
+  "created_utc": "2026-08-26T00:00:00Z",
+  "scope": {
+    "question": "How much of the prospective next-token benefit of reusing the previous minibatch gradient requires the correct context-target assignment?",
+    "estimand": "On one true-target online trajectory, the packet-weighted next-token NLL difference between an equal-radius previous true-gradient branch and the mean of four previous target-permuted branches from the same center.",
+    "not_claimed": [
+      "permutation replicas are independent streams",
+      "different permutation RNG states are independent model trajectories",
+      "token IDs may be permuted into conditioning positions",
+      "equal-radius raw-gradient branches are counterfactual AdamW optimizer steps",
+      "a one-step audit establishes long-horizon language-model quality",
+      "the CPU smoke is paper evidence"
+    ]
+  },
+  "runtime": {
+    "python": "3.12",
+    "device": "cuda",
+    "torch": "2.13.0+cu130",
+    "transformers": "5.14.1",
+    "numpy": "2.5.1",
+    "cublas_workspace_config": ":4096:8",
+    "one_gpu_process": true
+  },
+  "cuda_preflight": {
+    "required_for_paper_eligible_full_run": true,
+    "minimum_warmup_packets": 2,
+    "minimum_online_packets": 3,
+    "minimum_total_device_memory_bytes": 32000000000,
+    "maximum_peak_reserved_bytes": 27917287424
+  },
+  "assets": {
+    "model": {
+      "asset_name": "pythia_160m_deduped_step143000",
+      "repository_id": "EleutherAI/pythia-160m-deduped",
+      "checkpoint_label": "step143000",
+      "resolved_revision": "de95c9570237bac1e0c70856f41b840809c55889",
+      "kind": "directory",
+      "acquisition": "external offline snapshot; local_files_only is mandatory"
+    },
+    "dataset": {
+      "asset_name": "common_pile_news_v0",
+      "repository_id": "common-pile/news",
+      "resolved_revision": "13e76bdc8d49ed14d710fac7e3b61186cf74c8d3",
+      "kind": "directory",
+      "split": "train",
+      "license_filter": "per-record CC BY or CC BY-SA only",
+      "acquisition": "external offline snapshot authenticated as one content-addressed tree"
+    }
+  },
+  "stream": {
+    "chronology_field": "created",
+    "tie_breakers": ["source", "stable_record_identity"],
+    "earliest_utc": "2021-01-01T00:00:00+00:00",
+    "context_length": 128,
+    "warmup_examples": 4096,
+    "online_examples": 8192,
+    "packet_size": 16,
+    "one_window_per_article": true,
+    "offset_salt": "fmmt-pythia-fixed-window-v1",
+    "offset_depends_on": ["stable_record_identity", "offset_salt"],
+    "offset_does_not_depend_on": ["model_seed", "target_token_value", "model_prediction"],
+    "conditioning_policy": "fixed_context_predicted_token_only",
+    "tokenizer_options": {
+      "add_special_tokens": false,
+      "padding": false,
+      "truncation": false
+    }
+  },
+  "model": {
+    "architecture": "Pythia-160M-deduped",
+    "expected_total_parameter_range": [150000000, 175000000],
+    "dtype": "float32",
+    "attention_implementation": "eager",
+    "use_cache": false,
+    "dropout": 0.0,
+    "logits_to_keep": 1,
+    "scored_logits": "final conditioning position only"
+  },
+  "optimization": {
+    "optimizer": "AdamW",
+    "adamw_foreach": false,
+    "adamw_fused": false,
+    "warmup_epochs": 1,
+    "learning_rate": 0.000005,
+    "betas": [0.9, 0.999],
+    "epsilon": 1e-8,
+    "weight_decay": 0.01,
+    "gradient_clip": 1.0,
+    "radius_window": 16,
+    "fallback_radius": 0.00001,
+    "counterfactual_actuator": "equal_radius_raw_gradient_actuator",
+    "counterfactual_direction": "stored raw minibatch gradient; no AdamW moments, preconditioner, or weight decay are applied to virtual branches",
+    "reuse_endpoint_radius": "median realized norm of the last 16 true-target AdamW updates"
+  },
+  "audit": {
+    "trajectory_seed": 300,
+    "independent_model_trajectories": 1,
+    "seed_level_replication": false,
+    "n_permutations": 4,
+    "fail_on_zero_norm_actuator_branch": true,
+    "permutation_salt": 93487,
+    "permutation_unit": "predicted next-token targets within the previous chronological packet",
+    "conditioning_tokens_permuted": false,
+    "branches": {
+      "K0": "no historical update",
+      "K1": "equal-radius previous true-target gradient",
+      "K4": "mean outcome of four equal-radius previous target-permuted gradients"
+    },
+    "bootstrap_draws": 2000,
+    "bootstrap_block_length": 8,
+    "live_update": "exactly one true-target AdamW update after all branches and permutation gradients are computed"
+  },
+  "reporting": {
+    "task_metrics": ["next_token_nll", "perplexity", "top1_accuracy", "top5_accuracy"],
+    "diagnostics": [
+      "target_multiset_exact_preservation",
+      "assignment_changed_fraction",
+      "index_fixed_point_fraction",
+      "true_permuted_gradient_cosine",
+      "true_to_mean_permuted_gradient_distance",
+      "finite_permutation_gradient_variance"
+    ],
+    "inference": "paired circular block intervals for K1-vs-K0, K4-vs-K0, and K1-vs-K4 NLL/top-1/top-5 contrasts; four permutation replicas are nested and averaged within packet",
+    "permutation_sensitivity": "nested K-prefix summaries at K=1,2,4 plus outcome-level finite-permutation Monte Carlo standard errors",
+    "perplexity_inference": "perplexity is exp(aggregate NLL); interval claims remain on the additive NLL scale",
+    "seed_level_uncertainty": false
+  }
+}

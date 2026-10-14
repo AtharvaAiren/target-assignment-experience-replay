@@ -1,0 +1,151 @@
+{
+  "schema_version": "fmmt.iclr_breadth.lock.v1",
+  "status": "LOCKED_BEFORE_ICLR_BREADTH_RUN",
+  "created_utc": "2026-08-23T00:00:00Z",
+  "scope": {
+    "frozen_workshop_artifacts_untouched": true,
+    "campaign_role": "separate_iclr_breadth_extension",
+    "estimand": "conditional fixed-trajectory task-performance difference between a true-assignment historical branch and the mean of estimator-matched uniformly target-permuted branches from the same common center",
+    "not_claimed": [
+      "packet or permutation replicas are independent datasets",
+      "the normalized task contrast estimates a Jacobian-target covariance norm",
+      "the observed contrast is a universal task-recovery ceiling",
+      "smoke outputs are scientific evidence"
+    ]
+  },
+  "runtime": {
+    "device": "cuda",
+    "seeds": [200, 201, 202, 203],
+    "execution_order": ["classification", "sequence"],
+    "atomic_unit_resumption": true,
+    "one_gpu_process": true
+  },
+  "tasks": {
+    "classification": {
+      "dataset": "CIFAR100",
+      "source_url": "https://www.cs.toronto.edu/~kriz/cifar.html",
+      "data_root": "data_raw/cifar100",
+      "allow_download": true,
+      "archive_md5": "eb9058c3a382ffc7106e4002c42a8d85",
+      "split": {
+        "warmup": "canonical_train_50000",
+        "online_stream": "canonical_test_10000_each_used_once"
+      },
+      "loss": "cross_entropy",
+      "stream_order_seed": 260823,
+      "domain_block_size": 1000,
+      "packet_size": 64,
+      "domains": [
+        {"name": "clean", "kind": "clean", "severity": 0.0},
+        {"name": "brightness_035", "kind": "brightness", "severity": 0.35},
+        {"name": "contrast_050", "kind": "contrast", "severity": 0.5},
+        {"name": "gaussian_noise_012", "kind": "gaussian_noise", "severity": 0.12},
+        {"name": "blur_3", "kind": "blur", "kernel": 3},
+        {"name": "quantize_16", "kind": "quantize", "levels": 16}
+      ],
+      "normalization_mean": [0.5071, 0.4867, 0.4408],
+      "normalization_std": [0.2675, 0.2565, 0.2761],
+      "model": {
+        "name": "deep_residual_classifier_groupnorm",
+        "widths": [64, 128, 256],
+        "blocks_per_stage": [2, 2, 2],
+        "mutable_running_statistics": false
+      },
+      "warmup_epochs": 30,
+      "warmup_batch_size": 128,
+      "data_workers": 4,
+      "warmup_learning_rate": 0.05,
+      "online_learning_rate": 0.002,
+      "momentum": 0.9,
+      "weight_decay": 0.0005,
+      "gradient_clip": 5.0,
+      "radius_window": 16,
+      "fallback_radius": 0.001,
+      "n_permutations": 4,
+      "permutation_salt": 73121,
+      "actuators": [
+        {
+          "name": "stored_gradient_s1",
+          "kind": "stored_gradient",
+          "steps": 1,
+          "endpoint_radius": "median_last_16_live_updates"
+        }
+      ],
+      "bootstrap_draws": 2000,
+      "bootstrap_block_length": 8
+    },
+    "sequence": {
+      "dataset": "APPLIANCES",
+      "uci_id": 374,
+      "source_url": "https://archive.ics.uci.edu/static/public/374/appliances+energy+prediction.zip",
+      "archive_sha256": "2fccf354445d886e7917620b0195db1f3e3e34d5a067a93b844694a4c561255a",
+      "split": {
+        "warmup": "leading_5_percent_frozen_preprocessing_prefix",
+        "online_stream": "all_remaining_chronological_rows_each_used_once"
+      },
+      "loss": "mse",
+      "context_length": 24,
+      "packet_size": 32,
+      "model": {
+        "name": "two_layer_gru_mlp",
+        "hidden_size": 128,
+        "layers": 2,
+        "mlp_width": 128,
+        "dropout": 0.0
+      },
+      "warmup_epochs": 12,
+      "warmup_batch_size": 64,
+      "warmup_learning_rate": 0.002,
+      "online_learning_rate": 0.0005,
+      "adamw_betas": [0.9, 0.999],
+      "weight_decay": 0.0001,
+      "gradient_clip": 1.0,
+      "radius_window": 16,
+      "fallback_radius": 0.001,
+      "n_permutations": 4,
+      "permutation_salt": 84401,
+      "actuators": [
+        {
+          "name": "stored_gradient_s1",
+          "kind": "stored_gradient",
+          "steps": 1,
+          "endpoint_radius": "median_last_16_live_updates"
+        },
+        {
+          "name": "replay_projected_s3",
+          "kind": "replay_projected",
+          "steps": 3,
+          "historical_buffer": "exactly_one_already_revealed_packet_audit_only",
+          "per_step_path_radius": "endpoint_radius_divided_by_3",
+          "endpoint_projection": "median_last_16_live_updates"
+        }
+      ],
+      "bootstrap_draws": 2000,
+      "bootstrap_block_length": 8
+    }
+  },
+  "reporting": {
+    "task_metrics": ["accuracy", "cross_entropy", "brier", "mse", "rmse", "mae"],
+    "distribution_metrics": [
+      "target_multiset_hash_and_exact_preservation",
+      "assignment_changed_fraction",
+      "fixed_point_fraction",
+      "true_shuffled_gradient_cosine",
+      "true_to_mean_shuffled_gradient_distance",
+      "permutation_gradient_variance"
+    ],
+    "power_metrics": [
+      "paired_circular_block_bootstrap_interval",
+      "effective_packet_count",
+      "normal_approximation_80_percent_mde"
+    ],
+    "seed_reporting": "mean_and_sample_standard_deviation_across_run_seeds",
+    "paper_outputs": [
+      "PAPER_SUMMARY.json",
+      "PAPER_SUMMARY.csv",
+      "PAPER_SUMMARY.md",
+      "PAPER_SEED_SUMMARY.csv",
+      "PAPER_DOMAIN_SUMMARY.csv"
+    ]
+  }
+}

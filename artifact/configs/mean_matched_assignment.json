@@ -1,0 +1,103 @@
+{
+  "schema_version": "gradient_reuse.mean_matched_assignment_lock.v1",
+  "status": "OUTCOME_INFORMED_COMPANION_LOCKED_BEFORE_MEAN_MATCHED_OUTCOMES",
+  "scientific_question": "At a fixed expected amount of replay target-Jacobian covariance erasure, how much of the stochastic reassignment effect is explained by its deterministic mean target and how much is attributable to assignment noise?",
+  "interpretation": {
+    "analysis_role": "prospectively locked deterministic companion to the immutable assignment-strength parent",
+    "parent_selection_was_outcome_informed": true,
+    "parent_assignment_strength_outcomes_not_read_during_companion_design_or_preflight": true,
+    "not_a_replacement_for_original_primary": true,
+    "current_stream_targets_always_correct": true,
+    "replay_inputs_and_batch_mean_target_held_fixed_within_each_update": true,
+    "path_level_arms_diverge_after_the_first_intervened_update": true,
+    "fixed_state_expectation_only": true,
+    "no_causal_mechanism_decomposition_claim": true,
+    "mean_target_rule": "For replay batch size n, use the parent's m=1+round_half_up(lambda*(n-1)) and lambda_n=(m-1)/(n-1), then t_mean_i=(1-lambda_n)*onehot(y_i)+lambda_n*mean_j onehot(y_j).",
+    "delta_noise_sign": "Delta_noise=M_stochastic-M_mean; positive values favor stochastic reassignment over its deterministic conditional-mean target."
+  },
+  "upstream": {
+    "name": "Mammoth",
+    "repository": "https://github.com/aimagelab/mammoth.git",
+    "commit": "e75a491c69fd729edeb01431afb753d9157d9a81",
+    "license_sha256": "309ca56cfbbe29aa036d1c53f8f05d5ee0a1dd78dcc37f53f94e840b22b60275"
+  },
+  "parent": {
+    "project_path": ".",
+    "output_path": "results/assignment_strength",
+    "lock_relative_path": "configs/assignment_strength_sweep.json",
+    "source_manifest_relative_path": "provenance/assignment_strength_source_manifest.json",
+    "aggregate_name": "ASSIGNMENT_STRENGTH_AGGREGATE.json",
+    "done_name": "DONE.json",
+    "expected_units": 432,
+    "required_lambda_basis_points": [2500, 5000, 7500, 10000],
+    "required_permutation_replicas": [0, 1, 2, 3]
+  },
+  "runtime": {
+    "device": "cuda:0",
+    "run_seeds": [3501, 3502, 3503, 3504, 3505, 3506, 3507, 3508, 3509, 3510, 3511, 3512],
+    "lambda_basis_points": [2500, 5000, 7500, 10000],
+    "audit_interval": 100,
+    "num_workers": 4,
+    "numerical_threads": 1,
+    "deterministic_algorithms": true,
+    "maximum_concurrent_gpu_processes": 2,
+    "minimum_free_gpu_memory_mib_before_first_launch": 28000,
+    "minimum_free_gpu_memory_mib_per_additional_launch": 14000,
+    "minimum_free_disk_gib": 100,
+    "parent_wait_poll_seconds": 60
+  },
+  "benchmarks": {
+    "split_cifar100": {
+      "mammoth_dataset": "seq-cifar100",
+      "setting": "class-il",
+      "followup_primary_setting": "task-il",
+      "mandatory_secondary_settings": ["class-il"],
+      "dataset_config": "20tasks",
+      "backbone": "resnet18",
+      "tasks": 20,
+      "batch_size": 32,
+      "epochs": 1,
+      "learning_rate": 0.03
+    },
+    "permuted_mnist": {
+      "mammoth_dataset": "perm-mnist",
+      "setting": "domain-il",
+      "followup_primary_setting": "domain-il",
+      "mandatory_secondary_settings": [],
+      "dataset_config": null,
+      "backbone": "mnistmlp",
+      "tasks": 20,
+      "batch_size": 128,
+      "epochs": 1,
+      "learning_rate": 0.1
+    }
+  },
+  "method": {
+    "mammoth_model": "er_mean_matched",
+    "buffer_size": 500,
+    "minibatch_size": 32
+  },
+  "inference": {
+    "independent_unit": "run_seed",
+    "parent_permutation_replicas_are_nested_monte_carlo": true,
+    "primary_estimand": "Within each benchmark and seed, average over the four doses of parent stochastic-reassignment mean accuracy minus deterministic mean-target accuracy.",
+    "primary_intervals": "two-sided Student-t 95 percent interval over 12 seed-level effects with a parent nested-Monte-Carlo variance floor",
+    "primary_family": "two benchmark-specific average Delta_noise tests with Holm correction",
+    "secondary_family": "eight benchmark-by-dose Delta_noise tests with Holm correction",
+    "directional_decisions_require_estimate_sign_and_two_sided_holm_rejection": true,
+    "nonfamily_intervals_are_descriptive_unadjusted": true,
+    "no_ratios": true,
+    "no_optional_stopping": true,
+    "all_planned_units_required": true,
+    "all_doses_seeds_endpoints_and_parent_replicas_reported": true
+  },
+  "execution": {
+    "expected_units_per_benchmark_seed": 4,
+    "expected_units": 96,
+    "parent_must_reach_authenticated_terminal_pass_before_first_unit": true,
+    "completed_units_immutable": true,
+    "failed_attempts_preserved": true,
+    "monitoring_must_not_print_scientific_outcomes": true,
+    "correction_after_readable_outcome_requires_new_versioned_sensitivity_run": true
+  }
+}

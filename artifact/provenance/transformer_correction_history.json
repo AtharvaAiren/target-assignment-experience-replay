@@ -1,0 +1,30 @@
+{
+  "historical_chain": [
+    {
+      "manifest_sha256": "677999e4f2fc02554ff89ee9c6de7f3659ee3ef8618a634111d84c1d35a26510",
+      "patch_sha256": "6f750c55e020651034d0e8fe9b080f59225abb69f1fdf02144a3239a24132637",
+      "role": "classifier_dropout_compatibility",
+      "schema_version": "gradient_reuse.external_transformer_classifier_dropout_correction.v1"
+    },
+    {
+      "manifest_sha256": "223c8af59a04b636ced07da012b20fca8a1128e8bc07db35018099496b140bd4",
+      "patch_sha256": "9c74a3140f06a5e2252466eeeb15f41ae4c50ffc2ed02f775b989afc491e209a",
+      "role": "padded_vocabulary_compatibility",
+      "schema_version": "gradient_reuse.external_transformer_padded_vocab_correction.v1"
+    },
+    {
+      "manifest_sha256": "a5911ac2a37642a4a6b16f9373ec290ff1e85a75ac05bdb3f2aa24422f99afee",
+      "patch_sha256": "e0ca3cb07f89e276090675053553cb6d947ccb75212494e9f9a1c9426d834ec1",
+      "role": "effective_vocabulary_compatibility",
+      "schema_version": "gradient_reuse.external_transformer_effective_vocab_correction.v1"
+    }
+  ],
+  "historical_digest_provenance": "author_recorded_from_private_execution_artifacts",
+  "historical_patch_bytes_distributed": false,
+  "portable_relation": "author_reimplementation_of_documented_rules_not_a_byte_or_semantic_equivalence_proof",
+  "portable_source_is_byte_identical_to_historical_patch": false,
+  "private_execution_paths_distributed": false,
+  "semantic_equivalence_verified": false,
+  "schema_version": "gradient_reuse.transformer_correction_history_bridge.v1",
+  "status": "AUTHOR_RECORDED_HISTORICAL_DIGESTS"
+}

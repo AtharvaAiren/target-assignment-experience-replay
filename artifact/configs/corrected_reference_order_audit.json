@@ -1,0 +1,137 @@
+{
+  "schema_version": "gradient_reuse.corrected_reference_order_lock.v1",
+  "status": "PROSPECTIVELY_LOCKED_BEFORE_CORRECTED_REFERENCE_ORDER_OUTCOMES",
+  "scientific_question": "Do the replay conclusions survive an RNG-isolated, arm-identical Permuted-MNIST domain bank and a nominal learning-rate-rescaled no-replay reference?",
+  "interpretation": {
+    "fresh_seed_followup": true,
+    "not_a_replacement_for_frozen_results": true,
+    "all_original_results_immutable": true,
+    "fixed_current_is_learning_rate_rescaling_only": true,
+    "task_banks_are_generated_before_training": true,
+    "task_bank_rng_isolated_from_training_rng": true,
+    "same_seed_task_bank_identical_across_arms": true,
+    "assignment_replicas_are_nested_monte_carlo": true,
+    "split_cifar100_is_a_separately_locked_campaign": true,
+    "no_optional_stopping": true
+  },
+  "upstream": {
+    "name": "Mammoth",
+    "repository": "https://github.com/aimagelab/mammoth.git",
+    "commit": "e75a491c69fd729edeb01431afb753d9157d9a81",
+    "license_sha256": "309ca56cfbbe29aa036d1c53f8f05d5ee0a1dd78dcc37f53f94e840b22b60275",
+    "assignment_intervention": "assignment_strength_overlay/models/utils/assignment_strength_intervention.py"
+  },
+  "runtime": {
+    "device": "cuda:0",
+    "run_seeds": [3801, 3802, 3803, 3804, 3805, 3806, 3807, 3808, 3809, 3810, 3811, 3812],
+    "deterministic_algorithms": true,
+    "num_workers": 4,
+    "numerical_threads": 1,
+    "maximum_concurrent_gpu_processes": 1,
+    "minimum_free_disk_gib": 80,
+    "minimum_free_gpu_memory_mib": 14000,
+    "permutation_seed_offset": 100003,
+    "selection_seed_salt": 2779096485,
+    "audit_interval": 100,
+    "audit_permutations": 4
+  },
+  "benchmarks": {
+    "permuted_mnist": {
+      "mammoth_dataset": "perm-mnist",
+      "setting": "domain-il",
+      "dataset_config": null,
+      "backbone": "mnistmlp",
+      "tasks": 20,
+      "batch_size": 128,
+      "replay_batch_size": 32,
+      "epochs": 1,
+      "standard_learning_rate": 0.1,
+      "current_gradient_coefficient": 0.8,
+      "fixed_current_learning_rate": 0.08,
+      "order_variants": ["fixed_bank"],
+      "primary_endpoint": "domain_il"
+    }
+  },
+  "arms": {
+    "standard_no_replay": {
+      "mammoth_model": "sgd",
+      "lambda_bp": null,
+      "replicas": [null]
+    },
+    "fixed_current_no_replay": {
+      "mammoth_model": "sgd",
+      "lambda_bp": null,
+      "replicas": [null]
+    },
+    "er_paired": {
+      "mammoth_model": "er_assignment_strength",
+      "lambda_bp": 0,
+      "replicas": [null]
+    },
+    "er_reassigned": {
+      "mammoth_model": "er_assignment_strength",
+      "lambda_bp": [2500, 5000, 7500, 10000],
+      "replicas": [0, 1, 2, 3]
+    }
+  },
+  "task_and_order_banks": {
+    "permuted_mnist_generator": "numpy.random.Generator(PCG64(SeedSequence))",
+    "permuted_mnist_domains": 20,
+    "permuted_mnist_pixels": 784,
+    "permuted_mnist_task_bank_sha256_by_seed": {
+      "3801": "c16015c81ce87ed98d4aa0f9d0cea18112fecbffb87cce453f381cc4a1084132",
+      "3802": "6ed4bc62066390599b53f9fbc5e0fef61826009f70042053b2bf391f96416e0f",
+      "3803": "692d96c12abb98dbbadc2bf645fccd6f90f358e24df0ec63f57d811d84c6c80a",
+      "3804": "ce55f465f1427e1a6b6e9d1b04c865f1795f51a67c463f3322fd8a95ca010506",
+      "3805": "044103a50df6a3111e6822317e2de70b802357c9eae4b05633becac730314fad",
+      "3806": "91fd8aaa058d234d88bbb6f9a13e22471e92a10f7f5a0f33990579286c588df9",
+      "3807": "27d1fead43643c6e5b089ba57f366f5eb429261bf5c9903d42836cfca2f5c2a1",
+      "3808": "885c0b7b928a09690479538756fa798b2d93350ec8d50810763732552a634f62",
+      "3809": "fa33a1a9f86adc77a60fd3a577a8b7e9043c64a662cf6e20d27a34fb7f1df3bd",
+      "3810": "57c9d6101b75841916db48c58ff1fa0f986d4d392eb8ad248e6e39ba771b6bac",
+      "3811": "13c135520aaa7c99289065b9620a5dab6676f7aeb8844f8a6b3d0204a3dfa13f",
+      "3812": "aee517463499dc1b46b185e1853b813d4bb0cca88a8e4faf2d59135b0d7387a6"
+    }
+  },
+  "inference": {
+    "independent_unit": "run_seed",
+    "all_planned_units_required": true,
+    "assignment_replicas_are_not_independent_units": true,
+    "nested_assignment_replica_reduction": "mean the four assignment replicas within run seed and nonzero lambda before any contrast or inference",
+    "primary_panel": "permuted_mnist",
+    "split_cifar100_role": "separate prospectively locked campaign",
+    "all_arms_orders_strengths_replicas_reported": true,
+    "contrast_sign_convention": {
+      "paired_minus_standard": "positive favors paired ER over standard no-replay SGD",
+      "paired_minus_fixed": "positive favors paired ER over fixed-current no-replay SGD",
+      "reassigned_minus_standard": "positive favors replica-mean reassigned ER over standard no-replay SGD",
+      "reassigned_minus_fixed": "positive favors replica-mean reassigned ER over fixed-current no-replay SGD",
+      "paired_minus_reassigned": "positive favors paired ER over replica-mean reassigned ER",
+      "dose_slope": "accuracy points per unit lambda; positive means accuracy increases with reassignment strength"
+    },
+    "dose_slope": "within-seed ordinary-least-squares slope over lambda=[0,0.25,0.5,0.75,1], using paired ER at lambda=0 and assignment-replica means at nonzero lambda",
+    "confirmatory_family": [
+      "dose_slope",
+      "paired_minus_standard",
+      "paired_minus_fixed",
+      "lambda_07500bp_minus_standard",
+      "lambda_07500bp_minus_fixed",
+      "lambda_10000bp_minus_standard",
+      "lambda_10000bp_minus_fixed"
+    ],
+    "confirmatory_tests": 7,
+    "multiplicity": "two-sided Holm correction over the seven prospectively locked run-seed tests",
+    "other_lambda_specific_contrasts": "descriptive pointwise summaries, including paired-minus-reassigned and reassigned-minus-standard/fixed at every nonzero lambda"
+  },
+  "execution": {
+    "units_per_seed_order_panel": 19,
+    "expected_units": 228,
+    "priority_permuted_mnist_units": 132,
+    "mandatory_permuted_mnist_units": 228,
+    "output_must_be_outside_frozen_results": true,
+    "completed_units_immutable": true,
+    "failed_attempts_preserved": true,
+    "monitoring_must_not_print_scientific_outcomes": true,
+    "queue_requires_explicit_execute_flag": true
+  }
+}

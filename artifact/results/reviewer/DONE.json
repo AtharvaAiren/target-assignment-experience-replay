@@ -1,0 +1,10 @@
+{
+  "campaign_summary": "CAMPAIGN_SUMMARY.json",
+  "campaign_summary_sha256": "bdf341d708e9ac1c77fc1ccfe6c7e9115a0dfc3ca8f3796f03d93800555a2759",
+  "completed_unix": 1787513644.389989,
+  "config_sha256": "e5b8c0a73d758340502d9e9fff8e27220b5e2fca294aaebd3c515d2124d58eaf",
+  "schema_version": "fmmt.reviewer_diagnostics.done.v1",
+  "source_bundle_sha256": "86712457603819f6ee81edb93988eba13e69c6e23e8b36a5e82f1e26ebc459e9",
+  "status": "PASS",
+  "unit_count": 32
+}

@@ -1,0 +1,611 @@
+{
+  "actuator_pairing_results": {
+    "normalized/r0.25": {
+      "bootstrap": {
+        "draws": 4000,
+        "effective_block_length": 3,
+        "initialization_seeds_resampled": true,
+        "method": "nested_seed_circular_time_permutation",
+        "ordered_temporal_blocks": true,
+        "permutation_replicas_resampled_within_seed": true,
+        "requested_block_length": 3
+      },
+      "ci95": [
+        0.00013331188161605932,
+        0.00018497827588486202
+      ],
+      "ci95_relative": [
+        0.0003716878689980256,
+        0.000564431355974418
+      ],
+      "finite_permutation_mean_minus_exact_expectation": 1.9299417975404687e-05,
+      "improvement": 0.0001586231856895018,
+      "macro_temporal_nrmse": {
+        "exact_permutation_expectation_direction": 0.3450703419330688,
+        "permutation_mean": 0.3450896413510442,
+        "true": 0.3449310181653547
+      },
+      "relative_improvement": 0.0004596579169067018
+    },
+    "normalized/r0.5": {
+      "bootstrap": {
+        "draws": 4000,
+        "effective_block_length": 3,
+        "initialization_seeds_resampled": true,
+        "method": "nested_seed_circular_time_permutation",
+        "ordered_temporal_blocks": true,
+        "permutation_replicas_resampled_within_seed": true,
+        "requested_block_length": 3
+      },
+      "ci95": [
+        0.00025221132837094715,
+        0.0003489818787468118
+      ],
+      "ci95_relative": [
+        0.0007044260896398668,
+        0.0010701520294999411
+      ],
+      "finite_permutation_mean_minus_exact_expectation": 3.549225909899034e-05,
+      "improvement": 0.00029823578714863983,
+      "macro_temporal_nrmse": {
+        "exact_permutation_expectation_direction": 0.3419996213965852,
+        "permutation_mean": 0.3420351136556842,
+        "true": 0.3417368778685355
+      },
+      "relative_improvement": 0.0008719449414450011
+    },
+    "normalized/r1": {
+      "bootstrap": {
+        "draws": 4000,
+        "effective_block_length": 3,
+        "initialization_seeds_resampled": true,
+        "method": "nested_seed_circular_time_permutation",
+        "ordered_temporal_blocks": true,
+        "permutation_replicas_resampled_within_seed": true,
+        "requested_block_length": 3
+      },
+      "ci95": [
+        0.0004324810000891038,
+        0.0006071555165994673
+      ],
+      "ci95_relative": [
+        0.0012487509487562006,
+        0.001892689550590835
+      ],
+      "finite_permutation_mean_minus_exact_expectation": 5.8140811125428904e-05,
+      "improvement": 0.0005174199150260048,
+      "macro_temporal_nrmse": {
+        "exact_permutation_expectation_direction": 0.33625528118658715,
+        "permutation_mean": 0.3363134219977126,
+        "true": 0.33579600208268656
+      },
+      "relative_improvement": 0.0015385051002499805
+    },
+    "normalized/r2": {
+      "bootstrap": {
+        "draws": 4000,
+        "effective_block_length": 3,
+        "initialization_seeds_resampled": true,
+        "method": "nested_seed_circular_time_permutation",
+        "ordered_temporal_blocks": true,
+        "permutation_replicas_resampled_within_seed": true,
+        "requested_block_length": 3
+      },
+      "ci95": [
+        0.0005500812839265824,
+        0.0008452808832559939
+      ],
+      "ci95_relative": [
+        0.0016580014905800012,
+        0.002675609062611302
+      ],
+      "finite_permutation_mean_minus_exact_expectation": 6.186402032271054e-05,
+      "improvement": 0.0006961241299994499,
+      "macro_temporal_nrmse": {
+        "exact_permutation_expectation_direction": 0.326454879734978,
+        "permutation_mean": 0.3265167437553007,
+        "true": 0.32582061962530123
+      },
+      "relative_improvement": 0.0021319706977144842
+    },
+    "normalized/r4": {
+      "bootstrap": {
+        "draws": 4000,
+        "effective_block_length": 3,
+        "initialization_seeds_resampled": true,
+        "method": "nested_seed_circular_time_permutation",
+        "ordered_temporal_blocks": true,
+        "permutation_replicas_resampled_within_seed": true,
+        "requested_block_length": 3
+      },
+      "ci95": [
+        -0.0004213069186177238,
+        0.00017700175517328947
+      ],
+      "ci95_relative": [
+        -0.0013764610324443556,
+        0.0005490107907297039
+      ],
+      "finite_permutation_mean_minus_exact_expectation": -0.00011162289118921143,
+      "improvement": -9.368415344613551e-05,
+      "macro_temporal_nrmse": {
+        "exact_permutation_expectation_direction": 0.3143103394580393,
+        "permutation_mean": 0.3141987165668501,
+        "true": 0.31429240072029624
+      },
+      "relative_improvement": -0.0002981684790752572
+    },
+    "raw/r0.25": {
+      "bootstrap": {
+        "draws": 4000,
+        "effective_block_length": 3,
+        "initialization_seeds_resampled": true,
+        "method": "nested_seed_circular_time_permutation",
+        "ordered_temporal_blocks": true,
+        "permutation_replicas_resampled_within_seed": true,
+        "requested_block_length": 3
+      },
+      "ci95": [
+        -1.186362560275849e-05,
+        6.330190947161711e-05
+      ],
+      "ci95_relative": [
+        -3.4071762745675295e-05,
+        0.00018982345671244568
+      ],
+      "finite_permutation_mean_minus_exact_expectation": 3.7667155585729972e-06,
+      "improvement": 2.0545616377151322e-05,
+      "macro_temporal_nrmse": {
+        "exact_permutation_expectation_direction": 0.3449477970659615,
+        "permutation_mean": 0.3449515637815201,
+        "true": 0.3449310181651429
+      },
+      "relative_improvement": 5.9560873277165884e-05
+    },
+    "raw/r0.5": {
+      "bootstrap": {
+        "draws": 4000,
+        "effective_block_length": 3,
+        "initialization_seeds_resampled": true,
+        "method": "nested_seed_circular_time_permutation",
+        "ordered_temporal_blocks": true,
+        "permutation_replicas_resampled_within_seed": true,
+        "requested_block_length": 3
+      },
+      "ci95": [
+        3.400356147011912e-05,
+        0.0003442792800335027
+      ],
+      "ci95_relative": [
+        9.80585898755017e-05,
+        0.0010503049234053441
+      ],
+      "finite_permutation_mean_minus_exact_expectation": 1.516152519442926e-05,
+      "improvement": 0.00015598495188095233,
+      "macro_temporal_nrmse": {
+        "exact_permutation_expectation_direction": 0.3418777013028024,
+        "permutation_mean": 0.3418928628279968,
+        "true": 0.34173687787611584
+      },
+      "relative_improvement": 0.0004562392750486486
+    },
+    "raw/r1": {
+      "bootstrap": {
+        "draws": 4000,
+        "effective_block_length": 3,
+        "initialization_seeds_resampled": true,
+        "method": "nested_seed_circular_time_permutation",
+        "ordered_temporal_blocks": true,
+        "permutation_replicas_resampled_within_seed": true,
+        "requested_block_length": 3
+      },
+      "ci95": [
+        0.00025452076390067275,
+        0.00159587445160652
+      ],
+      "ci95_relative": [
+        0.0007334422100503237,
+        0.004921630885218501
+      ],
+      "finite_permutation_mean_minus_exact_expectation": 5.995866217767265e-05,
+      "improvement": 0.0007741254872442047,
+      "macro_temporal_nrmse": {
+        "exact_permutation_expectation_direction": 0.33651016889747526,
+        "permutation_mean": 0.33657012755965293,
+        "true": 0.33579600207240873
+      },
+      "relative_improvement": 0.0023000421720641277
+    },
+    "raw/r2": {
+      "bootstrap": {
+        "draws": 4000,
+        "effective_block_length": 3,
+        "initialization_seeds_resampled": true,
+        "method": "nested_seed_circular_time_permutation",
+        "ordered_temporal_blocks": true,
+        "permutation_replicas_resampled_within_seed": true,
+        "requested_block_length": 3
+      },
+      "ci95": [
+        0.0012675175625770179,
+        0.006494302325857666
+      ],
+      "ci95_relative": [
+        0.0037452912023230684,
+        0.020424224824356605
+      ],
+      "finite_permutation_mean_minus_exact_expectation": 0.00022664058395766018,
+      "improvement": 0.003335604524351033,
+      "macro_temporal_nrmse": {
+        "exact_permutation_expectation_direction": 0.32892958357039637,
+        "permutation_mean": 0.329156224154354,
+        "true": 0.32582061963000297
+      },
+      "relative_improvement": 0.01013380358497137
+    },
+    "raw/r4": {
+      "bootstrap": {
+        "draws": 4000,
+        "effective_block_length": 3,
+        "initialization_seeds_resampled": true,
+        "method": "nested_seed_circular_time_permutation",
+        "ordered_temporal_blocks": true,
+        "permutation_replicas_resampled_within_seed": true,
+        "requested_block_length": 3
+      },
+      "ci95": [
+        0.005480591376605291,
+        0.022761121009880026
+      ],
+      "ci95_relative": [
+        0.016698907080045875,
+        0.07036563290996593
+      ],
+      "finite_permutation_mean_minus_exact_expectation": 0.0007897371080606841,
+      "improvement": 0.01276089553711663,
+      "macro_temporal_nrmse": {
+        "exact_permutation_expectation_direction": 0.3262635592021739,
+        "permutation_mean": 0.3270532963102346,
+        "true": 0.314292400773118
+      },
+      "relative_improvement": 0.03901778603390672
+    },
+    "replay_sgd/steps1": {
+      "bootstrap": {
+        "draws": 4000,
+        "effective_block_length": 3,
+        "initialization_seeds_resampled": true,
+        "method": "nested_seed_circular_time_permutation",
+        "ordered_temporal_blocks": true,
+        "permutation_replicas_resampled_within_seed": true,
+        "requested_block_length": 3
+      },
+      "ci95": [
+        0.0002812646720326054,
+        0.0015018021801523076
+      ],
+      "ci95_relative": [
+        0.0008057199227872287,
+        0.0045914785141265325
+      ],
+      "improvement": 0.0007829077317239597,
+      "macro_temporal_nrmse": {
+        "permutation_mean": 0.33654795927269754,
+        "true": 0.3357650515409736
+      },
+      "relative_improvement": 0.0023262887506906157
+    },
+    "replay_sgd/steps2": {
+      "bootstrap": {
+        "draws": 4000,
+        "effective_block_length": 3,
+        "initialization_seeds_resampled": true,
+        "method": "nested_seed_circular_time_permutation",
+        "ordered_temporal_blocks": true,
+        "permutation_replicas_resampled_within_seed": true,
+        "requested_block_length": 3
+      },
+      "ci95": [
+        0.0010397516407910287,
+        0.005511964988576658
+      ],
+      "ci95_relative": [
+        0.0030753077541695825,
+        0.01751043001456351
+      ],
+      "improvement": 0.002824596633619674,
+      "macro_temporal_nrmse": {
+        "permutation_mean": 0.32945044358415104,
+        "true": 0.3266258469505314
+      },
+      "relative_improvement": 0.008573661649656245
+    },
+    "replay_sgd/steps4": {
+      "bootstrap": {
+        "draws": 4000,
+        "effective_block_length": 3,
+        "initialization_seeds_resampled": true,
+        "method": "nested_seed_circular_time_permutation",
+        "ordered_temporal_blocks": true,
+        "permutation_replicas_resampled_within_seed": true,
+        "requested_block_length": 3
+      },
+      "ci95": [
+        0.1105891809230658,
+        0.711289250823097
+      ],
+      "ci95_relative": [
+        0.22922938527755093,
+        0.6378546881402581
+      ],
+      "improvement": 0.34647733274441833,
+      "macro_temporal_nrmse": {
+        "permutation_mean": 0.7375071803568005,
+        "true": 0.39102984761238224
+      },
+      "relative_improvement": 0.4697951992505282
+    }
+  },
+  "circular_block_length_sensitivity": {
+    "1": {
+      "bootstrap": {
+        "draws": 4000,
+        "effective_block_length": 1,
+        "initialization_seeds_resampled": true,
+        "method": "nested_seed_circular_time_permutation",
+        "ordered_temporal_blocks": true,
+        "permutation_replicas_resampled_within_seed": true,
+        "requested_block_length": 1
+      },
+      "ci95": [
+        0.0004500367507185639,
+        0.0005908532173445042
+      ],
+      "ci95_relative": [
+        0.0013119128907724863,
+        0.001806494169683356
+      ],
+      "improvement": 0.0005174199150260048,
+      "relative_improvement": 0.0015385051002499805
+    },
+    "12": {
+      "bootstrap": {
+        "draws": 4000,
+        "effective_block_length": 12,
+        "initialization_seeds_resampled": true,
+        "method": "nested_seed_circular_time_permutation",
+        "ordered_temporal_blocks": true,
+        "permutation_replicas_resampled_within_seed": true,
+        "requested_block_length": 12
+      },
+      "ci95": [
+        0.00048501080259951996,
+        0.00055450490745132
+      ],
+      "ci95_relative": [
+        0.0014148456766535607,
+        0.0016781416919589762
+      ],
+      "improvement": 0.0005174199150260048,
+      "relative_improvement": 0.0015385051002499805
+    },
+    "2": {
+      "bootstrap": {
+        "draws": 4000,
+        "effective_block_length": 2,
+        "initialization_seeds_resampled": true,
+        "method": "nested_seed_circular_time_permutation",
+        "ordered_temporal_blocks": true,
+        "permutation_replicas_resampled_within_seed": true,
+        "requested_block_length": 2
+      },
+      "ci95": [
+        0.0004404213872335449,
+        0.0006070637294104391
+      ],
+      "ci95_relative": [
+        0.001269015660399839,
+        0.0018715111617658299
+      ],
+      "improvement": 0.0005174199150260048,
+      "relative_improvement": 0.0015385051002499805
+    },
+    "3": {
+      "bootstrap": {
+        "draws": 4000,
+        "effective_block_length": 3,
+        "initialization_seeds_resampled": true,
+        "method": "nested_seed_circular_time_permutation",
+        "ordered_temporal_blocks": true,
+        "permutation_replicas_resampled_within_seed": true,
+        "requested_block_length": 3
+      },
+      "ci95": [
+        0.00043405819027378005,
+        0.0006086678098834799
+      ],
+      "ci95_relative": [
+        0.0012425629267162495,
+        0.0018840053963670787
+      ],
+      "improvement": 0.0005174199150260048,
+      "relative_improvement": 0.0015385051002499805
+    },
+    "6": {
+      "bootstrap": {
+        "draws": 4000,
+        "effective_block_length": 6,
+        "initialization_seeds_resampled": true,
+        "method": "nested_seed_circular_time_permutation",
+        "ordered_temporal_blocks": true,
+        "permutation_replicas_resampled_within_seed": true,
+        "requested_block_length": 6
+      },
+      "ci95": [
+        0.00043745463731720833,
+        0.0005988900409668752
+      ],
+      "ci95_relative": [
+        0.0012668354776705318,
+        0.0018596794910301139
+      ],
+      "improvement": 0.0005174199150260048,
+      "relative_improvement": 0.0015385051002499805
+    }
+  },
+  "identity": {
+    "dataset": "BEIJING",
+    "device": "cpu",
+    "model": "functional_units",
+    "optimizer": "adamw",
+    "packet_size": 32
+  },
+  "integrity": {
+    "all_locked_block_lengths_present": true,
+    "all_pass": true,
+    "all_unit_audits_pass": true,
+    "locality_diagnostics_present": true,
+    "packet_strength_rows_present": true,
+    "primary_result_reused_exactly": true
+  },
+  "interpretation": "Scientific estimates are reported regardless of sign. PASS denotes only technical completeness and integrity, not support for a paper claim.",
+  "locality_diagnostics": {
+    "activation_fraction_crossing_center_to_endpoint": {
+      "maximum": 0.5148590207099915,
+      "mean": 0.0012163896972372512,
+      "median": 0.0,
+      "minimum": 0.0,
+      "q10": 0.0,
+      "q90": 0.003761574160307646
+    },
+    "does_not_prove_smoothness": true,
+    "empirical_directional_curvature": {
+      "maximum": 933.0230102539062,
+      "mean": 19.445638076549727,
+      "median": 17.370304107666016,
+      "minimum": 0.009597967378795147,
+      "q10": 4.030577182769775,
+      "q90": 33.93391799926758
+    },
+    "finite_grid_only": true,
+    "fraction_of_records_with_any_observed_crossing": 0.27010625865826,
+    "multistep_geometry_limit": "For replay_sgd, activation crossing is measured on the straight center-to-final-endpoint chord, not on every segment of the curved multi-step replay path. Taylor risk change remains endpoint-exact.",
+    "n_packet_setting_records": 1702376,
+    "population": {
+      "inclusion_rule": "current destination packet is scored",
+      "unit_of_analysis": "actuator endpoint on the current destination packet"
+    },
+    "relative_taylor_remainder": {
+      "maximum": 1.9954125881195068,
+      "mean": 0.24732261865122787,
+      "median": 0.12335171923041344,
+      "minimum": 0.00025621766690164804,
+      "q10": 0.020111799240112305,
+      "q90": 0.6535041928291321
+    }
+  },
+  "n_initialization_seeds": 8,
+  "n_permutations_per_packet": 16,
+  "n_temporal_clusters": 46,
+  "packet_strength": {
+    "S_J": {
+      "maximum": 14882.732331788959,
+      "mean": 59.784314825570846,
+      "median": 43.2992574799532,
+      "minimum": 9.695367257961648,
+      "q10": 29.92618783442491,
+      "q90": 75.65365111157517
+    },
+    "S_y": {
+      "maximum": 60.0546418964073,
+      "mean": 2.7238732968177004,
+      "median": 1.65453739072557,
+      "minimum": 0.016282865677718306,
+      "q10": 0.30767192005683286,
+      "q90": 6.234301357129197
+    },
+    "covariance_norm": {
+      "maximum": 3.8082326250172587,
+      "mean": 0.19442034903445152,
+      "median": 0.12464330719318255,
+      "minimum": 0.0065383324097570035,
+      "q10": 0.046084278898712444,
+      "q90": 0.40447530719659497
+    },
+    "covariance_to_permutation_sd": {
+      "maximum": 4.700066011245231,
+      "mean": 1.9399609792947423,
+      "median": 1.8693323842999012,
+      "minimum": 0.10714748085705862,
+      "q10": 1.034942837703371,
+      "q90": 2.9496494776119695
+    },
+    "covariance_to_true_gradient": {
+      "maximum": 52.11042495675968,
+      "mean": 0.6280775291249366,
+      "median": 0.2831256593747959,
+      "minimum": 0.005523052639736209,
+      "q10": 0.06370152850334104,
+      "q90": 1.467288615333804
+    },
+    "empirical_to_theoretical_permutation_mse_ratio": {
+      "maximum": 3.147901448223519,
+      "mean": 1.000255135989482,
+      "median": 0.9909936651836466,
+      "minimum": 0.1982208496209594,
+      "q10": 0.8126835204192246,
+      "q90": 1.1975778906707994
+    },
+    "normalized_true_expected_distance": {
+      "maximum": 1.9973526282861336,
+      "mean": 0.38012533685512767,
+      "median": 0.2508300361802097,
+      "minimum": 0.001506090652947782,
+      "q10": 0.06043605585294287,
+      "q90": 0.8968755709483912
+    },
+    "permutation_gradient_l2_sd": {
+      "maximum": 2.6762724404899676,
+      "mean": 0.09263398054130022,
+      "median": 0.07435179895925728,
+      "minimum": 0.005945692153811281,
+      "q10": 0.030796371456643698,
+      "q90": 0.1678699267410242
+    },
+    "population": {
+      "final_source_without_destination_excluded": true,
+      "inclusion_rule": "source packet powers a scored destination packet t+1",
+      "n_source_packets": 130952,
+      "unit_of_analysis": "source packet gradient"
+    }
+  },
+  "posthoc": true,
+  "primary_normalized_r1_pairing": {
+    "bootstrap": {
+      "draws": 4000,
+      "effective_block_length": 3,
+      "initialization_seeds_resampled": true,
+      "method": "nested_seed_circular_time_permutation",
+      "ordered_temporal_blocks": true,
+      "permutation_replicas_resampled_within_seed": true,
+      "requested_block_length": 3
+    },
+    "ci95": [
+      0.0004324810000891038,
+      0.0006071555165994673
+    ],
+    "ci95_relative": [
+      0.0012487509487562006,
+      0.001892689550590835
+    ],
+    "finite_permutation_mean_minus_exact_expectation": 5.8140811125428904e-05,
+    "improvement": 0.0005174199150260048,
+    "macro_temporal_nrmse": {
+      "exact_permutation_expectation_direction": 0.33625528118658715,
+      "permutation_mean": 0.3363134219977126,
+      "true": 0.33579600208268656
+    },
+    "relative_improvement": 0.0015385051002499805
+  },
+  "schema_version": "fmmt.reviewer_diagnostics.summary.v1"
+}

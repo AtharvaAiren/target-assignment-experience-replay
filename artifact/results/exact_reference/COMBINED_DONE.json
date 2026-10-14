@@ -1,0 +1,7 @@
+{
+  "cifar_done_sha256": "4670046ee3f93caaf8d89187a84ce2a2ffdeed06745f875cf4361450e47ac458",
+  "completed_units": 816,
+  "pmnist_done_sha256": "e2b8cdd35d9b963dea83f405de7285b03e45fd327856213a213de2b53e49ce87",
+  "schema_version": "gradient_reuse.exact_reference.combined_done.v1",
+  "status": "PASS"
+}

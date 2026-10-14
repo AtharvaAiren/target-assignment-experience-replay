@@ -1,0 +1,12 @@
+{
+  "amendment_manifest_sha256": "376131d990aa7410e353fc37f1d40d8540ee0d78dd7b0fa7255b0f135cb286cb",
+  "completed_cl_units_reused_unchanged": 156,
+  "original_aggregate_intentionally_not_emitted": true,
+  "result": {
+    "path": "artifact://local/RESULT.json",
+    "sha256": "43a87576922299e9b1d3e109ecff559cc1bebb188be170958a9103eeff24a868"
+  },
+  "schema_version": "gradient_reuse.reviewer_extension.e7_feasibility_done.v1",
+  "scientific_result": true,
+  "status": "PASS"
+}

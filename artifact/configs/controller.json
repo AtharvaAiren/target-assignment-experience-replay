@@ -1,0 +1,72 @@
+{
+  "schema_version": "gradient_reuse.controller.v3",
+  "status": "LOCKED_BEFORE_RUN",
+  "campaign_seed": 914027,
+  "policies": [
+    "never",
+    "always",
+    "cosine",
+    "pairing_aware"
+  ],
+  "model": {
+    "conditional_dimension": 8,
+    "packet_size": 64,
+    "base_learning_rate": 0.002,
+    "reuse_radius": 0.025,
+    "warmup_packets": 1
+  },
+  "permutations": {
+    "replicas": 4,
+    "draws_per_replica": 8,
+    "seed_salt": 271828
+  },
+  "controller": {
+    "epsilon": 1e-12,
+    "pairing_reliability_threshold": 0.75
+  },
+  "streams": {
+    "mean_drift": {
+      "kind": "mean_drift",
+      "mean_start": 2.5,
+      "mean_drift_per_packet": 0.02,
+      "noise_std": 0.05
+    },
+    "recurrent_reversal": {
+      "kind": "recurrent_reversal",
+      "mean_start": 3.0,
+      "mean_drift_per_packet": 0.02,
+      "slope": 1.0,
+      "reversal_period_packets": 8,
+      "noise_std": 0.05
+    },
+    "weak_noisy_pairing": {
+      "kind": "weak_noisy_pairing",
+      "mean_start": 1.0,
+      "mean_drift_per_packet": 0.0,
+      "slope": 0.05,
+      "noise_std": 1.5
+    }
+  },
+  "ablations": {
+    "pairing_aware_no_reliability": {
+      "enabled_streams": ["weak_noisy_pairing"],
+      "pairing_reliability_threshold": 0.0
+    }
+  },
+  "full": {
+    "seeds": [101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132],
+    "packets": 256,
+    "scored_after_packets": 32,
+    "bootstrap_draws": 4000,
+    "inference_unit": "independent_stream_seed",
+    "retain_packet_records": false
+  },
+  "smoke": {
+    "seeds": [17, 29],
+    "packets": 32,
+    "scored_after_packets": 4,
+    "bootstrap_draws": 64,
+    "inference_unit": "independent_stream_seed",
+    "retain_packet_records": true
+  }
+}

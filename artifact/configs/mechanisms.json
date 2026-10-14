@@ -1,0 +1,204 @@
+{
+  "schema_version": "gradient_reuse.mechanism_lock.v1",
+  "status": "LOCKED_BEFORE_MECHANISM_RUN",
+  "scientific_question": "Which benefits of established gradient-reuse methods survive within-replay-batch target-assignment scrambling?",
+  "upstream": {
+    "name": "Mammoth",
+    "repository": "https://github.com/aimagelab/mammoth.git",
+    "commit": "e75a491c69fd729edeb01431afb753d9157d9a81",
+    "commit_date": "2026-05-20T22:13:32+02:00",
+    "license_sha256": "309ca56cfbbe29aa036d1c53f8f05d5ee0a1dd78dcc37f53f94e840b22b60275",
+    "gem_component_license": "CC-BY-NC-4.0"
+  },
+  "scope": {
+    "linked_project_artifacts_untouched": true,
+    "current_stream_targets_always_correct": true,
+    "intervention": "permute only already stored replay targets relative to their replay inputs",
+    "interpretation": "survival identifies information preserved by assignment scrambling, including inputs, target marginals, and method-specific gradient geometry; it does not identify label-free learning",
+    "pcgrad_name": "PCGrad replay adaptation",
+    "paper_eligible_requires_smoke_false": true
+  },
+  "runtime": {
+    "device": "cuda:0",
+    "seeds": [3401, 3402, 3403, 3404, 3405],
+    "permutation_replicas": [0, 1, 2, 3],
+    "num_workers": 4,
+    "deterministic_algorithms": true,
+    "numerical_threads": 1,
+    "audit_interval": 100,
+    "audit_permutations": 4
+  },
+  "evaluation": {
+    "primary": "final_average_accuracy_across_observed_tasks",
+    "primary_inference": "within_method_paired_vs_permuted",
+    "cross_method_accuracy_ranking_supported": false,
+    "secondary": [
+      "backward_transfer",
+      "average_incremental_accuracy",
+      "full_accuracy_matrix"
+    ],
+    "diagnostics": [
+      "pairing_component_norm",
+      "finite_permutation_variance",
+      "true_mean_permuted_gradient_cosine",
+      "projection_activation_rate",
+      "pre_post_projection_constraint",
+      "target_fixed_point_fraction",
+      "runtime_seconds"
+    ],
+    "estimands": {
+      "V_total": "accuracy(method,paired)-accuracy(reference_baseline_for_method)",
+      "V_perm": "mean_replica_accuracy(method,permuted)-accuracy(reference_baseline_for_method)",
+      "V_pair": "accuracy(method,paired)-mean_replica_accuracy(method,permuted)",
+      "identity": "V_total=V_perm+V_pair",
+      "reference_baseline_by_method": {
+        "default": "naive_sgd",
+        "mer": "mer_current_only"
+      }
+    },
+    "inference_unit": "run seed; permutation replicas are nested Monte Carlo draws"
+  },
+  "benchmarks": {
+    "split_cifar100": {
+      "mammoth_dataset": "seq-cifar100",
+      "dataset_config": "20tasks",
+      "tasks": 20,
+      "classes_per_task": 5,
+      "classes": 100,
+      "setting": "class-il",
+      "backbone": "resnet18",
+      "batch_size": 32,
+      "epochs": 1,
+      "scheduler": null,
+      "data_license": "CIFAR-100 terms",
+      "data_provenance_required": true
+    },
+    "split_miniimagenet": {
+      "mammoth_dataset": "seq-miniimg",
+      "dataset_config": "20tasks",
+      "tasks": 20,
+      "classes_per_task": 5,
+      "classes": 100,
+      "setting": "class-il",
+      "backbone": "resnet18",
+      "batch_size": 32,
+      "epochs": 1,
+      "scheduler": null,
+      "data_license": "ImageNet terms; local access only; images are never redistributed",
+      "data_provenance_required": true,
+      "manifest_required": "MINIIMAGENET_MANIFEST.json"
+    },
+    "permuted_mnist": {
+      "mammoth_dataset": "perm-mnist",
+      "dataset_config": null,
+      "tasks": 20,
+      "classes_per_task": 10,
+      "classes": 10,
+      "setting": "domain-il",
+      "backbone": "mnistmlp",
+      "batch_size": 128,
+      "epochs": 1,
+      "scheduler": null,
+      "data_license": "MNIST terms",
+      "data_provenance_required": true
+    }
+  },
+  "methods": {
+    "naive_sgd": {
+      "estimand_class": "reference_baseline",
+      "mammoth_model": "sgd",
+      "intervention_arms": ["none"],
+      "buffer_size": null,
+      "hyperparameters": {
+        "split_cifar100": {"lr": 0.03},
+        "split_miniimagenet": {"lr": 0.03},
+        "permuted_mnist": {"lr": 0.1}
+      }
+    },
+    "mer_current_only": {
+      "estimand_class": "reference_baseline",
+      "mammoth_model": "mer_current_only",
+      "intervention_arms": ["none"],
+      "buffer_size": null,
+      "stream_batch_size": 1,
+      "hyperparameters": {
+        "split_cifar100": {"lr": 0.03, "beta": 0.1, "gamma": 0.1, "batch_num": 1},
+        "split_miniimagenet": {"lr": 0.03, "beta": 0.1, "gamma": 0.1, "batch_num": 1},
+        "permuted_mnist": {"lr": 0.1, "beta": 0.01, "gamma": 0.03, "batch_num": 1}
+      }
+    },
+    "experience_replay": {
+      "estimand_class": "assignment_only",
+      "mammoth_model": "er_pairing",
+      "intervention_arms": ["paired", "permuted"],
+      "buffer_size": 500,
+      "minibatch_size": 32,
+      "hyperparameters": {
+        "split_cifar100": {"lr": 0.03},
+        "split_miniimagenet": {"lr": 0.03},
+        "permuted_mnist": {"lr": 0.1}
+      }
+    },
+    "gem": {
+      "estimand_class": "assignment_only",
+      "mammoth_model": "gem_pairing",
+      "intervention_arms": ["paired", "permuted"],
+      "buffer_size": 500,
+      "minibatch_size": 32,
+      "hyperparameters": {
+        "split_cifar100": {"lr": 0.03, "gamma": 0.5},
+        "split_miniimagenet": {"lr": 0.03, "gamma": 0.5},
+        "permuted_mnist": {"lr": 0.1, "gamma": 0.5}
+      }
+    },
+    "agem": {
+      "estimand_class": "assignment_only",
+      "mammoth_model": "agem_pairing",
+      "intervention_arms": ["paired", "permuted"],
+      "buffer_size": 500,
+      "minibatch_size": 32,
+      "hyperparameters": {
+        "split_cifar100": {"lr": 0.03},
+        "split_miniimagenet": {"lr": 0.03},
+        "permuted_mnist": {"lr": 0.1}
+      }
+    },
+    "mer": {
+      "estimand_class": "assignment_only",
+      "mammoth_model": "mer_pairing",
+      "intervention_arms": ["paired", "permuted"],
+      "buffer_size": 500,
+      "minibatch_size": 10,
+      "stream_batch_size": 1,
+      "hyperparameters": {
+        "split_cifar100": {"lr": 0.03, "beta": 0.1, "gamma": 0.1, "batch_num": 1},
+        "split_miniimagenet": {"lr": 0.03, "beta": 0.1, "gamma": 0.1, "batch_num": 1},
+        "permuted_mnist": {"lr": 0.1, "beta": 0.01, "gamma": 0.03, "batch_num": 1}
+      }
+    },
+    "der": {
+      "estimand_class": "path_dependent_endogenous_targets",
+      "mammoth_model": "der_pairing",
+      "intervention_arms": ["paired", "permuted"],
+      "buffer_size": 500,
+      "minibatch_size": 32,
+      "hyperparameters": {
+        "split_cifar100": {"lr": 0.03, "alpha": 0.3},
+        "split_miniimagenet": {"lr": 0.03, "alpha": 0.3},
+        "permuted_mnist": {"lr": 0.1, "alpha": 0.3}
+      }
+    },
+    "pcgrad_replay": {
+      "estimand_class": "assignment_only",
+      "mammoth_model": "pcgrad_replay_pairing",
+      "intervention_arms": ["paired", "permuted"],
+      "buffer_size": 500,
+      "minibatch_size": 32,
+      "hyperparameters": {
+        "split_cifar100": {"lr": 0.03},
+        "split_miniimagenet": {"lr": 0.03},
+        "permuted_mnist": {"lr": 0.1}
+      }
+    }
+  }
+}

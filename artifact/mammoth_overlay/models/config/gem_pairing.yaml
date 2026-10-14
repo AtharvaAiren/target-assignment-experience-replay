@@ -1,0 +1,18 @@
+seq-cifar100:
+  500:
+    gamma: 0.5
+    lr: 0.03
+    model: gem_pairing
+    n_epochs: 1
+perm-mnist:
+  500:
+    gamma: 0.5
+    lr: 0.1
+    model: gem_pairing
+    n_epochs: 1
+seq-miniimg:
+  500:
+    gamma: 0.5
+    lr: 0.03
+    model: gem_pairing
+    n_epochs: 1

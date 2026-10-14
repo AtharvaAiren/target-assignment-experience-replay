@@ -1,0 +1,2833 @@
+{
+  "domain_rows": [
+    {
+      "actuator": "stored_gradient_s1",
+      "domain": "blur_3",
+      "effects": {
+        "gross_accuracy": 0.01100000000000001,
+        "pairing_accuracy": 0.007750000000000035,
+        "pairing_cross_entropy_reduction": 0.08375654602050808,
+        "shuffled_accuracy": 0.003249999999999975
+      },
+      "seed": 200,
+      "setting": "classification_cross_entropy",
+      "task_metrics": {
+        "K0": {
+          "accuracy": 0.332,
+          "brier": 0.8513978805541992,
+          "count": 1000,
+          "cross_entropy": 3.3394704132080077
+        },
+        "K1": {
+          "accuracy": 0.343,
+          "brier": 0.8385039768218994,
+          "count": 1000,
+          "cross_entropy": 3.246287902832031
+        },
+        "K4": {
+          "accuracy": 0.33525,
+          "brier": 0.8502531309127808,
+          "count": 1000,
+          "cross_entropy": 3.330044448852539
+        }
+      }
+    },
+    {
+      "actuator": "stored_gradient_s1",
+      "domain": "brightness_035",
+      "effects": {
+        "gross_accuracy": 0.0034999999999999476,
+        "pairing_accuracy": 0.0008749999999999591,
+        "pairing_cross_entropy_reduction": 0.00441261482238775,
+        "shuffled_accuracy": 0.0026249999999999885
+      },
+      "seed": 200,
+      "setting": "classification_cross_entropy",
+      "task_metrics": {
+        "K0": {
+          "accuracy": 0.5685,
+          "brier": 0.5641665124893188,
+          "count": 2000,
+          "cross_entropy": 1.6638603401184082
+        },
+        "K1": {
+          "accuracy": 0.572,
+          "brier": 0.5635197172164917,
+          "count": 2000,
+          "cross_entropy": 1.6617586708068848
+        },
+        "K4": {
+          "accuracy": 0.571125,
+          "brier": 0.5647898490428924,
+          "count": 2000,
+          "cross_entropy": 1.6661712856292725
+        }
+      }
+    },
+    {
+      "actuator": "stored_gradient_s1",
+      "domain": "clean",
+      "effects": {
+        "gross_accuracy": 0.0010330578512396382,
+        "pairing_accuracy": 0.0003873966942148366,
+        "pairing_cross_entropy_reduction": 0.0008226076433481833,
+        "shuffled_accuracy": 0.0006456611570248016
+      },
+      "seed": 200,
+      "setting": "classification_cross_entropy",
+      "task_metrics": {
+        "K0": {
+          "accuracy": 0.5883264462809917,
+          "brier": 0.5501468802286573,
+          "count": 1936,
+          "cross_entropy": 1.5789899333449435
+        },
+        "K1": {
+          "accuracy": 0.5893595041322314,
+          "brier": 0.5497364761415592,
+          "count": 1936,
+          "cross_entropy": 1.5776110700339325
+        },
+        "K4": {
+          "accuracy": 0.5889721074380165,
+          "brier": 0.5501661544496362,
+          "count": 1936,
+          "cross_entropy": 1.5784336776772807
+        }
+      }
+    },
+    {
+      "actuator": "stored_gradient_s1",
+      "domain": "contrast_050",
+      "effects": {
+        "gross_accuracy": 0.0045000000000000595,
+        "pairing_accuracy": 0.0040000000000000036,
+        "pairing_cross_entropy_reduction": 0.0041864790916443795,
+        "shuffled_accuracy": 0.000500000000000056
+      },
+      "seed": 200,
+      "setting": "classification_cross_entropy",
+      "task_metrics": {
+        "K0": {
+          "accuracy": 0.576,
+          "brier": 0.561147741317749,
+          "count": 2000,
+          "cross_entropy": 1.5952012958526611
+        },
+        "K1": {
+          "accuracy": 0.5805,
+          "brier": 0.560288423538208,
+          "count": 2000,
+          "cross_entropy": 1.5923804054260253
+        },
+        "K4": {
+          "accuracy": 0.5765,
+          "brier": 0.5613072504997253,
+          "count": 2000,
+          "cross_entropy": 1.5965668845176697
+        }
+      }
+    },
+    {
+      "actuator": "stored_gradient_s1",
+      "domain": "gaussian_noise_012",
+      "effects": {
+        "gross_accuracy": 0.003500000000000003,
+        "pairing_accuracy": 0.0030000000000000027,
+        "pairing_cross_entropy_reduction": 0.028392621994018707,
+        "shuffled_accuracy": 0.0005000000000000004
+      },
+      "seed": 200,
+      "setting": "classification_cross_entropy",
+      "task_metrics": {
+        "K0": {
+          "accuracy": 0.2635,
+          "brier": 0.9375631198883057,
+          "count": 2000,
+          "cross_entropy": 3.7392260665893553
+        },
+        "K1": {
+          "accuracy": 0.267,
+          "brier": 0.9322900581359863,
+          "count": 2000,
+          "cross_entropy": 3.686233283996582
+        },
+        "K4": {
+          "accuracy": 0.264,
+          "brier": 0.9351759419441223,
+          "count": 2000,
+          "cross_entropy": 3.7146259059906006
+        }
+      }
+    },
+    {
+      "actuator": "stored_gradient_s1",
+      "domain": "quantize_16",
+      "effects": {
+        "gross_accuracy": 0.007000000000000006,
+        "pairing_accuracy": 0.005750000000000033,
+        "pairing_cross_entropy_reduction": 0.023867372512817342,
+        "shuffled_accuracy": 0.0012499999999999734
+      },
+      "seed": 200,
+      "setting": "classification_cross_entropy",
+      "task_metrics": {
+        "K0": {
+          "accuracy": 0.526,
+          "brier": 0.6246177196502686,
+          "count": 1000,
+          "cross_entropy": 1.8520299606323243
+        },
+        "K1": {
+          "accuracy": 0.533,
+          "brier": 0.619964677810669,
+          "count": 1000,
+          "cross_entropy": 1.8314544372558594
+        },
+        "K4": {
+          "accuracy": 0.52725,
+          "brier": 0.6251662216186523,
+          "count": 1000,
+          "cross_entropy": 1.8553218097686768
+        }
+      }
+    },
+    {
+      "actuator": "stored_gradient_s1",
+      "domain": "blur_3",
+      "effects": {
+        "gross_accuracy": 0.009999999999999953,
+        "pairing_accuracy": 0.0050000000000000044,
+        "pairing_cross_entropy_reduction": 0.08306569862365754,
+        "shuffled_accuracy": 0.004999999999999949
+      },
+      "seed": 201,
+      "setting": "classification_cross_entropy",
+      "task_metrics": {
+        "K0": {
+          "accuracy": 0.343,
+          "brier": 0.8734824008941651,
+          "count": 1000,
+          "cross_entropy": 3.4340715789794922
+        },
+        "K1": {
+          "accuracy": 0.353,
+          "brier": 0.8582952442169189,
+          "count": 1000,
+          "cross_entropy": 3.3267474517822264
+        },
+        "K4": {
+          "accuracy": 0.348,
+          "brier": 0.8707989206314087,
+          "count": 1000,
+          "cross_entropy": 3.409813150405884
+        }
+      }
+    },
+    {
+      "actuator": "stored_gradient_s1",
+      "domain": "brightness_035",
+      "effects": {
+        "gross_accuracy": -0.000500000000000056,
+        "pairing_accuracy": 0.0006249999999999867,
+        "pairing_cross_entropy_reduction": 0.0031000432968137925,
+        "shuffled_accuracy": -0.0011250000000000426
+      },
+      "seed": 201,
+      "setting": "classification_cross_entropy",
+      "task_metrics": {
+        "K0": {
+          "accuracy": 0.5745,
+          "brier": 0.5709510164260865,
+          "count": 2000,
+          "cross_entropy": 1.7042378692626954
+        },
+        "K1": {
+          "accuracy": 0.574,
+          "brier": 0.570648455619812,
+          "count": 2000,
+          "cross_entropy": 1.7026983070373536
+        },
+        "K4": {
+          "accuracy": 0.573375,
+          "brier": 0.5715697145462036,
+          "count": 2000,
+          "cross_entropy": 1.7057983503341674
+        }
+      }
+    },
+    {
+      "actuator": "stored_gradient_s1",
+      "domain": "clean",
+      "effects": {
+        "gross_accuracy": 0.0015495867768594573,
+        "pairing_accuracy": -0.00012913223140498253,
+        "pairing_cross_entropy_reduction": 0.0008439086685494424,
+        "shuffled_accuracy": 0.0016787190082644399
+      },
+      "seed": 201,
+      "setting": "classification_cross_entropy",
+      "task_metrics": {
+        "K0": {
+          "accuracy": 0.581095041322314,
+          "brier": 0.5518489356868523,
+          "count": 1936,
+          "cross_entropy": 1.5851181026332635
+        },
+        "K1": {
+          "accuracy": 0.5826446280991735,
+          "brier": 0.5521324843414559,
+          "count": 1936,
+          "cross_entropy": 1.5853038819368221
+        },
+        "K4": {
+          "accuracy": 0.5827737603305785,
+          "brier": 0.5520972705577031,
+          "count": 1936,
+          "cross_entropy": 1.5861477906053716
+        }
+      }
+    },
+    {
+      "actuator": "stored_gradient_s1",
+      "domain": "contrast_050",
+      "effects": {
+        "gross_accuracy": -0.0010000000000000009,
+        "pairing_accuracy": -0.000500000000000056,
+        "pairing_cross_entropy_reduction": 0.004789599895477226,
+        "shuffled_accuracy": -0.0004999999999999449
+      },
+      "seed": 201,
+      "setting": "classification_cross_entropy",
+      "task_metrics": {
+        "K0": {
+          "accuracy": 0.5615,
+          "brier": 0.5890876216888428,
+          "count": 2000,
+          "cross_entropy": 1.6889732627868652
+        },
+        "K1": {
+          "accuracy": 0.5605,
+          "brier": 0.5889305734634399,
+          "count": 2000,
+          "cross_entropy": 1.686852508544922
+        },
+        "K4": {
+          "accuracy": 0.561,
+          "brier": 0.5897438237667084,
+          "count": 2000,
+          "cross_entropy": 1.6916421084403992
+        }
+      }
+    },
+    {
+      "actuator": "stored_gradient_s1",
+      "domain": "gaussian_noise_012",
+      "effects": {
+        "gross_accuracy": 0.0020000000000000018,
+        "pairing_accuracy": 0.0006249999999999867,
+        "pairing_cross_entropy_reduction": 0.026638551712036218,
+        "shuffled_accuracy": 0.001375000000000015
+      },
+      "seed": 201,
+      "setting": "classification_cross_entropy",
+      "task_metrics": {
+        "K0": {
+          "accuracy": 0.256,
+          "brier": 0.9445447235107421,
+          "count": 2000,
+          "cross_entropy": 3.680310157775879
+        },
+        "K1": {
+          "accuracy": 0.258,
+          "brier": 0.9383230972290039,
+          "count": 2000,
+          "cross_entropy": 3.631286392211914
+        },
+        "K4": {
+          "accuracy": 0.257375,
+          "brier": 0.9416305527687073,
+          "count": 2000,
+          "cross_entropy": 3.65792494392395
+        }
+      }
+    },
+    {
+      "actuator": "stored_gradient_s1",
+      "domain": "quantize_16",
+      "effects": {
+        "gross_accuracy": 0.0040000000000000036,
+        "pairing_accuracy": 0.005250000000000088,
+        "pairing_cross_entropy_reduction": 0.020457143783569443,
+        "shuffled_accuracy": -0.0012500000000000844
+      },
+      "seed": 201,
+      "setting": "classification_cross_entropy",
+      "task_metrics": {
+        "K0": {
+          "accuracy": 0.541,
+          "brier": 0.6239209938049316,
+          "count": 1000,
+          "cross_entropy": 1.896062774658203
+        },
+        "K1": {
+          "accuracy": 0.545,
+          "brier": 0.6189499988555908,
+          "count": 1000,
+          "cross_entropy": 1.8736799087524414
+        },
+        "K4": {
+          "accuracy": 0.53975,
+          "brier": 0.6241244869232178,
+          "count": 1000,
+          "cross_entropy": 1.8941370525360108
+        }
+      }
+    },
+    {
+      "actuator": "stored_gradient_s1",
+      "domain": "blur_3",
+      "effects": {
+        "gross_accuracy": 0.0050000000000000044,
+        "pairing_accuracy": 0.0047499999999999765,
+        "pairing_cross_entropy_reduction": 0.07779321861267086,
+        "shuffled_accuracy": 0.000250000000000028
+      },
+      "seed": 202,
+      "setting": "classification_cross_entropy",
+      "task_metrics": {
+        "K0": {
+          "accuracy": 0.356,
+          "brier": 0.8437525234222412,
+          "count": 1000,
+          "cross_entropy": 3.289200454711914
+        },
+        "K1": {
+          "accuracy": 0.361,
+          "brier": 0.8339108524322509,
+          "count": 1000,
+          "cross_entropy": 3.20113423538208
+        },
+        "K4": {
+          "accuracy": 0.35625,
+          "brier": 0.8443277115821839,
+          "count": 1000,
+          "cross_entropy": 3.278927453994751
+        }
+      }
+    },
+    {
+      "actuator": "stored_gradient_s1",
+      "domain": "brightness_035",
+      "effects": {
+        "gross_accuracy": 0.0010000000000000009,
+        "pairing_accuracy": 0.0044999999999999485,
+        "pairing_cross_entropy_reduction": 0.005866938591003512,
+        "shuffled_accuracy": -0.0034999999999999476
+      },
+      "seed": 202,
+      "setting": "classification_cross_entropy",
+      "task_metrics": {
+        "K0": {
+          "accuracy": 0.569,
+          "brier": 0.5711819925308228,
+          "count": 2000,
+          "cross_entropy": 1.7018076210021973
+        },
+        "K1": {
+          "accuracy": 0.57,
+          "brier": 0.5702247552871704,
+          "count": 2000,
+          "cross_entropy": 1.6984441833496093
+        },
+        "K4": {
+          "accuracy": 0.5655,
+          "brier": 0.5717147397994995,
+          "count": 2000,
+          "cross_entropy": 1.7043111219406128
+        }
+      }
+    },
+    {
+      "actuator": "stored_gradient_s1",
+      "domain": "clean",
+      "effects": {
+        "gross_accuracy": 0.0,
+        "pairing_accuracy": 0.0015495867768594573,
+        "pairing_cross_entropy_reduction": 0.0019472581295927327,
+        "shuffled_accuracy": -0.0015495867768594573
+      },
+      "seed": 202,
+      "setting": "classification_cross_entropy",
+      "task_metrics": {
+        "K0": {
+          "accuracy": 0.6007231404958677,
+          "brier": 0.539589134129611,
+          "count": 1936,
+          "cross_entropy": 1.5972653302279385
+        },
+        "K1": {
+          "accuracy": 0.6007231404958677,
+          "brier": 0.5390175068674009,
+          "count": 1936,
+          "cross_entropy": 1.5956497389422961
+        },
+        "K4": {
+          "accuracy": 0.5991735537190083,
+          "brier": 0.5398317462156627,
+          "count": 1936,
+          "cross_entropy": 1.5975969970718888
+        }
+      }
+    },
+    {
+      "actuator": "stored_gradient_s1",
+      "domain": "contrast_050",
+      "effects": {
+        "gross_accuracy": -0.0004999999999999449,
+        "pairing_accuracy": 0.000500000000000056,
+        "pairing_cross_entropy_reduction": 0.005151139736175647,
+        "shuffled_accuracy": -0.0010000000000000009
+      },
+      "seed": 202,
+      "setting": "classification_cross_entropy",
+      "task_metrics": {
+        "K0": {
+          "accuracy": 0.58,
+          "brier": 0.5694613437652588,
+          "count": 2000,
+          "cross_entropy": 1.6345240688323974
+        },
+        "K1": {
+          "accuracy": 0.5795,
+          "brier": 0.5687483396530152,
+          "count": 2000,
+          "cross_entropy": 1.631309844970703
+        },
+        "K4": {
+          "accuracy": 0.579,
+          "brier": 0.5697257461547851,
+          "count": 2000,
+          "cross_entropy": 1.6364609847068787
+        }
+      }
+    },
+    {
+      "actuator": "stored_gradient_s1",
+      "domain": "gaussian_noise_012",
+      "effects": {
+        "gross_accuracy": 0.005500000000000005,
+        "pairing_accuracy": 0.0071249999999999925,
+        "pairing_cross_entropy_reduction": 0.03424037742614727,
+        "shuffled_accuracy": -0.0016249999999999876
+      },
+      "seed": 202,
+      "setting": "classification_cross_entropy",
+      "task_metrics": {
+        "K0": {
+          "accuracy": 0.256,
+          "brier": 0.9447940883636474,
+          "count": 2000,
+          "cross_entropy": 3.696856803894043
+        },
+        "K1": {
+          "accuracy": 0.2615,
+          "brier": 0.9383560066223144,
+          "count": 2000,
+          "cross_entropy": 3.636567222595215
+        },
+        "K4": {
+          "accuracy": 0.254375,
+          "brier": 0.9419151501655578,
+          "count": 2000,
+          "cross_entropy": 3.6708076000213623
+        }
+      }
+    },
+    {
+      "actuator": "stored_gradient_s1",
+      "domain": "quantize_16",
+      "effects": {
+        "gross_accuracy": 0.0050000000000000044,
+        "pairing_accuracy": 0.007000000000000006,
+        "pairing_cross_entropy_reduction": 0.02549635410308837,
+        "shuffled_accuracy": -0.0020000000000000018
+      },
+      "seed": 202,
+      "setting": "classification_cross_entropy",
+      "task_metrics": {
+        "K0": {
+          "accuracy": 0.53,
+          "brier": 0.6411363067626953,
+          "count": 1000,
+          "cross_entropy": 1.9101544723510742
+        },
+        "K1": {
+          "accuracy": 0.535,
+          "brier": 0.6364795551300049,
+          "count": 1000,
+          "cross_entropy": 1.8837534523010253
+        },
+        "K4": {
+          "accuracy": 0.528,
+          "brier": 0.6411178517341614,
+          "count": 1000,
+          "cross_entropy": 1.9092498064041137
+        }
+      }
+    },
+    {
+      "actuator": "stored_gradient_s1",
+      "domain": "blur_3",
+      "effects": {
+        "gross_accuracy": 0.010000000000000009,
+        "pairing_accuracy": 0.009000000000000008,
+        "pairing_cross_entropy_reduction": 0.0849676055908204,
+        "shuffled_accuracy": 0.0010000000000000009
+      },
+      "seed": 203,
+      "setting": "classification_cross_entropy",
+      "task_metrics": {
+        "K0": {
+          "accuracy": 0.332,
+          "brier": 0.8700453929901123,
+          "count": 1000,
+          "cross_entropy": 3.4797536544799805
+        },
+        "K1": {
+          "accuracy": 0.342,
+          "brier": 0.8584318981170654,
+          "count": 1000,
+          "cross_entropy": 3.3915228118896485
+        },
+        "K4": {
+          "accuracy": 0.333,
+          "brier": 0.8711214060783387,
+          "count": 1000,
+          "cross_entropy": 3.476490417480469
+        }
+      }
+    },
+    {
+      "actuator": "stored_gradient_s1",
+      "domain": "brightness_035",
+      "effects": {
+        "gross_accuracy": -0.0004999999999999449,
+        "pairing_accuracy": 0.00024999999999997247,
+        "pairing_cross_entropy_reduction": 0.003665584564209068,
+        "shuffled_accuracy": -0.0007499999999999174
+      },
+      "seed": 203,
+      "setting": "classification_cross_entropy",
+      "task_metrics": {
+        "K0": {
+          "accuracy": 0.576,
+          "brier": 0.5678451118469239,
+          "count": 2000,
+          "cross_entropy": 1.6859704246520997
+        },
+        "K1": {
+          "accuracy": 0.5755,
+          "brier": 0.5669396495819092,
+          "count": 2000,
+          "cross_entropy": 1.6835926704406738
+        },
+        "K4": {
+          "accuracy": 0.57525,
+          "brier": 0.5679874958992004,
+          "count": 2000,
+          "cross_entropy": 1.687258255004883
+        }
+      }
+    },
+    {
+      "actuator": "stored_gradient_s1",
+      "domain": "clean",
+      "effects": {
+        "gross_accuracy": -0.0015495867768594573,
+        "pairing_accuracy": -0.0010330578512396382,
+        "pairing_cross_entropy_reduction": 0.0006088343533603435,
+        "shuffled_accuracy": -0.0005165289256198191
+      },
+      "seed": 203,
+      "setting": "classification_cross_entropy",
+      "task_metrics": {
+        "K0": {
+          "accuracy": 0.5965909090909091,
+          "brier": 0.5397120526999482,
+          "count": 1936,
+          "cross_entropy": 1.5775350578560317
+        },
+        "K1": {
+          "accuracy": 0.5950413223140496,
+          "brier": 0.5394179131373886,
+          "count": 1936,
+          "cross_entropy": 1.5772549337592006
+        },
+        "K4": {
+          "accuracy": 0.5960743801652892,
+          "brier": 0.539615726175387,
+          "count": 1936,
+          "cross_entropy": 1.577863768112561
+        }
+      }
+    },
+    {
+      "actuator": "stored_gradient_s1",
+      "domain": "contrast_050",
+      "effects": {
+        "gross_accuracy": -0.0010000000000000009,
+        "pairing_accuracy": -0.0015000000000000568,
+        "pairing_cross_entropy_reduction": 0.005306430816650387,
+        "shuffled_accuracy": 0.000500000000000056
+      },
+      "seed": 203,
+      "setting": "classification_cross_entropy",
+      "task_metrics": {
+        "K0": {
+          "accuracy": 0.572,
+          "brier": 0.5669255447387695,
+          "count": 2000,
+          "cross_entropy": 1.6464311084747314
+        },
+        "K1": {
+          "accuracy": 0.571,
+          "brier": 0.5662990198135376,
+          "count": 2000,
+          "cross_entropy": 1.6438749237060546
+        },
+        "K4": {
+          "accuracy": 0.5725,
+          "brier": 0.5674014556407928,
+          "count": 2000,
+          "cross_entropy": 1.649181354522705
+        }
+      }
+    },
+    {
+      "actuator": "stored_gradient_s1",
+      "domain": "gaussian_noise_012",
+      "effects": {
+        "gross_accuracy": 0.0010000000000000009,
+        "pairing_accuracy": 0.0008750000000000147,
+        "pairing_cross_entropy_reduction": 0.02730422210693373,
+        "shuffled_accuracy": 0.00012499999999998623
+      },
+      "seed": 203,
+      "setting": "classification_cross_entropy",
+      "task_metrics": {
+        "K0": {
+          "accuracy": 0.258,
+          "brier": 0.9496452312469482,
+          "count": 2000,
+          "cross_entropy": 3.676734287261963
+        },
+        "K1": {
+          "accuracy": 0.259,
+          "brier": 0.9441223049163818,
+          "count": 2000,
+          "cross_entropy": 3.6294675979614257
+        },
+        "K4": {
+          "accuracy": 0.258125,
+          "brier": 0.9471691164970398,
+          "count": 2000,
+          "cross_entropy": 3.6567718200683594
+        }
+      }
+    },
+    {
+      "actuator": "stored_gradient_s1",
+      "domain": "quantize_16",
+      "effects": {
+        "gross_accuracy": 0.007000000000000006,
+        "pairing_accuracy": 0.005249999999999977,
+        "pairing_cross_entropy_reduction": 0.01937224197387688,
+        "shuffled_accuracy": 0.0017500000000000293
+      },
+      "seed": 203,
+      "setting": "classification_cross_entropy",
+      "task_metrics": {
+        "K0": {
+          "accuracy": 0.528,
+          "brier": 0.6213189010620117,
+          "count": 1000,
+          "cross_entropy": 1.8170081710815429
+        },
+        "K1": {
+          "accuracy": 0.535,
+          "brier": 0.6180045356750489,
+          "count": 1000,
+          "cross_entropy": 1.798989356994629
+        },
+        "K4": {
+          "accuracy": 0.52975,
+          "brier": 0.6218109259605408,
+          "count": 1000,
+          "cross_entropy": 1.8183615989685058
+        }
+      }
+    },
+    {
+      "actuator": "replay_projected_s3",
+      "domain": "chronological_quartile_1",
+      "effects": {
+        "gross_rmse_reduction": 0.017909747088083683,
+        "pairing_mse_reduction": 0.019300051027073994,
+        "pairing_rmse_reduction": 0.012454243976157908,
+        "shuffled_rmse_reduction": 0.005455503111925775
+      },
+      "seed": 200,
+      "setting": "sequence_regression",
+      "task_metrics": {
+        "K0": {
+          "count": 4640,
+          "mae": 0.565259341022064,
+          "mse": 0.6186152013982165,
+          "rmse": 0.7865209478445037
+        },
+        "K1": {
+          "count": 4640,
+          "mae": 0.5547041548737164,
+          "mse": 0.5907631779282257,
+          "rmse": 0.76861120075642
+        },
+        "K4": {
+          "count": 4640,
+          "mae": 0.5580354471145005,
+          "mse": 0.6100632289552997,
+          "rmse": 0.7810654447325779
+        }
+      }
+    },
+    {
+      "actuator": "replay_projected_s3",
+      "domain": "chronological_quartile_2",
+      "effects": {
+        "gross_rmse_reduction": 0.009926496064125101,
+        "pairing_mse_reduction": 0.0002457219790541476,
+        "pairing_rmse_reduction": 0.000169848181227783,
+        "shuffled_rmse_reduction": 0.009756647882897318
+      },
+      "seed": 200,
+      "setting": "sequence_regression",
+      "task_metrics": {
+        "K0": {
+          "count": 4704,
+          "mae": 0.5251864011393113,
+          "mse": 0.5375811707380475,
+          "rmse": 0.7331992708248198
+        },
+        "K1": {
+          "count": 4704,
+          "mae": 0.515748534275561,
+          "mse": 0.5231235067100346,
+          "rmse": 0.7232727747606947
+        },
+        "K4": {
+          "count": 4704,
+          "mae": 0.5145392177157662,
+          "mse": 0.5233692286890888,
+          "rmse": 0.7234426229419225
+        }
+      }
+    },
+    {
+      "actuator": "replay_projected_s3",
+      "domain": "chronological_quartile_3",
+      "effects": {
+        "gross_rmse_reduction": 0.021048420038864757,
+        "pairing_mse_reduction": 0.006483593521869391,
+        "pairing_rmse_reduction": 0.004584917197936633,
+        "shuffled_rmse_reduction": 0.016463502840928124
+      },
+      "seed": 200,
+      "setting": "sequence_regression",
+      "task_metrics": {
+        "K0": {
+          "count": 4672,
+          "mae": 0.4821655104217464,
+          "mse": 0.5268041262632772,
+          "rmse": 0.7258127349828447
+        },
+        "K1": {
+          "count": 4672,
+          "mae": 0.46094925875124865,
+          "mse": 0.49669273961845734,
+          "rmse": 0.70476431494398
+        },
+        "K4": {
+          "count": 4672,
+          "mae": 0.4644442560431892,
+          "mse": 0.5031763331403267,
+          "rmse": 0.7093492321419166
+        }
+      }
+    },
+    {
+      "actuator": "replay_projected_s3",
+      "domain": "chronological_quartile_4",
+      "effects": {
+        "gross_rmse_reduction": 0.006904384847095102,
+        "pairing_mse_reduction": 0.006312165038382778,
+        "pairing_rmse_reduction": 0.004718568533489398,
+        "shuffled_rmse_reduction": 0.002185816313605704
+      },
+      "seed": 200,
+      "setting": "sequence_regression",
+      "task_metrics": {
+        "K0": {
+          "count": 4700,
+          "mae": 0.4701394407799903,
+          "mse": 0.4534803578067333,
+          "rmse": 0.6734095023139585
+        },
+        "K1": {
+          "count": 4700,
+          "mae": 0.45831234495690526,
+          "mse": 0.44422907160951736,
+          "rmse": 0.6665051174668634
+        },
+        "K4": {
+          "count": 4700,
+          "mae": 0.46516839316550723,
+          "mse": 0.45054123664790013,
+          "rmse": 0.6712236860003528
+        }
+      }
+    },
+    {
+      "actuator": "stored_gradient_s1",
+      "domain": "chronological_quartile_1",
+      "effects": {
+        "gross_rmse_reduction": 0.006690614904670489,
+        "pairing_mse_reduction": 0.0157115016517968,
+        "pairing_rmse_reduction": 0.010009429179577922,
+        "shuffled_rmse_reduction": -0.0033188142749074334
+      },
+      "seed": 200,
+      "setting": "sequence_regression",
+      "task_metrics": {
+        "K0": {
+          "count": 4640,
+          "mae": 0.565259341022064,
+          "mse": 0.6186152013982165,
+          "rmse": 0.7865209478445037
+        },
+        "K1": {
+          "count": 4640,
+          "mae": 0.5651045099414628,
+          "mse": 0.608135348173051,
+          "rmse": 0.7798303329398332
+        },
+        "K4": {
+          "count": 4640,
+          "mae": 0.5689480684440712,
+          "mse": 0.6238468498248478,
+          "rmse": 0.7898397621194111
+        }
+      }
+    },
+    {
+      "actuator": "stored_gradient_s1",
+      "domain": "chronological_quartile_2",
+      "effects": {
+        "gross_rmse_reduction": 0.006027771851664698,
+        "pairing_mse_reduction": 0.0001702970527366343,
+        "pairing_rmse_reduction": 0.00011708609579941243,
+        "shuffled_rmse_reduction": 0.005910685755865286
+      },
+      "seed": 200,
+      "setting": "sequence_regression",
+      "task_metrics": {
+        "K0": {
+          "count": 4704,
+          "mae": 0.5251864011393113,
+          "mse": 0.5375811707380475,
+          "rmse": 0.7331992708248198
+        },
+        "K1": {
+          "count": 4704,
+          "mae": 0.5194753436308329,
+          "mse": 0.5287783889188653,
+          "rmse": 0.7271714989731551
+        },
+        "K4": {
+          "count": 4704,
+          "mae": 0.5185571051627195,
+          "mse": 0.5289486859716019,
+          "rmse": 0.7272885850689546
+        }
+      }
+    },
+    {
+      "actuator": "stored_gradient_s1",
+      "domain": "chronological_quartile_3",
+      "effects": {
+        "gross_rmse_reduction": 0.020452700883155317,
+        "pairing_mse_reduction": 0.00512346748122311,
+        "pairing_rmse_reduction": 0.0036225081299046114,
+        "shuffled_rmse_reduction": 0.016830192753250706
+      },
+      "seed": 200,
+      "setting": "sequence_regression",
+      "task_metrics": {
+        "K0": {
+          "count": 4672,
+          "mae": 0.4821655104217464,
+          "mse": 0.5268041262632772,
+          "rmse": 0.7258127349828447
+        },
+        "K1": {
+          "count": 4672,
+          "mae": 0.463537655413559,
+          "mse": 0.497532777705115,
+          "rmse": 0.7053600340996894
+        },
+        "K4": {
+          "count": 4672,
+          "mae": 0.4658780463218485,
+          "mse": 0.5026562451863381,
+          "rmse": 0.708982542229594
+        }
+      }
+    },
+    {
+      "actuator": "stored_gradient_s1",
+      "domain": "chronological_quartile_4",
+      "effects": {
+        "gross_rmse_reduction": 0.005355984933526736,
+        "pairing_mse_reduction": 0.004433866558556876,
+        "pairing_rmse_reduction": 0.003310295051340395,
+        "shuffled_rmse_reduction": 0.002045689882186341
+      },
+      "seed": 200,
+      "setting": "sequence_regression",
+      "task_metrics": {
+        "K0": {
+          "count": 4700,
+          "mae": 0.4701394407799903,
+          "mse": 0.4534803578067333,
+          "rmse": 0.6734095023139585
+        },
+        "K1": {
+          "count": 4700,
+          "mae": 0.4602982833030376,
+          "mse": 0.4462955020843668,
+          "rmse": 0.6680535173804317
+        },
+        "K4": {
+          "count": 4700,
+          "mae": 0.464864449703947,
+          "mse": 0.4507293686429237,
+          "rmse": 0.6713638124317721
+        }
+      }
+    },
+    {
+      "actuator": "replay_projected_s3",
+      "domain": "chronological_quartile_1",
+      "effects": {
+        "gross_rmse_reduction": 0.025078415071673077,
+        "pairing_mse_reduction": 0.018314780718807544,
+        "pairing_rmse_reduction": 0.011867799985933347,
+        "shuffled_rmse_reduction": 0.01321061508573973
+      },
+      "seed": 201,
+      "setting": "sequence_regression",
+      "task_metrics": {
+        "K0": {
+          "count": 4640,
+          "mae": 0.5728949168632771,
+          "mse": 0.6253029925042185,
+          "rmse": 0.7907610211082856
+        },
+        "K1": {
+          "count": 4640,
+          "mae": 0.5489285981860654,
+          "mse": 0.5862698531870184,
+          "rmse": 0.7656826060366125
+        },
+        "K4": {
+          "count": 4640,
+          "mae": 0.5557662024580199,
+          "mse": 0.604584633905826,
+          "rmse": 0.7775504060225459
+        }
+      }
+    },
+    {
+      "actuator": "replay_projected_s3",
+      "domain": "chronological_quartile_2",
+      "effects": {
+        "gross_rmse_reduction": 0.004151144389682115,
+        "pairing_mse_reduction": 0.001909387975829735,
+        "pairing_rmse_reduction": 0.0013094617342469528,
+        "shuffled_rmse_reduction": 0.0028416826554351626
+      },
+      "seed": 201,
+      "setting": "sequence_regression",
+      "task_metrics": {
+        "K0": {
+          "count": 4704,
+          "mae": 0.5110683035688336,
+          "mse": 0.5366588328413817,
+          "rmse": 0.7325700190707928
+        },
+        "K1": {
+          "count": 4704,
+          "mae": 0.5093077008618789,
+          "mse": 0.5305940569916956,
+          "rmse": 0.7284188746811107
+        },
+        "K4": {
+          "count": 4704,
+          "mae": 0.5082141007645194,
+          "mse": 0.5325034449675253,
+          "rmse": 0.7297283364153576
+        }
+      }
+    },
+    {
+      "actuator": "replay_projected_s3",
+      "domain": "chronological_quartile_3",
+      "effects": {
+        "gross_rmse_reduction": 0.019919376822685964,
+        "pairing_mse_reduction": 0.006910571656253639,
+        "pairing_rmse_reduction": 0.004926740666690632,
+        "shuffled_rmse_reduction": 0.014992636155995331
+      },
+      "seed": 201,
+      "setting": "sequence_regression",
+      "task_metrics": {
+        "K0": {
+          "count": 4672,
+          "mae": 0.4744179329439385,
+          "mse": 0.5166576405578892,
+          "rmse": 0.7187890097642626
+        },
+        "K1": {
+          "count": 4672,
+          "mae": 0.4559818828759128,
+          "mse": 0.48841876384789407,
+          "rmse": 0.6988696329415767
+        },
+        "K4": {
+          "count": 4672,
+          "mae": 0.46037322199865155,
+          "mse": 0.4953293355041477,
+          "rmse": 0.7037963736082673
+        }
+      }
+    },
+    {
+      "actuator": "replay_projected_s3",
+      "domain": "chronological_quartile_4",
+      "effects": {
+        "gross_rmse_reduction": 0.00625330026029991,
+        "pairing_mse_reduction": 0.007098147280989842,
+        "pairing_rmse_reduction": 0.0052753708206183525,
+        "shuffled_rmse_reduction": 0.0009779294396815574
+      },
+      "seed": 201,
+      "setting": "sequence_regression",
+      "task_metrics": {
+        "K0": {
+          "count": 4700,
+          "mae": 0.4776392443129357,
+          "mse": 0.4574878616662736,
+          "rmse": 0.6763784899494317
+        },
+        "K1": {
+          "count": 4700,
+          "mae": 0.4661694163971759,
+          "mse": 0.4490677698558949,
+          "rmse": 0.6701251896891318
+        },
+        "K4": {
+          "count": 4700,
+          "mae": 0.47268164988527905,
+          "mse": 0.45616591713688476,
+          "rmse": 0.6754005605097502
+        }
+      }
+    },
+    {
+      "actuator": "stored_gradient_s1",
+      "domain": "chronological_quartile_1",
+      "effects": {
+        "gross_rmse_reduction": 0.02167071999886805,
+        "pairing_mse_reduction": 0.01049329672522592,
+        "pairing_rmse_reduction": 0.006791898703028543,
+        "shuffled_rmse_reduction": 0.014878821295839506
+      },
+      "seed": 201,
+      "setting": "sequence_regression",
+      "task_metrics": {
+        "K0": {
+          "count": 4640,
+          "mae": 0.5728949168632771,
+          "mse": 0.6253029925042185,
+          "rmse": 0.7907610211082856
+        },
+        "K1": {
+          "count": 4640,
+          "mae": 0.5538304828364273,
+          "mse": 0.5914998912605746,
+          "rmse": 0.7690903011094176
+        },
+        "K4": {
+          "count": 4640,
+          "mae": 0.5572371442770135,
+          "mse": 0.6019931879858005,
+          "rmse": 0.7758821998124461
+        }
+      }
+    },
+    {
+      "actuator": "stored_gradient_s1",
+      "domain": "chronological_quartile_2",
+      "effects": {
+        "gross_rmse_reduction": -0.0023868153236622502,
+        "pairing_mse_reduction": 0.0019400912356011268,
+        "pairing_rmse_reduction": 0.00131868445614447,
+        "shuffled_rmse_reduction": -0.00370549977980672
+      },
+      "seed": 201,
+      "setting": "sequence_regression",
+      "task_metrics": {
+        "K0": {
+          "count": 4704,
+          "mae": 0.5110683035688336,
+          "mse": 0.5366588328413817,
+          "rmse": 0.7325700190707928
+        },
+        "K1": {
+          "count": 4704,
+          "mae": 0.5150688916039304,
+          "mse": 0.5401615484231184,
+          "rmse": 0.734956834394455
+        },
+        "K4": {
+          "count": 4704,
+          "mae": 0.5128085573210197,
+          "mse": 0.5421016396587195,
+          "rmse": 0.7362755188505995
+        }
+      }
+    },
+    {
+      "actuator": "stored_gradient_s1",
+      "domain": "chronological_quartile_3",
+      "effects": {
+        "gross_rmse_reduction": 0.01814393141333759,
+        "pairing_mse_reduction": 0.00445733073945731,
+        "pairing_rmse_reduction": 0.0031736884895388062,
+        "shuffled_rmse_reduction": 0.014970242923798782
+      },
+      "seed": 201,
+      "setting": "sequence_regression",
+      "task_metrics": {
+        "K0": {
+          "count": 4672,
+          "mae": 0.4744179329439385,
+          "mse": 0.5166576405578892,
+          "rmse": 0.7187890097642626
+        },
+        "K1": {
+          "count": 4672,
+          "mae": 0.4591975936232364,
+          "mse": 0.49090352581737384,
+          "rmse": 0.700645078350925
+        },
+        "K4": {
+          "count": 4672,
+          "mae": 0.4613859560085486,
+          "mse": 0.49536085655683115,
+          "rmse": 0.7038187668404638
+        }
+      }
+    },
+    {
+      "actuator": "stored_gradient_s1",
+      "domain": "chronological_quartile_4",
+      "effects": {
+        "gross_rmse_reduction": 0.004062884190222049,
+        "pairing_mse_reduction": 0.00229683084056731,
+        "pairing_rmse_reduction": 0.0017059848355875928,
+        "shuffled_rmse_reduction": 0.0023568993546344563
+      },
+      "seed": 201,
+      "setting": "sequence_regression",
+      "task_metrics": {
+        "K0": {
+          "count": 4700,
+          "mae": 0.4776392443129357,
+          "mse": 0.4574878616662736,
+          "rmse": 0.6763784899494317
+        },
+        "K1": {
+          "count": 4700,
+          "mae": 0.4683626569585597,
+          "mse": 0.4520082737473731,
+          "rmse": 0.6723156057592097
+        },
+        "K4": {
+          "count": 4700,
+          "mae": 0.4714053956498491,
+          "mse": 0.45430510458794043,
+          "rmse": 0.6740215905947973
+        }
+      }
+    },
+    {
+      "actuator": "replay_projected_s3",
+      "domain": "chronological_quartile_1",
+      "effects": {
+        "gross_rmse_reduction": 0.018661316270106365,
+        "pairing_mse_reduction": 0.021680857883445093,
+        "pairing_rmse_reduction": 0.013522084446471183,
+        "shuffled_rmse_reduction": 0.005139231823635182
+      },
+      "seed": 202,
+      "setting": "sequence_regression",
+      "task_metrics": {
+        "K0": {
+          "count": 4640,
+          "mae": 0.582364035474843,
+          "mse": 0.6619181910208587,
+          "rmse": 0.8135835488877947
+        },
+        "K1": {
+          "count": 4640,
+          "mae": 0.5748279177937015,
+          "mse": 0.6319013559098902,
+          "rmse": 0.7949222326176884
+        },
+        "K4": {
+          "count": 4640,
+          "mae": 0.5812405302349863,
+          "mse": 0.6535822137933353,
+          "rmse": 0.8084443170641595
+        }
+      }
+    },
+    {
+      "actuator": "replay_projected_s3",
+      "domain": "chronological_quartile_2",
+      "effects": {
+        "gross_rmse_reduction": 0.014109694680381701,
+        "pairing_mse_reduction": 0.004559114841478196,
+        "pairing_rmse_reduction": 0.003100584786730476,
+        "shuffled_rmse_reduction": 0.011009109893651225
+      },
+      "seed": 202,
+      "setting": "sequence_regression",
+      "task_metrics": {
+        "K0": {
+          "count": 4704,
+          "mae": 0.5242771633020064,
+          "mse": 0.5591477342456782,
+          "rmse": 0.7477618165202595
+        },
+        "K1": {
+          "count": 4704,
+          "mae": 0.5124076085836708,
+          "mse": 0.5382454358801549,
+          "rmse": 0.7336521218398778
+        },
+        "K4": {
+          "count": 4704,
+          "mae": 0.5133696674895124,
+          "mse": 0.5428045507216331,
+          "rmse": 0.7367527066266083
+        }
+      }
+    },
+    {
+      "actuator": "replay_projected_s3",
+      "domain": "chronological_quartile_3",
+      "effects": {
+        "gross_rmse_reduction": 0.02368692098450309,
+        "pairing_mse_reduction": 0.004522714208913592,
+        "pairing_rmse_reduction": 0.0032427800800568507,
+        "shuffled_rmse_reduction": 0.02044414090444624
+      },
+      "seed": 202,
+      "setting": "sequence_regression",
+      "task_metrics": {
+        "K0": {
+          "count": 4672,
+          "mae": 0.48288007718447135,
+          "mse": 0.5175606653936309,
+          "rmse": 0.719416892624597
+        },
+        "K1": {
+          "count": 4672,
+          "mae": 0.4624376425085819,
+          "mse": 0.4840401934383258,
+          "rmse": 0.6957299716400939
+        },
+        "K4": {
+          "count": 4672,
+          "mae": 0.46224280698097325,
+          "mse": 0.4885629076472394,
+          "rmse": 0.6989727517201507
+        }
+      }
+    },
+    {
+      "actuator": "replay_projected_s3",
+      "domain": "chronological_quartile_4",
+      "effects": {
+        "gross_rmse_reduction": 0.006352467832392628,
+        "pairing_mse_reduction": 0.005046949272460133,
+        "pairing_rmse_reduction": 0.0037789369093909064,
+        "shuffled_rmse_reduction": 0.002573530923001721
+      },
+      "seed": 202,
+      "setting": "sequence_regression",
+      "task_metrics": {
+        "K0": {
+          "count": 4700,
+          "mae": 0.46903017586850104,
+          "mse": 0.4519021636881727,
+          "rmse": 0.6722366872524682
+        },
+        "K1": {
+          "count": 4700,
+          "mae": 0.45869147087665313,
+          "mse": 0.4434017936726834,
+          "rmse": 0.6658842194200756
+        },
+        "K4": {
+          "count": 4700,
+          "mae": 0.4615113100346099,
+          "mse": 0.44844874294514353,
+          "rmse": 0.6696631563294665
+        }
+      }
+    },
+    {
+      "actuator": "stored_gradient_s1",
+      "domain": "chronological_quartile_1",
+      "effects": {
+        "gross_rmse_reduction": 0.013885277577173505,
+        "pairing_mse_reduction": 0.01606507587150252,
+        "pairing_rmse_reduction": 0.009982160099634929,
+        "shuffled_rmse_reduction": 0.0039031174775385757
+      },
+      "seed": 202,
+      "setting": "sequence_regression",
+      "task_metrics": {
+        "K0": {
+          "count": 4640,
+          "mae": 0.582364035474843,
+          "mse": 0.6619181910208587,
+          "rmse": 0.8135835488877947
+        },
+        "K1": {
+          "count": 4640,
+          "mae": 0.5820952807007165,
+          "mse": 0.639517325137196,
+          "rmse": 0.7996982713106212
+        },
+        "K4": {
+          "count": 4640,
+          "mae": 0.5875526589309347,
+          "mse": 0.6555824010086985,
+          "rmse": 0.8096804314102561
+        }
+      }
+    },
+    {
+      "actuator": "stored_gradient_s1",
+      "domain": "chronological_quartile_2",
+      "effects": {
+        "gross_rmse_reduction": 0.007251459157843976,
+        "pairing_mse_reduction": 0.005708635607290846,
+        "pairing_rmse_reduction": 0.0038445478866216964,
+        "shuffled_rmse_reduction": 0.0034069112712222793
+      },
+      "seed": 202,
+      "setting": "sequence_regression",
+      "task_metrics": {
+        "K0": {
+          "count": 4704,
+          "mae": 0.5242771633020064,
+          "mse": 0.5591477342456782,
+          "rmse": 0.7477618165202595
+        },
+        "K1": {
+          "count": 4704,
+          "mae": 0.518549347714502,
+          "mse": 0.5483555893610124,
+          "rmse": 0.7405103573624155
+        },
+        "K4": {
+          "count": 4704,
+          "mae": 0.5203654082859455,
+          "mse": 0.5540642249683032,
+          "rmse": 0.7443549052490372
+        }
+      }
+    },
+    {
+      "actuator": "stored_gradient_s1",
+      "domain": "chronological_quartile_3",
+      "effects": {
+        "gross_rmse_reduction": 0.024285739015498464,
+        "pairing_mse_reduction": 0.0021507864537304022,
+        "pairing_rmse_reduction": 0.0015453187736327312,
+        "shuffled_rmse_reduction": 0.022740420241865733
+      },
+      "seed": 202,
+      "setting": "sequence_regression",
+      "task_metrics": {
+        "K0": {
+          "count": 4672,
+          "mae": 0.48288007718447135,
+          "mse": 0.5175606653936309,
+          "rmse": 0.719416892624597
+        },
+        "K1": {
+          "count": 4672,
+          "mae": 0.4618238421437675,
+          "mse": 0.4832073207179161,
+          "rmse": 0.6951311536090985
+        },
+        "K4": {
+          "count": 4672,
+          "mae": 0.46134047928483113,
+          "mse": 0.4853581071716465,
+          "rmse": 0.6966764723827312
+        }
+      }
+    },
+    {
+      "actuator": "stored_gradient_s1",
+      "domain": "chronological_quartile_4",
+      "effects": {
+        "gross_rmse_reduction": 0.0012313157690694299,
+        "pairing_mse_reduction": 0.0038172239128579366,
+        "pairing_rmse_reduction": 0.002838403046300342,
+        "shuffled_rmse_reduction": -0.001607087277230912
+      },
+      "seed": 202,
+      "setting": "sequence_regression",
+      "task_metrics": {
+        "K0": {
+          "count": 4700,
+          "mae": 0.46903017586850104,
+          "mse": 0.4519021636881727,
+          "rmse": 0.6722366872524682
+        },
+        "K1": {
+          "count": 4700,
+          "mae": 0.46199674484577585,
+          "mse": 0.450248208559574,
+          "rmse": 0.6710053714833988
+        },
+        "K4": {
+          "count": 4700,
+          "mae": 0.4646027150940388,
+          "mse": 0.4540654324724319,
+          "rmse": 0.6738437745296991
+        }
+      }
+    },
+    {
+      "actuator": "replay_projected_s3",
+      "domain": "chronological_quartile_1",
+      "effects": {
+        "gross_rmse_reduction": 0.028458247986547613,
+        "pairing_mse_reduction": 0.0342112455709741,
+        "pairing_rmse_reduction": 0.021115338196912137,
+        "shuffled_rmse_reduction": 0.007342909789635477
+      },
+      "seed": 203,
+      "setting": "sequence_regression",
+      "task_metrics": {
+        "K0": {
+          "count": 4640,
+          "mae": 0.5900383049044116,
+          "mse": 0.685591806240123,
+          "rmse": 0.8280047138996993
+        },
+        "K1": {
+          "count": 4640,
+          "mae": 0.5695581427935896,
+          "mse": 0.6392745511542106,
+          "rmse": 0.7995464659131517
+        },
+        "K4": {
+          "count": 4640,
+          "mae": 0.5842507782167402,
+          "mse": 0.6734857967251847,
+          "rmse": 0.8206618041100638
+        }
+      }
+    },
+    {
+      "actuator": "replay_projected_s3",
+      "domain": "chronological_quartile_2",
+      "effects": {
+        "gross_rmse_reduction": 0.019257042502036192,
+        "pairing_mse_reduction": 0.005310904519746473,
+        "pairing_rmse_reduction": 0.003655156804559967,
+        "shuffled_rmse_reduction": 0.015601885697476225
+      },
+      "seed": 203,
+      "setting": "sequence_regression",
+      "task_metrics": {
+        "K0": {
+          "count": 4704,
+          "mae": 0.524949794014295,
+          "mse": 0.553423248915648,
+          "rmse": 0.7439242225627877
+        },
+        "K1": {
+          "count": 4704,
+          "mae": 0.5113723678451007,
+          "mse": 0.5251425218572017,
+          "rmse": 0.7246671800607515
+        },
+        "K4": {
+          "count": 4704,
+          "mae": 0.5129978485962972,
+          "mse": 0.5304534263769481,
+          "rmse": 0.7283223368653114
+        }
+      }
+    },
+    {
+      "actuator": "replay_projected_s3",
+      "domain": "chronological_quartile_3",
+      "effects": {
+        "gross_rmse_reduction": 0.018257596451056957,
+        "pairing_mse_reduction": 0.007304465544907601,
+        "pairing_rmse_reduction": 0.005374853334137009,
+        "shuffled_rmse_reduction": 0.012882743116919948
+      },
+      "seed": 203,
+      "setting": "sequence_regression",
+      "task_metrics": {
+        "K0": {
+          "count": 4672,
+          "mae": 0.4607570051942786,
+          "mse": 0.4831276960824042,
+          "rmse": 0.6950738781470673
+        },
+        "K1": {
+          "count": 4672,
+          "mae": 0.44791137631217093,
+          "mse": 0.4580802791688132,
+          "rmse": 0.6768162816960104
+        },
+        "K4": {
+          "count": 4672,
+          "mae": 0.45173599101500966,
+          "mse": 0.4653847447137208,
+          "rmse": 0.6821911350301474
+        }
+      }
+    },
+    {
+      "actuator": "replay_projected_s3",
+      "domain": "chronological_quartile_4",
+      "effects": {
+        "gross_rmse_reduction": 0.015774769776465858,
+        "pairing_mse_reduction": 0.005911297672923588,
+        "pairing_rmse_reduction": 0.004431317230069287,
+        "shuffled_rmse_reduction": 0.01134345254639657
+      },
+      "seed": 203,
+      "setting": "sequence_regression",
+      "task_metrics": {
+        "K0": {
+          "count": 4700,
+          "mae": 0.47023431326480625,
+          "mse": 0.46314849246055523,
+          "rmse": 0.6805501395639819
+        },
+        "K1": {
+          "count": 4700,
+          "mae": 0.45479754808101247,
+          "mse": 0.4419262922761288,
+          "rmse": 0.6647753697875161
+        },
+        "K4": {
+          "count": 4700,
+          "mae": 0.4592797479730971,
+          "mse": 0.4478375899490524,
+          "rmse": 0.6692066870175853
+        }
+      }
+    },
+    {
+      "actuator": "stored_gradient_s1",
+      "domain": "chronological_quartile_1",
+      "effects": {
+        "gross_rmse_reduction": 0.012724957691488736,
+        "pairing_mse_reduction": 0.016723234489046335,
+        "pairing_rmse_reduction": 0.010192421016416153,
+        "shuffled_rmse_reduction": 0.002532536675072583
+      },
+      "seed": 203,
+      "setting": "sequence_regression",
+      "task_metrics": {
+        "K0": {
+          "count": 4640,
+          "mae": 0.5900383049044116,
+          "mse": 0.685591806240123,
+          "rmse": 0.8280047138996993
+        },
+        "K1": {
+          "count": 4640,
+          "mae": 0.5835338729208913,
+          "mse": 0.6646810808829192,
+          "rmse": 0.8152797562082106
+        },
+        "K4": {
+          "count": 4640,
+          "mae": 0.5890024794329857,
+          "mse": 0.6814043153719656,
+          "rmse": 0.8254721772246267
+        }
+      }
+    },
+    {
+      "actuator": "stored_gradient_s1",
+      "domain": "chronological_quartile_2",
+      "effects": {
+        "gross_rmse_reduction": 0.013003559486964855,
+        "pairing_mse_reduction": 0.0049449322605822355,
+        "pairing_rmse_reduction": 0.0033748823088558533,
+        "shuffled_rmse_reduction": 0.009628677178109002
+      },
+      "seed": 203,
+      "setting": "sequence_regression",
+      "task_metrics": {
+        "K0": {
+          "count": 4704,
+          "mae": 0.524949794014295,
+          "mse": 0.553423248915648,
+          "rmse": 0.7439242225627877
+        },
+        "K1": {
+          "count": 4704,
+          "mae": 0.5169008591142642,
+          "mse": 0.5342450157112005,
+          "rmse": 0.7309206630758228
+        },
+        "K4": {
+          "count": 4704,
+          "mae": 0.5198270601733607,
+          "mse": 0.5391899479717828,
+          "rmse": 0.7342955453846787
+        }
+      }
+    },
+    {
+      "actuator": "stored_gradient_s1",
+      "domain": "chronological_quartile_3",
+      "effects": {
+        "gross_rmse_reduction": 0.014783089534217475,
+        "pairing_mse_reduction": 0.006070215105117349,
+        "pairing_rmse_reduction": 0.004446951092367812,
+        "shuffled_rmse_reduction": 0.010336138441849663
+      },
+      "seed": 203,
+      "setting": "sequence_regression",
+      "task_metrics": {
+        "K0": {
+          "count": 4672,
+          "mae": 0.4607570051942786,
+          "mse": 0.4831276960824042,
+          "rmse": 0.6950738781470673
+        },
+        "K1": {
+          "count": 4672,
+          "mae": 0.45290937785008184,
+          "mse": 0.4627955570714931,
+          "rmse": 0.6802907886128499
+        },
+        "K4": {
+          "count": 4672,
+          "mae": 0.4563919967423155,
+          "mse": 0.46886577217661046,
+          "rmse": 0.6847377397052177
+        }
+      }
+    },
+    {
+      "actuator": "stored_gradient_s1",
+      "domain": "chronological_quartile_4",
+      "effects": {
+        "gross_rmse_reduction": 0.008533077730936589,
+        "pairing_mse_reduction": 0.0015780750709645242,
+        "pairing_rmse_reduction": 0.0011731092669816645,
+        "shuffled_rmse_reduction": 0.0073599684639549245
+      },
+      "seed": 203,
+      "setting": "sequence_regression",
+      "task_metrics": {
+        "K0": {
+          "count": 4700,
+          "mae": 0.47023431326480625,
+          "mse": 0.46314849246055523,
+          "rmse": 0.6805501395639819
+        },
+        "K1": {
+          "count": 4700,
+          "mae": 0.46370534556977294,
+          "mse": 0.4516069313947191,
+          "rmse": 0.6720170618330453
+        },
+        "K4": {
+          "count": 4700,
+          "mae": 0.465647976322377,
+          "mse": 0.4531850064656836,
+          "rmse": 0.673190171100027
+        }
+      }
+    }
+  ],
+  "limitations": [
+    "Run-seed variation is not independent-dataset replication.",
+    "Packets and permutation replicas are repeated measurements, not independent datasets; replicas are averaged within packet before temporal power calculations.",
+    "Target permutation preserves endpoint target multisets but tests only the locked historical-gradient actuators.",
+    "The multi-step replay branch is audit-only and retains exactly one revealed historical packet; the live learner does not replay it.",
+    "Normal-approximation MDE values are descriptive; block-bootstrap intervals are stored per unit."
+  ],
+  "paper_evidence_eligible": true,
+  "rows": [
+    {
+      "actuator": "stored_gradient_s1",
+      "effects": {
+        "gross_accuracy": {
+          "max": 0.00432769726247989,
+          "mean": 0.0024154589371980784,
+          "min": 0.0013083735909822924,
+          "std": 0.0013275871536104044
+        },
+        "gross_cross_entropy_reduction": {
+          "max": 0.02529483793630316,
+          "mean": 0.023387088099923625,
+          "min": 0.021255357637881556,
+          "std": 0.0016572516847277788
+        },
+        "pairing_accuracy": {
+          "max": 0.003925120772946877,
+          "mean": 0.0023148148148148112,
+          "min": 0.0011574074074073848,
+          "std": 0.001386674898379006
+        },
+        "pairing_cross_entropy_reduction": {
+          "max": 0.01988490096228901,
+          "mean": 0.01844455414540158,
+          "min": 0.017533518457950592,
+          "std": 0.001029222632263345
+        },
+        "shuffled_accuracy": {
+          "max": 0.0013083735909822924,
+          "mean": 0.00010064412238326714,
+          "min": -0.0017109500805153055,
+          "std": 0.001297359603976762
+        },
+        "shuffled_cross_entropy_reduction": {
+          "max": 0.006089215885229926,
+          "mean": 0.004942533954522044,
+          "min": 0.0033335555194846656,
+          "std": 0.0011722034399305058
+        }
+      },
+      "pairing_power_estimate": {
+        "max": 0.00392512077294686,
+        "mean": 0.0023148148148148147,
+        "min": 0.0011574074074074073,
+        "std": 0.0013866748983789846
+      },
+      "power_effect_metric": "packet_accuracy_difference",
+      "replication_unit": "run seed on the same locked dataset/stream",
+      "setting": "classification_cross_entropy",
+      "task_metrics": {
+        "K0": {
+          "accuracy": {
+            "max": 0.48902979066022545,
+            "mean": 0.48540660225442833,
+            "min": 0.48238727858293073,
+            "std": 0.0027939697817575293
+          },
+          "brier": {
+            "max": 0.6818588624637868,
+            "mean": 0.6755055156018999,
+            "min": 0.6709797411149251,
+            "std": 0.004569030979981551
+          },
+          "cross_entropy": {
+            "max": 2.2691189190807743,
+            "mean": 2.2523687802459116,
+            "min": 2.2388285315939003,
+            "std": 0.012512415366518188
+          }
+        },
+        "K1": {
+          "accuracy": {
+            "max": 0.491243961352657,
+            "mean": 0.4878220611916264,
+            "min": 0.4841988727858293,
+            "std": 0.0029526087930338467
+          },
+          "brier": {
+            "max": 0.6785404574659903,
+            "mean": 0.6723276676187193,
+            "min": 0.6677692099661835,
+            "std": 0.0045087610181967445
+          },
+          "cross_entropy": {
+            "max": 2.245496184737594,
+            "mean": 2.2289816921459877,
+            "min": 2.215453109111571,
+            "std": 0.012563256114598055
+          }
+        },
+        "K4": {
+          "accuracy": {
+            "max": 0.48731884057971014,
+            "mean": 0.48550724637681164,
+            "min": 0.4830414653784219,
+            "std": 0.0017895607973955458
+          },
+          "brier": {
+            "max": 0.6813276877533795,
+            "mean": 0.6751402633417631,
+            "min": 0.6706005546013898,
+            "std": 0.004487106980723687
+          },
+          "cross_entropy": {
+            "max": 2.2630297031955444,
+            "mean": 2.2474262462913894,
+            "min": 2.233891104154541,
+            "std": 0.01202646286889175
+          }
+        }
+      },
+      "units": 4
+    },
+    {
+      "actuator": "replay_projected_s3",
+      "effects": {
+        "gross_mse_reduction": {
+          "max": 0.030172605063510716,
+          "mean": 0.023528331459574947,
+          "min": 0.02036487152845745,
+          "std": 0.004625470602993371
+        },
+        "gross_rmse_reduction": {
+          "max": 0.02070741979561086,
+          "mean": 0.01617724211835303,
+          "min": 0.0140728280923208,
+          "std": 0.0031333667384658937
+        },
+        "pairing_mse_reduction": {
+          "max": 0.013124184462425581,
+          "mean": 0.009654904088731125,
+          "min": 0.008050151611971867,
+          "std": 0.0023398823148450226
+        },
+        "pairing_rmse_reduction": {
+          "max": 0.009079567389431276,
+          "mean": 0.006683508886625417,
+          "min": 0.0055952432894672555,
+          "std": 0.001612642279138099
+        },
+        "shuffled_mse_reduction": {
+          "max": 0.017048420601085135,
+          "mean": 0.013873427370843822,
+          "min": 0.011836883359391481,
+          "std": 0.0023650776945427165
+        },
+        "shuffled_rmse_reduction": {
+          "max": 0.011627852406179584,
+          "mean": 0.009493733231727614,
+          "min": 0.008146331759429026,
+          "std": 0.0015742703687382446
+        }
+      },
+      "pairing_power_estimate": {
+        "max": 0.013124184462425545,
+        "mean": 0.009654904088731134,
+        "min": 0.00805015161197189,
+        "std": 0.002339882314844992
+      },
+      "power_effect_metric": "packet_mse_reduction",
+      "replication_unit": "run seed on the same locked dataset/stream",
+      "setting": "sequence_regression",
+      "task_metrics": {
+        "K0": {
+          "mae": {
+            "max": 0.5144703167324062,
+            "mean": 0.511300779670496,
+            "min": 0.5088524655491706,
+            "std": 0.0023517111462288526
+          },
+          "mse": {
+            "max": 0.5473132585104675,
+            "mean": 0.5402268620893013,
+            "min": 0.5337607651968037,
+            "std": 0.007428829793564584
+          },
+          "rmse": {
+            "max": 0.7398062303809475,
+            "mean": 0.7349882372873732,
+            "min": 0.730589327321994,
+            "std": 0.005053465939498656
+          }
+        },
+        "K1": {
+          "mae": {
+            "max": 0.5019195078147428,
+            "mean": 0.49748942631448684,
+            "min": 0.4949858802255083,
+            "std": 0.003106846933133213
+          },
+          "mse": {
+            "max": 0.5241158920606759,
+            "mean": 0.5166985306297263,
+            "min": 0.5133958936683463,
+            "std": 0.0050686939521683546
+          },
+          "rmse": {
+            "max": 0.723958487802081,
+            "mean": 0.7188109951690201,
+            "min": 0.7165164992296732,
+            "std": 0.0035183052452733812
+          }
+        },
+        "K4": {
+          "mae": {
+            "max": 0.5044105859980111,
+            "mean": 0.501462025909049,
+            "min": 0.4991377301260966,
+            "std": 0.0022625992507155353
+          },
+          "mse": {
+            "max": 0.533033184172137,
+            "mean": 0.5263534347184574,
+            "min": 0.5215326926043385,
+            "std": 0.0056002157816043875
+          },
+          "rmse": {
+            "max": 0.7300912163367924,
+            "mean": 0.7254945040556455,
+            "min": 0.7221722042590247,
+            "std": 0.003857339931491502
+          }
+        }
+      },
+      "units": 4
+    },
+    {
+      "actuator": "stored_gradient_s1",
+      "effects": {
+        "gross_mse_reduction": {
+          "max": 0.017978054344921612,
+          "mean": 0.016115385468959242,
+          "min": 0.013921744336453101,
+          "std": 0.0018476405580707884
+        },
+        "gross_rmse_reduction": {
+          "max": 0.01226725767296688,
+          "mean": 0.011041018612121228,
+          "min": 0.009589787237063274,
+          "std": 0.0012058446566853862
+        },
+        "pairing_mse_reduction": {
+          "max": 0.007300372258366994,
+          "mean": 0.006330570980323691,
+          "min": 0.004778523196341422,
+          "std": 0.0011088520297489553
+        },
+        "pairing_rmse_reduction": {
+          "max": 0.0050061849876230635,
+          "mean": 0.004356340024064015,
+          "min": 0.0033106292780721303,
+          "std": 0.0007433110894119316
+        },
+        "shuffled_mse_reduction": {
+          "max": 0.010677682086554618,
+          "mean": 0.009784814488635551,
+          "min": 0.00759141425000831,
+          "std": 0.0014686260410989203
+        },
+        "shuffled_rmse_reduction": {
+          "max": 0.007261072685343817,
+          "mean": 0.0066846785880572135,
+          "min": 0.0052135168879605676,
+          "std": 0.0009865963874946242
+        }
+      },
+      "pairing_power_estimate": {
+        "max": 0.007300372258366925,
+        "mean": 0.006330570980323688,
+        "min": 0.004778523196341467,
+        "std": 0.001108852029748909
+      },
+      "power_effect_metric": "packet_mse_reduction",
+      "replication_unit": "run seed on the same locked dataset/stream",
+      "setting": "sequence_regression",
+      "task_metrics": {
+        "K0": {
+          "mae": {
+            "max": 0.5144703167324062,
+            "mean": 0.511300779670496,
+            "min": 0.5088524655491706,
+            "std": 0.0023517111462288526
+          },
+          "mse": {
+            "max": 0.5473132585104675,
+            "mean": 0.5402268620893013,
+            "min": 0.5337607651968037,
+            "std": 0.007428829793564584
+          },
+          "rmse": {
+            "max": 0.7398062303809475,
+            "mean": 0.7349882372873732,
+            "min": 0.730589327321994,
+            "std": 0.005053465939498656
+          }
+        },
+        "K1": {
+          "mae": {
+            "max": 0.5059416502121805,
+            "mean": 0.502748856943982,
+            "min": 0.49900262617968066,
+            "std": 0.0029798097710175167
+          },
+          "mse": {
+            "max": 0.5300564363974617,
+            "mean": 0.524111476620342,
+            "min": 0.5184558441153473,
+            "std": 0.005768091354405007
+          },
+          "rmse": {
+            "max": 0.7280497485731738,
+            "mean": 0.7239472186752519,
+            "min": 0.7200387795913129,
+            "std": 0.0039834980789742805
+          }
+        },
+        "K4": {
+          "mae": {
+            "max": 0.5082848203770751,
+            "mean": 0.5052067047806281,
+            "min": 0.5005894608415072,
+            "std": 0.0035045092984497483
+          },
+          "mse": {
+            "max": 0.5369694947776033,
+            "mean": 0.5304420476006657,
+            "min": 0.5232343673116887,
+            "std": 0.006721008820511896
+          },
+          "rmse": {
+            "max": 0.732782024054632,
+            "mean": 0.7283035586993158,
+            "min": 0.723349408869385,
+            "std": 0.004615045912046596
+          }
+        }
+      },
+      "units": 4
+    }
+  ],
+  "schema_version": "fmmt.iclr_breadth.paper_summary.v1",
+  "scope": "A deterministic nonstationary CIFAR-100 online stream with a cross-entropy residual CNN plus naturally chronological Appliances regression with a sequence GRU; fixed-trajectory common-center target-pairing contrasts.",
+  "seed_rows": [
+    {
+      "actuator": "stored_gradient_s1",
+      "distribution_alignment": {
+        "mean_assignment_changed_fraction": 0.9737646484375,
+        "mean_fixed_point_fraction": 0.0169677734375,
+        "mean_permutation_gradient_variance": 31.398137127042713,
+        "mean_true_shuffled_gradient_cosine": 0.17527174412839877,
+        "mean_true_to_shuffled_gradient_distance": 9.388869528945495,
+        "packets": 160,
+        "target_multiset_preserved_all_packets": true
+      },
+      "effects": {
+        "gross_accuracy": 0.00432769726247989,
+        "gross_cross_entropy_reduction": 0.023375422482329267,
+        "pairing_accuracy": 0.003019323671497598,
+        "pairing_cross_entropy_reduction": 0.018437995042969835,
+        "shuffled_accuracy": 0.0013083735909822924,
+        "shuffled_cross_entropy_reduction": 0.004937427439359432
+      },
+      "power": {
+        "aggregation_unit": "chronologically ordered packets; permutation replicas are averaged within packet",
+        "bootstrap_draws": 2000,
+        "ci95": [
+          0.001365044522751199,
+          0.0050333363284402735
+        ],
+        "circular_block_length_packets": 8,
+        "effect_metric": "packet_accuracy_difference",
+        "effective_packet_count": 157.62967504598407,
+        "estimate": 0.0030193236714975845,
+        "interpretation": "positive means true pairing outperforms the estimator-matched shuffled control",
+        "normal_approx_mde_80_two_sided": 0.002575279314575453,
+        "packet_effect_sd": 0.011540747668088543
+      },
+      "seed": 200,
+      "setting": "classification_cross_entropy",
+      "task_metrics": {
+        "K0": {
+          "accuracy": 0.4844001610305958,
+          "brier": 0.6709797411149251,
+          "count": 9936,
+          "cross_entropy": 2.2388285315939003
+        },
+        "K1": {
+          "accuracy": 0.4887278582930757,
+          "brier": 0.6677692099661835,
+          "count": 9936,
+          "cross_entropy": 2.215453109111571
+        },
+        "K4": {
+          "accuracy": 0.4857085346215781,
+          "brier": 0.6706005546013898,
+          "count": 9936,
+          "cross_entropy": 2.233891104154541
+        }
+      }
+    },
+    {
+      "actuator": "stored_gradient_s1",
+      "distribution_alignment": {
+        "mean_assignment_changed_fraction": 0.9742089843749999,
+        "mean_fixed_point_fraction": 0.016064453125,
+        "mean_permutation_gradient_variance": 32.870039725943045,
+        "mean_true_shuffled_gradient_cosine": 0.18262497701556601,
+        "mean_true_to_shuffled_gradient_distance": 9.53153079183505,
+        "packets": 160,
+        "target_multiset_preserved_all_packets": true
+      },
+      "effects": {
+        "gross_accuracy": 0.0018115942028985588,
+        "gross_cross_entropy_reduction": 0.023622734343180518,
+        "pairing_accuracy": 0.0011574074074073848,
+        "pairing_cross_entropy_reduction": 0.017533518457950592,
+        "shuffled_accuracy": 0.000654186795491174,
+        "shuffled_cross_entropy_reduction": 0.006089215885229926
+      },
+      "power": {
+        "aggregation_unit": "chronologically ordered packets; permutation replicas are averaged within packet",
+        "bootstrap_draws": 2000,
+        "ci95": [
+          -0.00035310734463276836,
+          0.002610596392748025
+        ],
+        "circular_block_length_packets": 8,
+        "effect_metric": "packet_accuracy_difference",
+        "effective_packet_count": 157.62967504598407,
+        "estimate": 0.0011574074074074073,
+        "interpretation": "positive means true pairing outperforms the estimator-matched shuffled control",
+        "normal_approx_mde_80_two_sided": 0.0019972420722922145,
+        "packet_effect_sd": 0.008950356047966995
+      },
+      "seed": 201,
+      "setting": "classification_cross_entropy",
+      "task_metrics": {
+        "K0": {
+          "accuracy": 0.48238727858293073,
+          "brier": 0.6818588624637868,
+          "count": 9936,
+          "cross_entropy": 2.2691189190807743
+        },
+        "K1": {
+          "accuracy": 0.4841988727858293,
+          "brier": 0.6785404574659903,
+          "count": 9936,
+          "cross_entropy": 2.245496184737594
+        },
+        "K4": {
+          "accuracy": 0.4830414653784219,
+          "brier": 0.6813276877533795,
+          "count": 9936,
+          "cross_entropy": 2.2630297031955444
+        }
+      }
+    },
+    {
+      "actuator": "stored_gradient_s1",
+      "distribution_alignment": {
+        "mean_assignment_changed_fraction": 0.9750830078124999,
+        "mean_fixed_point_fraction": 0.01564453125,
+        "mean_permutation_gradient_variance": 32.559130145416916,
+        "mean_true_shuffled_gradient_cosine": 0.1710314278275876,
+        "mean_true_to_shuffled_gradient_distance": 9.567611347335685,
+        "packets": 160,
+        "target_multiset_preserved_all_packets": true
+      },
+      "effects": {
+        "gross_accuracy": 0.002214170692431572,
+        "gross_cross_entropy_reduction": 0.02529483793630316,
+        "pairing_accuracy": 0.003925120772946877,
+        "pairing_cross_entropy_reduction": 0.01988490096228901,
+        "shuffled_accuracy": -0.0017109500805153055,
+        "shuffled_cross_entropy_reduction": 0.005409936974014151
+      },
+      "power": {
+        "aggregation_unit": "chronologically ordered packets; permutation replicas are averaged within packet",
+        "bootstrap_draws": 2000,
+        "ci95": [
+          0.0023035477867705836,
+          0.005644809147673257
+        ],
+        "circular_block_length_packets": 8,
+        "effect_metric": "packet_accuracy_difference",
+        "effective_packet_count": 157.62967504598407,
+        "estimate": 0.00392512077294686,
+        "interpretation": "positive means true pairing outperforms the estimator-matched shuffled control",
+        "normal_approx_mde_80_two_sided": 0.0023943493041188196,
+        "packet_effect_sd": 0.010729935580853316
+      },
+      "seed": 202,
+      "setting": "classification_cross_entropy",
+      "task_metrics": {
+        "K0": {
+          "accuracy": 0.48902979066022545,
+          "brier": 0.6743567072442956,
+          "count": 9936,
+          "cross_entropy": 2.250205071843957
+        },
+        "K1": {
+          "accuracy": 0.491243961352657,
+          "brier": 0.6711540362301273,
+          "count": 9936,
+          "cross_entropy": 2.2249102339076536
+        },
+        "K4": {
+          "accuracy": 0.48731884057971014,
+          "brier": 0.6740409718427489,
+          "count": 9936,
+          "cross_entropy": 2.2447951348699426
+        }
+      }
+    },
+    {
+      "actuator": "stored_gradient_s1",
+      "distribution_alignment": {
+        "mean_assignment_changed_fraction": 0.974580078125,
+        "mean_fixed_point_fraction": 0.016064453125,
+        "mean_permutation_gradient_variance": 30.28042588472689,
+        "mean_true_shuffled_gradient_cosine": 0.1741283318118728,
+        "mean_true_to_shuffled_gradient_distance": 9.316229591154622,
+        "packets": 160,
+        "target_multiset_preserved_all_packets": true
+      },
+      "effects": {
+        "gross_accuracy": 0.0013083735909822924,
+        "gross_cross_entropy_reduction": 0.021255357637881556,
+        "pairing_accuracy": 0.0011574074074073848,
+        "pairing_cross_entropy_reduction": 0.01792180211839689,
+        "shuffled_accuracy": 0.00015096618357490765,
+        "shuffled_cross_entropy_reduction": 0.0033335555194846656
+      },
+      "power": {
+        "aggregation_unit": "chronologically ordered packets; permutation replicas are averaged within packet",
+        "bootstrap_draws": 2000,
+        "ci95": [
+          -0.0005056941885369175,
+          0.0030193236714975845
+        ],
+        "circular_block_length_packets": 8,
+        "effect_metric": "packet_accuracy_difference",
+        "effective_packet_count": 157.62967504598407,
+        "estimate": 0.0011574074074074073,
+        "interpretation": "positive means true pairing outperforms the estimator-matched shuffled control",
+        "normal_approx_mde_80_two_sided": 0.002418248303423829,
+        "packet_effect_sd": 0.010837035544316661
+      },
+      "seed": 203,
+      "setting": "classification_cross_entropy",
+      "task_metrics": {
+        "K0": {
+          "accuracy": 0.48580917874396135,
+          "brier": 0.674826751584592,
+          "count": 9936,
+          "cross_entropy": 2.251322598465015
+        },
+        "K1": {
+          "accuracy": 0.48711755233494364,
+          "brier": 0.671846966812576,
+          "count": 9936,
+          "cross_entropy": 2.2300672408271334
+        },
+        "K4": {
+          "accuracy": 0.48596014492753625,
+          "brier": 0.6745918391695345,
+          "count": 9936,
+          "cross_entropy": 2.2479890429455303
+        }
+      }
+    },
+    {
+      "actuator": "replay_projected_s3",
+      "distribution_alignment": {
+        "mean_assignment_changed_fraction": 0.7836078437347636,
+        "mean_fixed_point_fraction": 0.031175722208678695,
+        "mean_permutation_gradient_variance": 0.3297353522533901,
+        "mean_true_shuffled_gradient_cosine": 0.8255160710186845,
+        "mean_true_to_shuffled_gradient_distance": 1.0660637091885294,
+        "packets": 586,
+        "target_multiset_preserved_all_packets": true
+      },
+      "effects": {
+        "gross_mse_reduction": 0.020378482796539976,
+        "gross_rmse_reduction": 0.014080978006614009,
+        "pairing_mse_reduction": 0.008050151611971867,
+        "pairing_rmse_reduction": 0.0055952432894672555,
+        "shuffled_mse_reduction": 0.012328331184568109,
+        "shuffled_rmse_reduction": 0.008485734717146753
+      },
+      "power": {
+        "aggregation_unit": "chronologically ordered packets; permutation replicas are averaged within packet",
+        "bootstrap_draws": 2000,
+        "ci95": [
+          0.002779700361793208,
+          0.013830639874699823
+        ],
+        "circular_block_length_packets": 8,
+        "effect_metric": "packet_mse_reduction",
+        "effective_packet_count": 584.9843954575819,
+        "estimate": 0.00805015161197189,
+        "interpretation": "positive means true pairing outperforms the estimator-matched shuffled control",
+        "normal_approx_mde_80_two_sided": 0.007721224556212293,
+        "packet_effect_sd": 0.06665748748751915
+      },
+      "seed": 200,
+      "setting": "sequence_regression",
+      "task_metrics": {
+        "K0": {
+          "count": 18716,
+          "mae": 0.5105584959210329,
+          "mse": 0.5338610237889067,
+          "rmse": 0.7306579389761715
+        },
+        "K1": {
+          "count": 18716,
+          "mae": 0.4973034484948478,
+          "mse": 0.5134825409923667,
+          "rmse": 0.7165769609695575
+        },
+        "K4": {
+          "count": 18716,
+          "mae": 0.5004195323176913,
+          "mse": 0.5215326926043385,
+          "rmse": 0.7221722042590247
+        }
+      }
+    },
+    {
+      "actuator": "stored_gradient_s1",
+      "distribution_alignment": {
+        "mean_assignment_changed_fraction": 0.7836078437347636,
+        "mean_fixed_point_fraction": 0.031175722208678695,
+        "mean_permutation_gradient_variance": 0.3297353522533901,
+        "mean_true_shuffled_gradient_cosine": 0.8255160710186845,
+        "mean_true_to_shuffled_gradient_distance": 1.0660637091885294,
+        "packets": 586,
+        "target_multiset_preserved_all_packets": true
+      },
+      "effects": {
+        "gross_mse_reduction": 0.013921744336453101,
+        "gross_rmse_reduction": 0.009589787237063274,
+        "pairing_mse_reduction": 0.006330330086444791,
+        "pairing_rmse_reduction": 0.004376270349102707,
+        "shuffled_mse_reduction": 0.00759141425000831,
+        "shuffled_rmse_reduction": 0.0052135168879605676
+      },
+      "power": {
+        "aggregation_unit": "chronologically ordered packets; permutation replicas are averaged within packet",
+        "bootstrap_draws": 2000,
+        "ci95": [
+          0.0014613775187171997,
+          0.011450946006574196
+        ],
+        "circular_block_length_packets": 8,
+        "effect_metric": "packet_mse_reduction",
+        "effective_packet_count": 584.9843954575819,
+        "estimate": 0.006330330086444835,
+        "interpretation": "positive means true pairing outperforms the estimator-matched shuffled control",
+        "normal_approx_mde_80_two_sided": 0.00671130439760574,
+        "packet_effect_sd": 0.05793882636769111
+      },
+      "seed": 200,
+      "setting": "sequence_regression",
+      "task_metrics": {
+        "K0": {
+          "count": 18716,
+          "mae": 0.5105584959210329,
+          "mse": 0.5338610237889067,
+          "rmse": 0.7306579389761715
+        },
+        "K1": {
+          "count": 18716,
+          "mae": 0.5019633896230097,
+          "mse": 0.5199392794524536,
+          "rmse": 0.7210681517391082
+        },
+        "K4": {
+          "count": 18716,
+          "mae": 0.5044163713555326,
+          "mse": 0.5262696095388983,
+          "rmse": 0.7254444220882109
+        }
+      }
+    },
+    {
+      "actuator": "replay_projected_s3",
+      "distribution_alignment": {
+        "mean_assignment_changed_fraction": 0.7831012311067772,
+        "mean_fixed_point_fraction": 0.03081576060458313,
+        "mean_permutation_gradient_variance": 0.3336810104791026,
+        "mean_true_shuffled_gradient_cosine": 0.8286104513135654,
+        "mean_true_to_shuffled_gradient_distance": 1.0901388508718415,
+        "packets": 586,
+        "target_multiset_preserved_all_packets": true
+      },
+      "effects": {
+        "gross_mse_reduction": 0.02036487152845745,
+        "gross_rmse_reduction": 0.0140728280923208,
+        "pairing_mse_reduction": 0.00852798816906597,
+        "pairing_rmse_reduction": 0.005926496332891773,
+        "shuffled_mse_reduction": 0.011836883359391481,
+        "shuffled_rmse_reduction": 0.008146331759429026
+      },
+      "power": {
+        "aggregation_unit": "chronologically ordered packets; permutation replicas are averaged within packet",
+        "bootstrap_draws": 2000,
+        "ci95": [
+          0.0032951937496221283,
+          0.014118138928883736
+        ],
+        "circular_block_length_packets": 8,
+        "effect_metric": "packet_mse_reduction",
+        "effective_packet_count": 584.9843954575819,
+        "estimate": 0.008527988169066008,
+        "interpretation": "positive means true pairing outperforms the estimator-matched shuffled control",
+        "normal_approx_mde_80_two_sided": 0.00731223087646332,
+        "packet_effect_sd": 0.06312663679254656
+      },
+      "seed": 201,
+      "setting": "sequence_regression",
+      "task_metrics": {
+        "K0": {
+          "count": 18716,
+          "mae": 0.5088524655491706,
+          "mse": 0.5337607651968037,
+          "rmse": 0.730589327321994
+        },
+        "K1": {
+          "count": 18716,
+          "mae": 0.4949858802255083,
+          "mse": 0.5133958936683463,
+          "rmse": 0.7165164992296732
+        },
+        "K4": {
+          "count": 18716,
+          "mae": 0.4991377301260966,
+          "mse": 0.5219238818374122,
+          "rmse": 0.722442995562565
+        }
+      }
+    },
+    {
+      "actuator": "stored_gradient_s1",
+      "distribution_alignment": {
+        "mean_assignment_changed_fraction": 0.7831012311067772,
+        "mean_fixed_point_fraction": 0.03081576060458313,
+        "mean_permutation_gradient_variance": 0.3336810104791026,
+        "mean_true_shuffled_gradient_cosine": 0.8286104513135654,
+        "mean_true_to_shuffled_gradient_distance": 1.0901388508718415,
+        "packets": 586,
+        "target_multiset_preserved_all_packets": true
+      },
+      "effects": {
+        "gross_mse_reduction": 0.015304921081456424,
+        "gross_rmse_reduction": 0.010550547730681092,
+        "pairing_mse_reduction": 0.004778523196341422,
+        "pairing_rmse_reduction": 0.0033106292780721303,
+        "shuffled_mse_reduction": 0.010526397885115002,
+        "shuffled_rmse_reduction": 0.007239918452608962
+      },
+      "power": {
+        "aggregation_unit": "chronologically ordered packets; permutation replicas are averaged within packet",
+        "bootstrap_draws": 2000,
+        "ci95": [
+          0.0007012398621369886,
+          0.009208629079422265
+        ],
+        "circular_block_length_packets": 8,
+        "effect_metric": "packet_mse_reduction",
+        "effective_packet_count": 584.9843954575819,
+        "estimate": 0.004778523196341467,
+        "interpretation": "positive means true pairing outperforms the estimator-matched shuffled control",
+        "normal_approx_mde_80_two_sided": 0.005647248923383344,
+        "packet_effect_sd": 0.048752813975143944
+      },
+      "seed": 201,
+      "setting": "sequence_regression",
+      "task_metrics": {
+        "K0": {
+          "count": 18716,
+          "mae": 0.5088524655491706,
+          "mse": 0.5337607651968037,
+          "rmse": 0.730589327321994
+        },
+        "K1": {
+          "count": 18716,
+          "mae": 0.49900262617968066,
+          "mse": 0.5184558441153473,
+          "rmse": 0.7200387795913129
+        },
+        "K4": {
+          "count": 18716,
+          "mae": 0.5005894608415072,
+          "mse": 0.5232343673116887,
+          "rmse": 0.723349408869385
+        }
+      }
+    },
+    {
+      "actuator": "replay_projected_s3",
+      "distribution_alignment": {
+        "mean_assignment_changed_fraction": 0.7810328803022916,
+        "mean_fixed_point_fraction": 0.032230847757191615,
+        "mean_permutation_gradient_variance": 0.27759853601579604,
+        "mean_true_shuffled_gradient_cosine": 0.8333087952787602,
+        "mean_true_to_shuffled_gradient_distance": 1.0559050503041492,
+        "packets": 586,
+        "target_multiset_preserved_all_packets": true
+      },
+      "effects": {
+        "gross_mse_reduction": 0.023197366449791645,
+        "gross_rmse_reduction": 0.015847742578866453,
+        "pairing_mse_reduction": 0.008917292111461084,
+        "pairing_rmse_reduction": 0.0061327285347113625,
+        "shuffled_mse_reduction": 0.014280074338330562,
+        "shuffled_rmse_reduction": 0.00971501404415509
+      },
+      "power": {
+        "aggregation_unit": "chronologically ordered packets; permutation replicas are averaged within packet",
+        "bootstrap_draws": 2000,
+        "ci95": [
+          0.003625407012411147,
+          0.01522203234970105
+        ],
+        "circular_block_length_packets": 8,
+        "effect_metric": "packet_mse_reduction",
+        "effective_packet_count": 584.9843954575819,
+        "estimate": 0.008917292111461094,
+        "interpretation": "positive means true pairing outperforms the estimator-matched shuffled control",
+        "normal_approx_mde_80_two_sided": 0.007605518401176513,
+        "packet_effect_sd": 0.06565859391495481
+      },
+      "seed": 202,
+      "setting": "sequence_regression",
+      "task_metrics": {
+        "K0": {
+          "count": 18716,
+          "mae": 0.5144703167324062,
+          "mse": 0.5473132585104675,
+          "rmse": 0.7398062303809475
+        },
+        "K1": {
+          "count": 18716,
+          "mae": 0.5019195078147428,
+          "mse": 0.5241158920606759,
+          "rmse": 0.723958487802081
+        },
+        "K4": {
+          "count": 18716,
+          "mae": 0.5044105859980111,
+          "mse": 0.533033184172137,
+          "rmse": 0.7300912163367924
+        }
+      }
+    },
+    {
+      "actuator": "stored_gradient_s1",
+      "distribution_alignment": {
+        "mean_assignment_changed_fraction": 0.7810328803022916,
+        "mean_fixed_point_fraction": 0.032230847757191615,
+        "mean_permutation_gradient_variance": 0.27759853601579604,
+        "mean_true_shuffled_gradient_cosine": 0.8333087952787602,
+        "mean_true_to_shuffled_gradient_distance": 1.0559050503041492,
+        "packets": 586,
+        "target_multiset_preserved_all_packets": true
+      },
+      "effects": {
+        "gross_mse_reduction": 0.017256822113005832,
+        "gross_rmse_reduction": 0.011756481807773667,
+        "pairing_mse_reduction": 0.006913058380141557,
+        "pairing_rmse_reduction": 0.004732275481458159,
+        "shuffled_mse_reduction": 0.010343763732864275,
+        "shuffled_rmse_reduction": 0.0070242063263155075
+      },
+      "power": {
+        "aggregation_unit": "chronologically ordered packets; permutation replicas are averaged within packet",
+        "bootstrap_draws": 2000,
+        "ci95": [
+          0.0027217927692919715,
+          0.01168718133227698
+        ],
+        "circular_block_length_packets": 8,
+        "effect_metric": "packet_mse_reduction",
+        "effective_packet_count": 584.9843954575819,
+        "estimate": 0.0069130583801415265,
+        "interpretation": "positive means true pairing outperforms the estimator-matched shuffled control",
+        "normal_approx_mde_80_two_sided": 0.006207297453176303,
+        "packet_effect_sd": 0.05358772424038701
+      },
+      "seed": 202,
+      "setting": "sequence_regression",
+      "task_metrics": {
+        "K0": {
+          "count": 18716,
+          "mae": 0.5144703167324062,
+          "mse": 0.5473132585104675,
+          "rmse": 0.7398062303809475
+        },
+        "K1": {
+          "count": 18716,
+          "mae": 0.5059416502121805,
+          "mse": 0.5300564363974617,
+          "rmse": 0.7280497485731738
+        },
+        "K4": {
+          "count": 18716,
+          "mae": 0.5082848203770751,
+          "mse": 0.5369694947776033,
+          "rmse": 0.732782024054632
+        }
+      }
+    },
+    {
+      "actuator": "replay_projected_s3",
+      "distribution_alignment": {
+        "mean_assignment_changed_fraction": 0.7851543454412482,
+        "mean_fixed_point_fraction": 0.03178137189176012,
+        "mean_permutation_gradient_variance": 0.2766282196532457,
+        "mean_true_shuffled_gradient_cosine": 0.8404784959373581,
+        "mean_true_to_shuffled_gradient_distance": 1.0078447101649188,
+        "packets": 586,
+        "target_multiset_preserved_all_packets": true
+      },
+      "effects": {
+        "gross_mse_reduction": 0.030172605063510716,
+        "gross_rmse_reduction": 0.02070741979561086,
+        "pairing_mse_reduction": 0.013124184462425581,
+        "pairing_rmse_reduction": 0.009079567389431276,
+        "shuffled_mse_reduction": 0.017048420601085135,
+        "shuffled_rmse_reduction": 0.011627852406179584
+      },
+      "power": {
+        "aggregation_unit": "chronologically ordered packets; permutation replicas are averaged within packet",
+        "bootstrap_draws": 2000,
+        "ci95": [
+          0.0066810300221472356,
+          0.019667322088556177
+        ],
+        "circular_block_length_packets": 8,
+        "effect_metric": "packet_mse_reduction",
+        "effective_packet_count": 584.9843954575819,
+        "estimate": 0.013124184462425545,
+        "interpretation": "positive means true pairing outperforms the estimator-matched shuffled control",
+        "normal_approx_mde_80_two_sided": 0.008258500839930466,
+        "packet_effect_sd": 0.07129580449262041
+      },
+      "seed": 203,
+      "setting": "sequence_regression",
+      "task_metrics": {
+        "K0": {
+          "count": 18716,
+          "mae": 0.5113218404793745,
+          "mse": 0.5459724008610269,
+          "rmse": 0.7388994524703797
+        },
+        "K1": {
+          "count": 18716,
+          "mae": 0.4957488687228484,
+          "mse": 0.5157997957975162,
+          "rmse": 0.7181920326747688
+        },
+        "K4": {
+          "count": 18716,
+          "mae": 0.5018802551943972,
+          "mse": 0.5289239802599418,
+          "rmse": 0.7272716000642001
+        }
+      }
+    },
+    {
+      "actuator": "stored_gradient_s1",
+      "distribution_alignment": {
+        "mean_assignment_changed_fraction": 0.7851543454412482,
+        "mean_fixed_point_fraction": 0.03178137189176012,
+        "mean_permutation_gradient_variance": 0.2766282196532457,
+        "mean_true_shuffled_gradient_cosine": 0.8404784959373581,
+        "mean_true_to_shuffled_gradient_distance": 1.0078447101649188,
+        "packets": 586,
+        "target_multiset_preserved_all_packets": true
+      },
+      "effects": {
+        "gross_mse_reduction": 0.017978054344921612,
+        "gross_rmse_reduction": 0.01226725767296688,
+        "pairing_mse_reduction": 0.007300372258366994,
+        "pairing_rmse_reduction": 0.0050061849876230635,
+        "shuffled_mse_reduction": 0.010677682086554618,
+        "shuffled_rmse_reduction": 0.007261072685343817
+      },
+      "power": {
+        "aggregation_unit": "chronologically ordered packets; permutation replicas are averaged within packet",
+        "bootstrap_draws": 2000,
+        "ci95": [
+          0.003493862522041777,
+          0.011552576494322965
+        ],
+        "circular_block_length_packets": 8,
+        "effect_metric": "packet_mse_reduction",
+        "effective_packet_count": 584.9843954575819,
+        "estimate": 0.007300372258366925,
+        "interpretation": "positive means true pairing outperforms the estimator-matched shuffled control",
+        "normal_approx_mde_80_two_sided": 0.005681648500716601,
+        "packet_effect_sd": 0.04904978622079928
+      },
+      "seed": 203,
+      "setting": "sequence_regression",
+      "task_metrics": {
+        "K0": {
+          "count": 18716,
+          "mae": 0.5113218404793745,
+          "mse": 0.5459724008610269,
+          "rmse": 0.7388994524703797
+        },
+        "K1": {
+          "count": 18716,
+          "mae": 0.5040877617610573,
+          "mse": 0.5279943465161053,
+          "rmse": 0.7266321947974128
+        },
+        "K4": {
+          "count": 18716,
+          "mae": 0.5075361665483977,
+          "mse": 0.5352947187744723,
+          "rmse": 0.7316383797850359
+        }
+      }
+    }
+  ]
+}

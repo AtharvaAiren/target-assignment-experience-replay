@@ -1,0 +1,142 @@
+{
+  "checks": [
+    {
+      "compared": [
+        "returned_loss",
+        "network_state",
+        "optimizer_state",
+        "buffer_state",
+        "python_numpy_torch_rng_state"
+      ],
+      "loss": 0.7299357056617737,
+      "method": "er",
+      "paired_integrity_records": 1,
+      "scenario": "replay",
+      "status": "EXACT_PASS"
+    },
+    {
+      "compared": [
+        "returned_loss",
+        "network_state",
+        "optimizer_state",
+        "buffer_state",
+        "python_numpy_torch_rng_state"
+      ],
+      "loss": 0.8119356632232666,
+      "method": "der",
+      "paired_integrity_records": 1,
+      "scenario": "dark_logits",
+      "status": "EXACT_PASS"
+    },
+    {
+      "compared": [
+        "returned_loss",
+        "network_state",
+        "optimizer_state",
+        "buffer_state",
+        "python_numpy_torch_rng_state"
+      ],
+      "loss": 0.6799356937408447,
+      "method": "agem",
+      "paired_integrity_records": 1,
+      "scenario": "nonprojecting",
+      "status": "EXACT_PASS"
+    },
+    {
+      "compared": [
+        "returned_loss",
+        "network_state",
+        "optimizer_state",
+        "buffer_state",
+        "python_numpy_torch_rng_state"
+      ],
+      "loss": 0.5299357175827026,
+      "method": "agem",
+      "paired_integrity_records": 1,
+      "scenario": "projecting",
+      "status": "EXACT_PASS"
+    },
+    {
+      "compared": [
+        "returned_loss",
+        "network_state",
+        "optimizer_state",
+        "buffer_state",
+        "python_numpy_torch_rng_state"
+      ],
+      "loss": 0.6799356937408447,
+      "method": "gem",
+      "paired_integrity_records": 1,
+      "scenario": "class_il_nonprojecting",
+      "status": "EXACT_PASS"
+    },
+    {
+      "compared": [
+        "returned_loss",
+        "network_state",
+        "optimizer_state",
+        "buffer_state",
+        "python_numpy_torch_rng_state"
+      ],
+      "loss": 0.5299357175827026,
+      "method": "gem",
+      "paired_integrity_records": 1,
+      "scenario": "class_il_projecting",
+      "status": "EXACT_PASS"
+    }
+  ],
+  "claim": "Under a deterministic CPU, exact-Mammoth-buffer step harness, the paired ER, DER, A-GEM, and class-IL GEM wrapper paths produce exactly the same loss, state update, buffer state, and RNG state as source loaded from the pinned upstream Git object.",
+  "intentional_deviations_not_equivalence_claims": [
+    {
+      "classification": "INTENDED_ALGORITHM_REPAIR",
+      "method": "MER",
+      "reason": "The wrapper preserves the requested replay minibatch under Mammoth's stream-batch-size override and normalizes the current-label shape.",
+      "scope": "all benchmarks"
+    },
+    {
+      "classification": "EXPLICIT_DOMAIN_IL_ADAPTATION",
+      "method": "GEM",
+      "reason": "The wrapper balances memory by observed domain because class-balanced filling cannot represent repeated labels 0--9 across domains.",
+      "scope": "Permuted-MNIST/domain-IL buffer maintenance"
+    },
+    {
+      "classification": "PRESPECIFIED_NEW_ADAPTATION",
+      "method": "PCGrad replay",
+      "reason": "There is no upstream Mammoth continual-learning method to match.",
+      "scope": "all benchmarks"
+    }
+  ],
+  "limitations": [
+    "The harness is CPU-only and uses a linear network with deterministic identity transforms.",
+    "It compares one optimization step and cannot prove equality for every model state or trajectory.",
+    "Class-IL GEM is checked with one stored task, including projecting and nonprojecting branches.",
+    "The audit intentionally does not validate MER or GEM's domain-IL buffer branch as upstream-equivalent."
+  ],
+  "locked_overlay_sha256": {
+    "mammoth_overlay/models/agem_pairing.py": "22abe5f3faa30cfd50d1e411507383e0948e62652169b126a7810eb67119c859",
+    "mammoth_overlay/models/der_pairing.py": "26cf89d1be4286fb830bb4396e44566b5a4e7f76d41b052227610d80aaacc0eb",
+    "mammoth_overlay/models/er_pairing.py": "f3efce1004e9eb8ac2bf8dba395982d08be1f99a991134ac63497780e941c5c8",
+    "mammoth_overlay/models/gem_pairing.py": "46ec91dfc7630125dcc7701696db5839cdd71d7995e15d0762ba37c3a6ce4794",
+    "mammoth_overlay/models/mer_pairing.py": "78200ad574b3e054ba8f9f9d8a19d25ce0c3e1e0a71530bc6161a44ae42b547d",
+    "mammoth_overlay/models/utils/pairing_intervention.py": "3a1323d9dcac5616d346a7d1cd875469c734476931abb76b2549f8fc0458a1e7"
+  },
+  "pinned_mammoth_commit": "e75a491c69fd729edeb01431afb753d9157d9a81",
+  "runtime": {
+    "deterministic_algorithms": true,
+    "device": "cpu",
+    "numpy": "2.5.1",
+    "python": "3.12.3",
+    "torch": "2.13.0+cu130"
+  },
+  "schema_version": "gradient_reuse.paired_upstream_equivalence.v1",
+  "scientific_result": false,
+  "scope": "One replay-bearing optimization step per simple branch; this authenticates the intervention plumbing and update equations, not full-dataset trajectory identity or performance.",
+  "status": "PASS",
+  "upstream_git_object_sha256": {
+    "models/agem.py": "03945dad7138711764d8edff9224e34591b20e805894febdb427f5c2cdd4e6af",
+    "models/der.py": "967b298b7ae03cdd270618f9366ad3a69edf7deaaaae49d7ea443b6a6111fdcd",
+    "models/er.py": "181c33a93c29da560dc229d28b7cb066b1b5ba1b5ea52cb32d31ddc76da99b0f",
+    "models/gem.py": "7b057aa2a6be66a5674517a326633da08358b858a3763f1bdda97b3501c8f262",
+    "utils/buffer.py": "0a240bf1e46e11adc0175207c3139460a1800d38fd647a506be2804ae60a79da"
+  }
+}

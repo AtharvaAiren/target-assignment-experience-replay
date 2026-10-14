@@ -1,0 +1,12 @@
+{
+  "all_unit_integrity": true,
+  "corrected_synthetic_pass": true,
+  "interpretation": "Any prior-gradient gain is explained by a simpler correction or fails confirmation; this is boundary evidence, not a method claim.",
+  "metro_negative_control_noninferior": true,
+  "ot_engineered_positive_control_pass": true,
+  "primary_target_specific_beijing_dev_and_confirmation": false,
+  "schema_version": "fmmt.workshop.combined.v1",
+  "scientific_verdict": "WORKSHOP_BOUNDARY_EVIDENCE_COMPLETE",
+  "smoke": false,
+  "verdict": "WORKSHOP_BOUNDARY_EVIDENCE_COMPLETE"
+}

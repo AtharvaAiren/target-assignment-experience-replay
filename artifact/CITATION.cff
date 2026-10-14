@@ -1,0 +1,9 @@
+cff-version: 1.2.0
+message: "Please cite the accompanying anonymous manuscript."
+title: "How Target Assignment Shapes Experience Replay: Experimental Artifact"
+type: software
+version: 1.1.0
+date-released: 2026-10-13
+authors:
+  - name: "Anonymous Authors"
+license: LicenseRef-Review-Only

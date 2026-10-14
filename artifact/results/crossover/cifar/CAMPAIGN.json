@@ -1,0 +1,30 @@
+{
+  "campaign": "cifar",
+  "data_bundle_sha256": "f92cb3c229f210d363ec7dbf8a8fda8e49b758fbff2819b05882017a49c347fa",
+  "data_manifest_sha256": "5b2002ce8ea99481db0a6126090fe13797d456ad7a99a068e461c5d73177b23e",
+  "environment_bundle_sha256": "6edd44c0dd3ae0757ad93fe136433342ef52527f2bc2b23be1416f73064d53c6",
+  "environment_manifest_sha256": "8ec0986abbb0e345350a9c2d0f1fe644f3e6cc7dfc054bc5ac7724407dc363e0",
+  "expected_units": 336,
+  "historical_anchors": {
+    "aggregate": {
+      "path": "results/assignment_strength/aggregate.json",
+      "sha256": "da00d91c03a1954eaa10b53e34815f92b937cf66e9874d3e49c6e9b2f71ce4f8"
+    },
+    "done": {
+      "path": "results/assignment_strength/done.json",
+      "sha256": "cb6ae04d1575580f2f983fa2fad97d65f3fbb0447854871537c3e6062c7931a0"
+    },
+    "parent_lock": {
+      "path": "configs/assignment_strength_sweep.json",
+      "sha256": "f8227a9f2248bd96bd88ddcf340acf7ae2514185cdbf80117e7ceebf596e808d"
+    }
+  },
+  "lock_sha256": "f134be622383afa8015c80295b1ede10febd7420e3580fb3b3f7c1b774e52cc1",
+  "mammoth_commit": "e75a491c69fd729edeb01431afb753d9157d9a81",
+  "python_sha256": "e50d468e8b0adfb05733f5b87b3cff34829c4a8c1aea50c865aa8bdfe4bb150f",
+  "schema_version": "gradient_reuse.crossover_campaign_binding.v1",
+  "source_bundle_sha256": "b39f1df91d3209b9f04eb2c2ef194ad58242d90b4c4337c39deb785dfbabdd53",
+  "source_manifest_sha256": "04f53c3bef89e486c1877ad02cd251563e4835727785de6a825b9a2ac19403dd",
+  "status": "LOCKED",
+  "unit_ids_sha256": "4751b483b931764528538eefa2094a3e05d3c8cb20d8a42ecbb8a5e0bb82d3dd"
+}

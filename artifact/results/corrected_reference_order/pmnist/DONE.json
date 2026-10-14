@@ -1,0 +1,9 @@
+{
+  "aggregate_sha256": "7d7cae877fc12e3b072b8c8a30ca0d3762947bf2f9ccea46dd09b99b5f575def",
+  "campaign": "pmnist",
+  "completed_units": 228,
+  "required_units": 228,
+  "schema_version": "gradient_reuse.corrected_reference_order_queue_done.v1",
+  "status": "PASS",
+  "unit_ids_sha256": "67e43b2b250faae0a2f43fc22a71744223c7afdaa3e4c4e599eac26826336fc6"
+}

@@ -1,0 +1,150 @@
+{
+  "schema_version": "gradient_reuse.primary_seed_completion_lock.v1",
+  "status": "POST_HOC_EXECUTION_PLAN_LOCKED_BEFORE_NEW_IMAGE_OUTCOMES",
+  "scientific_role": {
+    "frozen_primary_analysis": "The completed three-seed RTX analysis remains the prespecified primary analysis and is never overwritten.",
+    "held_out_replication": "Seeds 3404 and 3405 are reported separately as a two-seed directional replication with descriptive estimates only.",
+    "pooled_analysis": "The five-seed analysis is a post-hoc completion of the seed set specified in the original pre-outcome mechanisms lock; it is not relabeled as prespecified or confirmatory.",
+    "permutation_replicas": "The four target permutations remain nested Monte Carlo draws within each run seed and are never counted as independent replicates."
+  },
+  "original_protocol": {
+    "lock_relative_path": "configs/mechanisms.json",
+    "lock_sha256": "be5247f6f94ba5835be7b87377fda106487306b2215ba30e3955377b4a402012",
+    "upstream_commit": "e75a491c69fd729edeb01431afb753d9157d9a81",
+    "original_seed_set": [
+      3401,
+      3402,
+      3403,
+      3404,
+      3405
+    ],
+    "frozen_primary_seeds": [
+      3401,
+      3402,
+      3403
+    ],
+    "completion_seeds": [
+      3404,
+      3405
+    ],
+    "permutation_replicas": [
+      0,
+      1,
+      2,
+      3
+    ]
+  },
+  "new_execution": {
+    "experiment_id": "E9_image_seed_extension",
+    "benchmarks": [
+      "split_cifar100",
+      "split_miniimagenet"
+    ],
+    "assignment_only_methods": [
+      "experience_replay",
+      "gem",
+      "agem",
+      "mer",
+      "pcgrad_replay"
+    ],
+    "reference_methods": [
+      "naive_sgd",
+      "mer_current_only"
+    ],
+    "intervention_arms": [
+      "paired",
+      "permuted"
+    ],
+    "expected_units_per_benchmark_seed": 27,
+    "expected_new_units": 108,
+    "maximum_concurrent_gpu_processes": 2,
+    "gpu_device": "cuda:0",
+    "initial_exclusive_free_gpu_memory_mib": 28000,
+    "minimum_free_gpu_memory_mib_per_unit_launch": 14000,
+    "minimum_free_disk_gib_before_launch": 100
+  },
+  "reused_evidence": {
+    "parent_three_seed_summary": {
+      "relative_role": "campaign/mechanisms/aggregate/SUMMARY.json",
+      "sha256": "06015597a934d8dba380b8e2e5b278eaf220c96e7c4288444cc0145bd84b7e86"
+    },
+    "parent_three_seed_secondary_endpoints": {
+      "relative_role": "secondary/E2_EXISTING_RUN_REANALYSIS.json",
+      "sha256": "14d6cc2b32422b993986e86d37a1068d77b26b53cd4ee0a19efaa1e2946e5f4b"
+    },
+    "pmnist_seed_extension": {
+      "experiment_id": "E5_pmnist_seed_extension",
+      "expected_units": 54,
+      "unit_and_done_file_count": 108,
+      "unit_and_done_inventory_sha256": "d0b5b77defe49badff91db0861ee04cef642634c4a52ec013ce39e61cacc1c6e"
+    }
+  },
+  "operational_correction": {
+    "trigger": "The zero-outcome v1 attempt showed that a fresh pinned Mammoth checkout already owns NOTICE.md, while the uncorrected overlay installer attempted to include the source provenance notice at the same path.",
+    "classification": "PRE_OUTCOME_NOTICE_ONLY_OVERLAY_IDENTITY_REACTIVATION",
+    "failed_attempt_completed_units": 0,
+    "scientific_change": false,
+    "source_notice_sha256": "7542217e3a918e154a968daa618ffeca51e0a8a28389b6686d0639a6f00dd651",
+    "installed_upstream_notice_sha256": "101bfbf3f1b22d4f7741d962b0b8e731dc162571be4f7ab964ad85844bae4965",
+    "runtime_overlay_file_count": 19,
+    "runtime_overlay_bundle_sha256": "15586d828e1388653328c4e1a971ff3e5839411da7c1cbca3a9b59a82dfbf8d6",
+    "parent_identity_match": "Exact overlay identity used by all authenticated completed parent mechanism units."
+  },
+  "mammoth_cli_identity_correction": {
+    "trigger": "The v2 attempt exposed pinned Mammoth's deterministic underscore-to-hyphen parser normalization when the first pairing model was constructed; four reference-only units had completed and no pairing-model outcome had been produced.",
+    "classification": "PRE_PAIRING_OUTCOME_MODEL_IDENTIFIER_REPRESENTATION_BRIDGE",
+    "failed_attempt_completed_reference_units": 4,
+    "failed_attempt_completed_pairing_units": 0,
+    "scientific_change": false,
+    "accepted_cli_spellings": "Each adapter accepts only its exact canonical underscore name or the exact hyphenated spelling produced by pinned Mammoth.",
+    "construction_scope": "The model identifier is canonicalized only while the authenticated overlay class is constructed, then the original parser value is restored.",
+    "argument_scope": "All locked scientific Mammoth arguments are otherwise preserved byte-for-byte; explicit replay minibatch values are retained across Mammoth dataset extension.",
+    "reexecution_policy": "A fresh v3 namespace reruns all 108 image units so every new outcome shares one source identity; the four valid v2 reference outcomes remain preserved but are not mixed into v3."
+  },
+  "analysis": {
+    "benchmarks": [
+      "permuted_mnist",
+      "split_cifar100",
+      "split_miniimagenet"
+    ],
+    "methods": [
+      "experience_replay",
+      "gem",
+      "agem",
+      "mer",
+      "pcgrad_replay"
+    ],
+    "primary_endpoint": "class_or_domain_il_final_average_accuracy",
+    "secondary_endpoint": "task_or_domain_il_final_average_accuracy",
+    "cells_per_endpoint": 15,
+    "seed_rows_per_endpoint": 75,
+    "independent_seeds": 5,
+    "degrees_of_freedom": 4,
+    "two_sided_t_critical_95": 2.7764451051977987,
+    "identity_tolerance": 1e-10,
+    "holm_families": [
+      "primary_endpoint_V_total_15_cells",
+      "primary_endpoint_V_perm_15_cells",
+      "primary_endpoint_V_pair_15_cells",
+      "secondary_endpoint_V_total_15_cells",
+      "secondary_endpoint_V_perm_15_cells",
+      "secondary_endpoint_V_pair_15_cells"
+    ],
+    "nested_variance_rule": "For each contrast, SE = sqrt(max(sample_variance_across_seed_estimands, mean_nested_permutation_mean_variance) / 5)."
+  },
+  "outcome_independent_gates": [
+    "original_lock_authenticates",
+    "exact_108_new_unit_coverage",
+    "all_new_unit_artifact_inventories_authenticate",
+    "exact_54_e5_unit_coverage",
+    "all_e5_artifact_inventories_authenticate",
+    "parent_summary_and_secondary_endpoint_hashes_authenticate",
+    "exact_parent_19_file_runtime_overlay_identity",
+    "exact_pinned_mammoth_cli_identity_bridge",
+    "exact_75_seed_rows_per_endpoint",
+    "four_nested_permutations_per_method_seed",
+    "V_total_equals_V_perm_plus_V_pair_within_1e-10",
+    "six_separate_endpoint_by_estimand_15_cell_Holm_families",
+    "no_outcome_dependent_pass_gate"
+  ]
+}

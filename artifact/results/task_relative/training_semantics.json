@@ -1,0 +1,112 @@
+{
+  "conclusion": {
+    "across_task_targets_dropped": false,
+    "current_and_used_replay_labels_enter_one_loss": true,
+    "evaluation_task_mask_is_training_loss_mask": false,
+    "loss_receives_full_network_logits": true,
+    "training_logit_mask_applied": false
+  },
+  "loss_path": {
+    "logit_path": "the full network output is passed directly to the configured loss",
+    "mask_between_target_assembly_and_loss": false,
+    "observe_first_line": 39,
+    "source_sha256": "34fd20e6372befcc755955e8c0d3cab9f571ad1919a9f122348d8dc9cf4f7cb2",
+    "target_path": "used across-task replay labels are concatenated with current labels",
+    "verified_operations": [
+      "used_replay_labels = self.task_structure.apply(replay_labels, plan)",
+      "inputs = torch.cat((inputs, replay_inputs))",
+      "labels = torch.cat((current_labels, used_replay_labels))",
+      "outputs = self.net(inputs)",
+      "loss = self.loss(outputs, labels)",
+      "loss.backward()",
+      "self.opt.step()"
+    ]
+  },
+  "parent_aggregate_sha256": "2166d1e5104dd75ed21d88ef79c3bdd4420e6648f74afe1f7720c7e556c061b9",
+  "parent_done_sha256": "0bb400c9c0ed3b78abf9b32dd3741054d1cc18aa65e754761f177d594f3e5182",
+  "runtime_evidence": {
+    "across_task_units": 12,
+    "changed_rows": 375868,
+    "eligible_exposures": 17064,
+    "per_seed": [
+      {
+        "changed_rows": 31576,
+        "eligible_exposures": 1422,
+        "seed": 3501,
+        "selected_rows": 31576
+      },
+      {
+        "changed_rows": 31352,
+        "eligible_exposures": 1422,
+        "seed": 3502,
+        "selected_rows": 31352
+      },
+      {
+        "changed_rows": 31176,
+        "eligible_exposures": 1422,
+        "seed": 3503,
+        "selected_rows": 31176
+      },
+      {
+        "changed_rows": 31264,
+        "eligible_exposures": 1422,
+        "seed": 3504,
+        "selected_rows": 31264
+      },
+      {
+        "changed_rows": 31356,
+        "eligible_exposures": 1422,
+        "seed": 3505,
+        "selected_rows": 31356
+      },
+      {
+        "changed_rows": 31216,
+        "eligible_exposures": 1422,
+        "seed": 3506,
+        "selected_rows": 31216
+      },
+      {
+        "changed_rows": 31596,
+        "eligible_exposures": 1422,
+        "seed": 3507,
+        "selected_rows": 31596
+      },
+      {
+        "changed_rows": 31344,
+        "eligible_exposures": 1422,
+        "seed": 3508,
+        "selected_rows": 31344
+      },
+      {
+        "changed_rows": 31244,
+        "eligible_exposures": 1422,
+        "seed": 3509,
+        "selected_rows": 31244
+      },
+      {
+        "changed_rows": 31032,
+        "eligible_exposures": 1422,
+        "seed": 3510,
+        "selected_rows": 31032
+      },
+      {
+        "changed_rows": 31284,
+        "eligible_exposures": 1422,
+        "seed": 3511,
+        "selected_rows": 31284
+      },
+      {
+        "changed_rows": 31428,
+        "eligible_exposures": 1422,
+        "seed": 3512,
+        "selected_rows": 31428
+      }
+    ],
+    "selected_equals_changed": true,
+    "selected_rows": 375868
+  },
+  "schema_version": "gradient_reuse.task_relative_training_semantics.v1",
+  "scientific_result": false,
+  "source_manifest_sha256": "64ddc79838d0f1ac051dd09aac6421ebc6ba0f2c3f25f3f3b6cd65930fc94b5c",
+  "status": "PASS"
+}

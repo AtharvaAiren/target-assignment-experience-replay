@@ -1,0 +1,119 @@
+{
+  "schema_version": "gradient_reuse.task_structure_equal_severity_lock.v1",
+  "status": "OPTIONAL_OUTCOME_INFORMED_FOLLOWUP_LOCKED_BEFORE_TASK_STRUCTURE_OUTCOMES",
+  "scientific_question": "At exactly matched target-reassignment severity, using identical collections of disjoint four-row swap atoms, does crossing historical Split CIFAR-100 task boundaries change the path-level value of ER relative to swaps confined within tasks?",
+  "interpretation": {
+    "analysis_role": "optional outcome-informed but prospectively locked fresh-seed mechanism stress test",
+    "benchmark_and_method_selection_informed_by_prior_results": true,
+    "current_stream_targets_always_correct": true,
+    "probe_training_targets_always_correct": true,
+    "within_and_across_arms_use_the_same_selected_replay_rows": true,
+    "each_selected_quadruple_has_two_different-class_rows_from_each_of_two_distinct_historical_tasks": true,
+    "all_four_selected_target_values_change_in_both_swap_arms": true,
+    "target_multiset_is_preserved_exactly_per_replay_batch": true,
+    "unselected_replay_rows_are_unchanged": true,
+    "selection_tie_breaking_uses_only_counter_key_rng_and_prespecified_task_class_eligibility": true,
+    "selection_never_uses_model_predictions_losses_gradients_or_scientific_outcomes": true,
+    "path_level_arms_diverge_after_the_first_eligible_update": true,
+    "common_state_probe_diagnostics_are_descriptive": true,
+    "forced_swaps_are_not_uniform_group_permutations": true,
+    "grouped_covariance_expectation_identity_is_not_applied_to_forced_swap_realizations": true,
+    "no_causal_mechanism_decomposition_claim": true
+  },
+  "upstream": {
+    "name": "Mammoth",
+    "repository": "https://github.com/aimagelab/mammoth.git",
+    "commit": "e75a491c69fd729edeb01431afb753d9157d9a81",
+    "license_sha256": "309ca56cfbbe29aa036d1c53f8f05d5ee0a1dd78dcc37f53f94e840b22b60275",
+    "task_mapping_evidence": {
+      "datasets/seq_cifar100.py": "53c012c88ee8e7ee1dad5b175fd92a1b3fe94074c240fe1adb5251267150664d",
+      "datasets/configs/seq-cifar100/20tasks.yaml": "813579db24a14c32787c1f2139cc09d264ff6523d2d540f90fe45c1513243a8e",
+      "datasets/utils/continual_dataset.py": "65a12ec2c0c75428eb70e4dc6afb7b32a3a10eb9b3aacdc59328b9c034188975",
+      "utils/buffer.py": "0a240bf1e46e11adc0175207c3139460a1800d38fd647a506be2804ae60a79da"
+    },
+    "effective_task_mapping": "With dataset_config=20tasks and class permutation disabled, internal task t contains unchanged global labels [5t,5t+5), hence task_id=label//5. Explicit task_labels derived once at buffer admission are used by the intervention."
+  },
+  "runtime": {
+    "device": "cuda:0",
+    "run_seeds": [3501, 3502, 3503, 3504, 3505, 3506, 3507, 3508, 3509, 3510, 3511, 3512],
+    "arms": ["within_task", "across_task", "paired_probe"],
+    "counter_seed_offset": 200003,
+    "selection_seed_salt": 3284386755,
+    "gradient_audit_interval": 100,
+    "num_workers": 4,
+    "numerical_threads": 1,
+    "deterministic_algorithms": true,
+    "maximum_concurrent_gpu_processes": 2,
+    "minimum_free_gpu_memory_mib_before_first_launch": 28000,
+    "minimum_free_gpu_memory_mib_per_additional_launch": 14000,
+    "minimum_free_disk_gib": 80
+  },
+  "benchmark": {
+    "name": "split_cifar100",
+    "mammoth_dataset": "seq-cifar100",
+    "dataset_config": "20tasks",
+    "setting": "class-il",
+    "followup_primary_setting": "task-il",
+    "mandatory_secondary_settings": ["class-il"],
+    "backbone": "resnet18",
+    "tasks": 20,
+    "classes_per_task": 5,
+    "class_permutation": false,
+    "custom_class_order": null,
+    "custom_task_order": null,
+    "noise_rate": 0.0,
+    "batch_size": 32,
+    "epochs": 1,
+    "learning_rate": 0.03
+  },
+  "method": {
+    "name": "experience_replay",
+    "mammoth_model": "er_task_structure_swap",
+    "buffer_size": 500,
+    "minibatch_size": 32
+  },
+  "intervention": {
+    "unit": "one replay batch",
+    "historical_definition": "stored replay row with explicit task_id strictly smaller than the current minibatch task_id",
+    "quadruple": "two rows with unequal labels from each of two unequal historical task IDs",
+    "selection": "counter-keyed random tie priorities; greedily form a maximum number of disjoint unequal-label pairs within each task, then greedily match pair pools from different tasks to the maximum feasible number of disjoint quadruples",
+    "within_task_swap": "exchange the two target sources inside each of the two task pairs",
+    "across_task_swap": "exchange the two task-pair target blocks, with a counter-keyed orientation bit",
+    "paired_probe": "train on unchanged replay targets and, every 100 observations when eligible, compute unnormalized full-replay CE gradients for true, within-task, and across-task target views from one common parameter state",
+    "ineligible_batches_are_logged": true,
+    "all_replay_exposures_are_logged": true
+  },
+  "inference": {
+    "independent_unit": "run_seed",
+    "primary_estimand": "across_task minus within_task final task-IL average accuracy in percentage points",
+    "primary_interval": "two-sided Student-t 95 percent paired interval over 12 seed differences",
+    "primary_test": "two-sided paired Student-t test at alpha 0.05",
+    "mandatory_secondary_estimand": "across_task minus within_task final class-IL average accuracy",
+    "secondary_outputs": [
+      "task-IL and class-IL accuracy matrices and trajectories",
+      "average incremental accuracy and backward transfer",
+      "eligible and ineligible replay exposure counts",
+      "selected quadruple and changed-row exposure",
+      "paired sampled-batch and selected-plan fingerprints",
+      "descriptive common-state gradient norms, distances, dot products, and cosines"
+    ],
+    "no_optional_stopping": true,
+    "all_planned_units_required": true,
+    "all_arms_seeds_and_endpoints_reported": true
+  },
+  "queue_prerequisites": {
+    "assignment_strength_done": "results/assignment_strength/done.json",
+    "mean_matched_done": "results/mean_matched/done.json",
+    "policy": "launch wait-controller immediately, but start no GPU process until both declared DONE sentinels authenticate as PASS"
+  },
+  "execution": {
+    "full_training_units": 24,
+    "paired_probe_units": 12,
+    "expected_units": 36,
+    "completed_units_immutable": true,
+    "failed_attempts_preserved": true,
+    "monitoring_must_not_print_scientific_outcomes": true,
+    "deterministic_export": true,
+    "correction_after_readable_outcome_requires_new_versioned_sensitivity_run": true
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "files": {
+    "configs/scalar.json": "4d9390bf90ebec310ffdb8cccb3a1e481c9215236cf453976799b22f820b0d2e",
+    "docs/scalar_protocol.md": "fd9e91746ffcbce9590cd6bc060372d252de5902c392e1c4d324fc0960b1ea23",
+    "experiments/fmmt/__init__.py": "5e096849fbeb890b0f1aa7b72104e36211683a4c4ff8c40707de14c42b237211",
+    "experiments/fmmt/common.py": "af44b0ab370136501922cec0bbbff9077d200f423511a277fe9c7a8aa34be3fc",
+    "experiments/fmmt/study_a.py": "93a00af23bde7d69ea7885519aac86b09485130e3b4a0f14e973e24b9e429ff0",
+    "experiments/fmmt_workshop/__init__.py": "b09bc6db2e562482006785e5d15a69ca480d5642de892912b591ec086b530534",
+    "experiments/fmmt_workshop/datasets.py": "1d215b8964131df1df4ca27a1fd4cfb2de335c68d3bddc6e025834606557b2a0",
+    "experiments/fmmt_workshop/ot_positive.py": "d564f501a9af9e1c8172d5c730fbafbfd380e39e4be44584b9b5aee810afab7c",
+    "experiments/fmmt_workshop/run.py": "dbc9209bf913a5040973522522cdd438193018298e1667363f202a82f249cff9",
+    "experiments/fmmt_workshop/specificity.py": "b3be3d4b972c02124687c68d3a37d6616bad9117b919f09c5d57cb68516285b0",
+    "experiments/fmmt_workshop/synthetic_control.py": "f33b8a7085a16523dd734ecddd9b21453806007d869e86501ff005c344418838",
+    "experiments/validation/stage4_regression.py": "6a236dc735027fd38b6bb0e75d703840937c196e73dbcc5fb766431842a5d584",
+    "src/chartfilm/fmmt/__init__.py": "2fe482193e8edf8af620fc141d9b72d00a6da8a3a08bb9241967314cd0880671",
+    "src/chartfilm/fmmt/core.py": "58d86b10e8cd39c9c0ae0d86e7551ee4a00f4bc6b5d3165cfef9789538dfee51",
+    "tests/test_fmmt_core.py": "8ac265d11f05b4f5655676613b000b396fc24ea0dc743be3c7e5f74380c92f14",
+    "tests/test_fmmt_stats.py": "c4c0f1e2c39d6b00546097a4eb2bd373244aaa85dcee5e9654459d7069b7df60",
+    "tests/test_fmmt_workshop.py": "3cd4aa0b9039235fabfa47d12046e6cc6cd7e08fc9215db2e2a524cb3558bfea"
+  },
+  "lock_sha256": "4d9390bf90ebec310ffdb8cccb3a1e481c9215236cf453976799b22f820b0d2e",
+  "schema_version": "fmmt.workshop.source_freeze.v1",
+  "source_bundle_sha256": "b643290ab50cb8a9800ffa064f80f2cfd2d92354a8eed0baea7ca5ac0a4f6c0b",
+  "status": "PUBLIC_ARTIFACT_SOURCE_CLOSURE"
+}

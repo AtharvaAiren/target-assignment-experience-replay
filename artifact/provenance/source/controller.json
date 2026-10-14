@@ -1,0 +1,46 @@
+{
+  "configuration_path": "configs/controller.json",
+  "configuration_sha256": "8717972e642cead3ae3b75e90507c988948aeb708330362dbed3355b4d7794eb",
+  "experiment": "controller",
+  "files": [
+    {
+      "path": "configs/controller.json",
+      "sha256": "8717972e642cead3ae3b75e90507c988948aeb708330362dbed3355b4d7794eb"
+    },
+    {
+      "path": "experiments/__init__.py",
+      "sha256": "a7a75debd0bf3e0c0fc1b388605323013217ffda0c0fb840d980d7c0dfd96cdd"
+    },
+    {
+      "path": "experiments/gradient_reuse_controller/__init__.py",
+      "sha256": "de22b867e1b2d1e1cc0a927bc6a24eec6017646f45fd0b708129668f91a16295"
+    },
+    {
+      "path": "experiments/gradient_reuse_controller/core.py",
+      "sha256": "31f8ce5757ee6ff85d8db4734ac0980edc3fb5b7eaac96e5c7f4f2470a7e30a5"
+    },
+    {
+      "path": "experiments/gradient_reuse_controller/provenance.py",
+      "sha256": "f521f2c9c3604a198a69a1ce2311d0a9a332943347e571b0252c92233aaf0f97"
+    },
+    {
+      "path": "experiments/gradient_reuse_controller/run.py",
+      "sha256": "24ede829b10231c52820f9ea34ca26dd1ba889fc7b4feb1e30376bf9888d367a"
+    },
+    {
+      "path": "experiments/source_provenance.py",
+      "sha256": "55eb9a323948f9d1525356da300079830a36fe702e22040e00fef6d6d626d5b3"
+    },
+    {
+      "path": "scripts/build_iclr_source_manifests.py",
+      "sha256": "4bebdb2b6adccc9ae239fc41d07649ff57b1aeb073097a258d11f13480f2899a"
+    },
+    {
+      "path": "tests/test_gradient_reuse_controller.py",
+      "sha256": "cd8da618b18184492dbbe43203c00fb501cbaea6658f46d7826fc3ae93d9bd75"
+    }
+  ],
+  "schema_version": "gradient_reuse.iclr_source_manifest.v1",
+  "source_bundle_sha256": "465e325e7e5660853512fcc14ded4362cbfaabe7e709c0162f8b035966e9cd32",
+  "status": "LOCKED_BEFORE_SCIENTIFIC_RUN"
+}

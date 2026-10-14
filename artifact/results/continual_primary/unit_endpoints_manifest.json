@@ -1,0 +1,22 @@
+{
+  "data_file": "results/continual_primary/unit_endpoints.jsonl",
+  "data_sha256": "18bd067cf5761ca838f468bb1d77902f3239c162bb2686fa1f1c21a07cde75dd",
+  "execution_unit_artifact_bundle_sha256": "180d62e6785bdf9791aae23f349be3bd3d20cc235e45c8205f53ed39d10e995f",
+  "interpretation_limit": "This table preserves legacy Permuted-MNIST reference-arm endpoints, but V_total, V_perm, buffer-size reference contrasts, and direct cross-method reference rankings are historical descriptive outputs because independently launched replay and no-replay arms were not guaranteed to share later task permutations.",
+  "reconstructs": {
+    "diagnostic_seed_rows": 54,
+    "diagnostic_summaries": 18,
+    "method_summaries": 18,
+    "reported_primary_rows": 18,
+    "seed_rows": 54
+  },
+  "residual_gap": "Full execution-time UNIT.json, DONE.json, training traces, and artifact bundles are not shipped; their recorded hashes cannot be recomputed from this compact release.",
+  "row_count": 288,
+  "schema_version": "gradient_reuse.continual_primary_endpoint_manifest.v1",
+  "scientific_scope": "lossless_projection_of_frozen_scalar_aggregate_only",
+  "source_files": {
+    "results/continual_primary/run_manifest.json": "5afbc6dc267ad2c95fb0399ac849b9cd01ac86f22c3eb05dba522abbfe32e6b5",
+    "results/mechanisms/SUMMARY.json": "06015597a934d8dba380b8e2e5b278eaf220c96e7c4288444cc0145bd84b7e86"
+  },
+  "status": "PASS"
+}

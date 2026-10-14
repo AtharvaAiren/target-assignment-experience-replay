@@ -1,0 +1,8 @@
+{
+  "binding_sha256": "6750b0bdffd0c3a30dc113527e62a390ed04f19b2e02f409c59ff7f5e4c115db",
+  "completed_units": 60,
+  "result": "artifact://local/FINITE_HORIZON_BEIJING_RESULTS.json",
+  "result_sha256": "6a63d260dfffbaa2536d4fc06b7d354d93c314ea9ab01cff732cecf527799120",
+  "schema_version": "gradient_reuse.finite_horizon_beijing_done.v3",
+  "status": "PASS"
+}

@@ -1,0 +1,157 @@
+{
+  "schema_version": "gradient_reuse.explanatory_followup_lock.v1",
+  "status": "OUTCOME_INFORMED_FOLLOWUP_LOCKED_BEFORE_EXPLANATORY_FOLLOWUP_OUTCOMES",
+  "scientific_question": "Does assignment structure matter when historical domains share one output space, and does replay performance vary as assignment variance is reduced at fixed conditional-mean supervision?",
+  "interpretation": {
+    "analysis_role": "outcome-informed but prospectively locked explanatory follow-up",
+    "prior_results_used_for_design": true,
+    "new_outcomes_read_during_freeze": false,
+    "current_stream_targets_always_correct": true,
+    "path_level_arms_diverge_after_the_first_intervened_update": true,
+    "shared_output_structure_primary": "Permuted-MNIST domain-IL across-domain minus within-domain final accuracy",
+    "variance_ladder_primary": "Within each benchmark, final accuracy across K=1,4,16,infinity at nominal lambda 0.75",
+    "nominal_lambda_075_was_selected_after_inspecting_the_parent_strength_and_mean_target_results": true,
+    "no_causal_mechanism_decomposition_claim": true,
+    "neural_accuracy_monotonicity_not_assumed": true
+  },
+  "upstream": {
+    "name": "Mammoth",
+    "repository": "https://github.com/aimagelab/mammoth.git",
+    "commit": "e75a491c69fd729edeb01431afb753d9157d9a81",
+    "license_sha256": "309ca56cfbbe29aa036d1c53f8f05d5ee0a1dd78dcc37f53f94e840b22b60275"
+  },
+  "runtime": {
+    "device": "cuda:0",
+    "shared_output_run_seeds": [3601, 3602, 3603, 3604, 3605, 3606],
+    "variance_ladder_run_seeds": [3701, 3702, 3703, 3704, 3705, 3706],
+    "counter_seed_offset": 300003,
+    "selection_seed_salt": 3919349337,
+    "variance_seed_offset": 400003,
+    "variance_support_seed_salt": 2654435761,
+    "variance_permutation_seed_salt": 2246822519,
+    "audit_interval": 500,
+    "scipy_version": "1.18.0",
+    "num_workers": 4,
+    "numerical_threads": 1,
+    "deterministic_algorithms": true,
+    "maximum_concurrent_gpu_processes": 2,
+    "minimum_free_gpu_memory_mib_before_first_launch": 28000,
+    "minimum_free_gpu_memory_mib_per_additional_launch": 14000,
+    "minimum_free_disk_gib": 80
+  },
+  "benchmarks": {
+    "split_cifar100": {
+      "mammoth_dataset": "seq-cifar100",
+      "setting": "class-il",
+      "followup_primary_setting": "task-il",
+      "mandatory_secondary_settings": ["class-il"],
+      "dataset_config": "20tasks",
+      "backbone": "resnet18",
+      "tasks": 20,
+      "classes": 100,
+      "batch_size": 32,
+      "epochs": 1,
+      "learning_rate": 0.03
+    },
+    "permuted_mnist": {
+      "mammoth_dataset": "perm-mnist",
+      "setting": "domain-il",
+      "followup_primary_setting": "domain-il",
+      "mandatory_secondary_settings": [],
+      "dataset_config": null,
+      "backbone": "mnistmlp",
+      "tasks": 20,
+      "classes": 10,
+      "batch_size": 128,
+      "epochs": 1,
+      "learning_rate": 0.1
+    }
+  },
+  "shared_output_structure": {
+    "benchmark": "permuted_mnist",
+    "arms": ["no_replay", "paired", "within_domain", "across_domain"],
+    "method": "experience_replay",
+    "mammoth_model": "er_shared_output_structure",
+    "reference_model": "er_shared_output_structure",
+    "reference_implementation": "the same audited wrapper with replay storage and replay loss disabled",
+    "buffer_size": 500,
+    "minibatch_size": 32,
+    "intervention": {
+      "historical_definition": "a buffered row whose stored domain ID is smaller than the current domain ID",
+      "atom": "four replay rows: two rows from each of two distinct historical domains, with four distinct target values",
+      "selection": "counter-keyed random candidate priority followed by deterministic greedy disjoint atom selection; the rule uses only row labels, stored domain IDs, observation index, and locked counter keys",
+      "within_domain": "transpose the two target sources inside each domain pair",
+      "across_domain": "exchange the two domain-pair target blocks with a counter-keyed orientation",
+      "same_inputs_selected_rows_target_multiset_and_changed_row_count": true,
+      "all_four_selected_target_values_change_in_both_swap_arms": true,
+      "historical_domain_not_supplied_at_inference": true,
+      "training_task_mask_applied": false,
+      "training_output_classes": 10,
+      "ineligible_batches_use_unchanged_replay_targets": true
+    },
+    "inference": {
+      "independent_unit": "run_seed",
+      "primary_estimand": "across_domain minus within_domain final domain-IL average accuracy in percentage points",
+      "primary_interval": "two-sided Student-t 95 percent paired interval over six fresh run seeds",
+      "secondary_estimands": [
+        "paired minus no-replay final accuracy",
+        "within-domain minus paired final accuracy",
+        "across-domain minus paired final accuracy",
+        "final shared-output negative log likelihood for every arm and the same paired contrasts",
+        "average incremental accuracy",
+        "backward transfer"
+      ],
+      "no_optional_stopping": true,
+      "all_planned_units_required": true
+    }
+  },
+  "variance_ladder": {
+    "benchmarks": ["split_cifar100", "permuted_mnist"],
+    "k_values": [1, 4, 16, "infinity"],
+    "lambda_basis_points": 7500,
+    "method": "experience_replay",
+    "mammoth_model": "er_variance_ladder",
+    "buffer_size": 500,
+    "minibatch_size": 32,
+    "intervention": {
+      "support_size": "m=1+round_half_up(0.75*(n-1))",
+      "finite_k": "draw K independent supports and K independent within-support permutations, convert every draw to one-hot targets, and average those K targets before one forward/backward update",
+      "infinity": "use the exact conditional mean over both random support selection and within-support permutation",
+      "support_and_permutation_streams_domain_separated": true,
+      "one_network_forward_per_update": true,
+      "soft_target_cross_entropy_used_for_every_k": true,
+      "current_and_replay_rows_share_one_mean_reduced_loss": true,
+      "gradient_clipping": false,
+      "optimizer_and_schedule": "Mammoth benchmark defaults except the explicitly locked learning rate and epoch count",
+      "common_state_identity": "the raw gradient of the finite-K average target equals the arithmetic mean of the K raw hard-target gradients, up to a locked floating-point tolerance"
+    },
+    "inference": {
+      "independent_unit": "run_seed",
+      "primary_outputs": [
+        "per-seed final accuracy at K=1,4,16,infinity",
+        "K=1 minus infinity and each intermediate minus infinity",
+        "ordered accuracy trajectory in 1/K without a monotonicity claim"
+      ],
+      "linear_theory_prediction": "conditional assignment covariance and finite-horizon excess quadratic risk scale as 1/K under the stated linear assumptions",
+      "neural_interpretation": "fixed conditional mean with reduced finite-K assignment variance; monotone accuracy is an empirical hypothesis",
+      "no_optional_stopping": true,
+      "all_planned_units_required": true
+    }
+  },
+  "prerequisites": {
+    "assignment_strength_done": "results/assignment_strength/done.json",
+    "mean_matched_done": "results/mean_matched/done.json",
+    "task_structure_done": "results/task_structure/done.json"
+  },
+  "execution": {
+    "shared_output_units": 24,
+    "variance_ladder_units": 48,
+    "expected_units": 72,
+    "queue_order": "all shared-output structure units before all variance-ladder units",
+    "completed_units_immutable": true,
+    "failed_attempts_preserved": true,
+    "monitoring_must_not_print_scientific_outcomes": true,
+    "deterministic_export": true,
+    "correction_after_readable_outcome_requires_new_versioned_sensitivity_run": true
+  }
+}

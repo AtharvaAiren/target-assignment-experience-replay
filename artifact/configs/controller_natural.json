@@ -1,0 +1,88 @@
+{
+  "schema_version": "gradient_reuse.controller_natural.v2",
+  "status": "LOCKED_BEFORE_RUN",
+  "policies": [
+    "never",
+    "always",
+    "cosine",
+    "pairing_aware"
+  ],
+  "dataset": {
+    "full_stream": "BEIJING",
+    "smoke_stream": "deterministic_local_synthetic",
+    "packet_size": 32,
+    "chronology": "frozen_event_atomic"
+  },
+  "model": {
+    "name": "functional_unit_regressor",
+    "functional_units": 16,
+    "device": "cpu"
+  },
+  "optimizer": {
+    "name": "adamw",
+    "learning_rate": 0.001,
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "weight_decay": 0.0001,
+    "gradient_clip": 1.0
+  },
+  "permutations": {
+    "replicas": 4,
+    "draws_per_replica": 8,
+    "seed_salt": 314159
+  },
+  "controller": {
+    "radius_history": 16,
+    "epsilon": 1e-20,
+    "pairing_reliability_threshold": 0.75,
+    "gate_timing": "score_t_then_gate_action_for_t_plus_1",
+    "radius_rule": "median_recent_never_reuse_shadow_adamw_update_norms",
+    "pairing_rule": "aligned_m_plus_binary_reliability_gated_aligned_c",
+    "variance_rule": "exact_finite_permutation_variance_of_full_mse_gradient"
+  },
+  "full": {
+    "seeds": [
+      100,
+      101,
+      102,
+      103,
+      104,
+      105,
+      106,
+      107
+    ],
+    "max_packets": null,
+    "bootstrap_draws": 4000,
+    "bootstrap_seed": 161803,
+    "bootstrap_block_lengths": [1, 3, 6, 12],
+    "primary_bootstrap_block_length": 3,
+    "retain_packet_records": true
+  },
+  "smoke": {
+    "seeds": [
+      7
+    ],
+    "max_packets": 12,
+    "bootstrap_draws": 64,
+    "bootstrap_seed": 271828,
+    "bootstrap_block_lengths": [1, 2],
+    "primary_bootstrap_block_length": 2,
+    "retain_packet_records": true
+  },
+  "source_identity": {
+    "algorithm": "sha256",
+    "files": {
+      "experiments/fmmt/common.py": "af44b0ab370136501922cec0bbbff9077d200f423511a277fe9c7a8aa34be3fc",
+      "experiments/fmmt/study_a.py": "93a00af23bde7d69ea7885519aac86b09485130e3b4a0f14e973e24b9e429ff0",
+      "experiments/fmmt_reviewer/diagnostics.py": "a0c7f0012b57dec8f099993427f2c2a89e3fc5d8ba2f1a2783ec3ed324b89b39",
+      "experiments/fmmt_workshop/datasets.py": "1d215b8964131df1df4ca27a1fd4cfb2de335c68d3bddc6e025834606557b2a0",
+      "experiments/gradient_reuse_controller/natural.py": "dfd854572c8c8f9f3008c931d9940924c67b9e9ed52318acaf38dd98af2c9268",
+      "experiments/gradient_reuse_controller/provenance.py": "f521f2c9c3604a198a69a1ce2311d0a9a332943347e571b0252c92233aaf0f97",
+      "experiments/validation/stage4_regression.py": "6a236dc735027fd38b6bb0e75d703840937c196e73dbcc5fb766431842a5d584",
+      "src/chartfilm/fmmt/core.py": "58d86b10e8cd39c9c0ae0d86e7551ee4a00f4bc6b5d3165cfef9789538dfee51"
+    },
+    "bundle_sha256": "5bd539af12fbb76893e5ff3fe613576f1b6c50507026db6df1da0cd84a4e5327"
+  }
+}

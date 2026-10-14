@@ -1,0 +1,144 @@
+{
+  "schema_version": "gradient_reuse.crossover_threshold_followup_lock.v1",
+  "status": "OUTCOME_INFORMED_PROSPECTIVELY_LOCKED_BEFORE_CROSSOVER_FOLLOWUP_OUTCOMES",
+  "scientific_question": "At which discrete replay-support size does target reassignment remove the accuracy advantage of experience replay over same-seed conventional no replay?",
+  "interpretation": {
+    "analysis_role": "outcome-informed threshold-localization follow-up",
+    "not_a_replacement_for_original_confirmatory_families": true,
+    "original_completed_results_remain_immutable": true,
+    "new_strengths_selected_after_reading_original_outcomes": true,
+    "new_outcomes_unread_when_this_lock_was_created": true,
+    "discrete_support_geometry_is_primary": true,
+    "interpolated_root_is_secondary_and_model_based": true,
+    "no_optional_stopping": true,
+    "all_planned_units_required": true
+  },
+  "upstream": {
+    "name": "Mammoth",
+    "repository": "https://github.com/aimagelab/mammoth.git",
+    "commit": "e75a491c69fd729edeb01431afb753d9157d9a81",
+    "license_sha256": "309ca56cfbbe29aa036d1c53f8f05d5ee0a1dd78dcc37f53f94e840b22b60275",
+    "assignment_intervention": "assignment_strength_overlay/models/utils/assignment_strength_intervention.py"
+  },
+  "runtime": {
+    "device": "cuda:0",
+    "run_seeds_by_campaign": {
+      "pmnist": [3801, 3802, 3803, 3804, 3805, 3806, 3807, 3808, 3809, 3810, 3811, 3812],
+      "cifar": [3501, 3502, 3503, 3504, 3505, 3506, 3507, 3508, 3509, 3510, 3511, 3512]
+    },
+    "requested_strengths_bp": [7742, 8065, 8387, 8710, 9032, 9355, 9677],
+    "selected_rows_at_replay_batch_32": [25, 26, 27, 28, 29, 30, 31],
+    "induced_strength_numerators_at_replay_batch_32": [24, 25, 26, 27, 28, 29, 30],
+    "induced_strength_denominator_at_replay_batch_32": 31,
+    "assignment_replicas": [0, 1, 2, 3],
+    "permutation_seed_offset": 100003,
+    "selection_seed_salt": 2779096485,
+    "audit_interval": 100,
+    "audit_permutations": 4,
+    "num_workers": 4,
+    "numerical_threads": 1,
+    "deterministic_algorithms": true,
+    "maximum_concurrent_gpu_processes": 1,
+    "minimum_free_gpu_memory_mib": 14000,
+    "minimum_free_disk_gib": 100,
+    "expected_data_manifest_sha256": "5b2002ce8ea99481db0a6126090fe13797d456ad7a99a068e461c5d73177b23e",
+    "expected_environment_manifest_sha256": "8ec0986abbb0e345350a9c2d0f1fe644f3e6cc7dfc054bc5ac7724407dc363e0",
+    "expected_python_sha256": "e50d468e8b0adfb05733f5b87b3cff34829c4a8c1aea50c865aa8bdfe4bb150f"
+  },
+  "benchmarks": {
+    "pmnist": {
+      "benchmark": "permuted_mnist",
+      "mammoth_dataset": "perm-mnist",
+      "setting": "domain-il",
+      "primary_endpoint": "domain_il",
+      "dataset_config": null,
+      "backbone": "mnistmlp",
+      "tasks": 20,
+      "batch_size": 128,
+      "replay_batch_size": 32,
+      "epochs": 1,
+      "learning_rate": 0.1,
+      "task_bank_lock_path": "configs/corrected_reference_order_audit.json",
+      "task_bank_lock_sha256": "100a1428f26860e0ef129b298192b05ccabc5c781ff1126b4528c5f4ddbcddec"
+    },
+    "cifar": {
+      "benchmark": "split_cifar100",
+      "mammoth_dataset": "seq-cifar100",
+      "setting": "class-il",
+      "primary_endpoint": "task_il",
+      "mandatory_secondary_endpoints": ["class_il"],
+      "dataset_config": "20tasks",
+      "backbone": "resnet18",
+      "tasks": 20,
+      "batch_size": 32,
+      "replay_batch_size": 32,
+      "epochs": 1,
+      "learning_rate": 0.03
+    }
+  },
+  "method": {
+    "arm": "er_reassigned",
+    "mammoth_model": "er_assignment_strength",
+    "buffer_size": 500,
+    "minibatch_size": 32
+  },
+  "historical_anchors": {
+    "pmnist": {
+      "parent_lock_path": "configs/corrected_reference_order_audit.json",
+      "parent_lock_sha256": "100a1428f26860e0ef129b298192b05ccabc5c781ff1126b4528c5f4ddbcddec",
+      "aggregate_path": "results/corrected_reference_order/pmnist/AGGREGATE.json",
+      "aggregate_sha256": "7d7cae877fc12e3b072b8c8a30ca0d3762947bf2f9ccea46dd09b99b5f575def",
+      "done_path": "results/corrected_reference_order/pmnist/DONE.json",
+      "done_sha256": "1c97cb811bf84a843331ea6539a781b90af9fb7130ca140dabd25e36fd1cfc06",
+      "campaign_path": "results/corrected_reference_order/pmnist/CAMPAIGN.json",
+      "campaign_sha256": "ed97e50e8e158771a455e87e6c64bffe8964219f2e3bd31550a9beade6f0c80e",
+      "reused_requested_strengths_bp": [7500, 10000],
+      "primary_reference": "standard_no_replay",
+      "sensitivity_reference": "fixed_current_no_replay"
+    },
+    "cifar": {
+      "parent_lock_path": "configs/assignment_strength_sweep.json",
+      "parent_lock_sha256": "f8227a9f2248bd96bd88ddcf340acf7ae2514185cdbf80117e7ceebf596e808d",
+      "aggregate_path": "results/assignment_strength/aggregate.json",
+      "aggregate_sha256": "da00d91c03a1954eaa10b53e34815f92b937cf66e9874d3e49c6e9b2f71ce4f8",
+      "done_path": "results/assignment_strength/done.json",
+      "done_sha256": "cb6ae04d1575580f2f983fa2fad97d65f3fbb0447854871537c3e6062c7931a0",
+      "reused_requested_strengths_bp": [7500, 10000],
+      "primary_reference": "reference"
+    }
+  },
+  "inference": {
+    "independent_unit": "run_seed",
+    "assignment_replicas_are_nested_monte_carlo": true,
+    "replica_reduction": "average four assignment replicas within run seed and support size before inference",
+    "primary_estimand": "smallest tested discrete support size whose expected reassigned-replay minus conventional-no-replay accuracy is nonpositive",
+    "primary_reporting": "report the adjacent discrete support-size bracket containing the first zero crossing; do not describe it as an exact percentage",
+    "monotonicity_rule": "fit a nonincreasing isotonic mean curve but also report every raw support-size mean; an adjacent increase is material exactly when its across-seed paired two-sided Student-t 95 percent interval lies entirely above zero",
+    "unique_crossing_rule": "a unique primary bracket is issued only when there is no material adjacent increase and exactly one raw-mean positive-to-nonpositive adjacent bracket; otherwise report the list or union of candidate raw sign-change brackets and treat any isotonic scalar root as sensitivity only",
+    "uncertainty": "seed-cluster bootstrap with common resampled seed indices across every strength and reference, preserving all four within-seed assignment replicas",
+    "bootstrap_replicates": 20000,
+    "bootstrap_seed": 20261008,
+    "simultaneous_band": "bootstrap max-absolute-deviation band over the complete locked support grid",
+    "censoring": "bootstrap draws without an in-range crossing are retained as right-censored above full reassignment",
+    "secondary_interpolation": "piecewise-linear zero of the fitted monotone mean curve within the primary discrete bracket",
+    "pmnist_sensitivity": "repeat the complete analysis against the fixed-current no-replay reference without combining its threshold with the primary threshold",
+    "required_dose_descriptors": [
+      "requested_strength_basis_points",
+      "selected_row_fraction",
+      "induced_covariance_erasure_strength",
+      "actual_changed_label_fraction"
+    ],
+    "no_optional_stopping": true,
+    "all_strengths_seeds_replicas_and_endpoints_reported": true
+  },
+  "execution": {
+    "new_units_per_campaign": 336,
+    "new_units_total": 672,
+    "completed_units_immutable": true,
+    "failed_attempts_preserved": true,
+    "monitoring_must_not_print_scientific_outcomes": true,
+    "output_must_be_outside_source_and_frozen_results": true,
+    "queue_requires_explicit_execute_flag": true,
+    "correction_after_readable_new_outcome_requires_new_versioned_sensitivity_run": true
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "bridge_sha256": "81aa927a602342ab975453f082af46c2c955f147178527ccadd19026b7595aaf",
+  "byte_identical_event_fields": 5,
+  "completed_unix": 1789377626.3354497,
+  "event_comparisons": 20736,
+  "handoff_manifest_sha256": "ef49969499adc38e1210011d5349e6eb803314ccaf03a419715229e2f4dae0f0",
+  "mean_dose_full_fingerprint_comparisons": 72,
+  "mean_matched_aggregate_sha256": "d38fe5efacbcd7d36b100e5a767373454b9bdcece72c213dacda8e2ac5a2f861",
+  "mean_matched_done_sha256": "fff9ceadbf0b3fa41a9f943d051e1bd91496a68a4b806c70973e233697b5d7c7",
+  "mean_matched_units_reused": 96,
+  "model_training_rerun": false,
+  "parent_artifacts_modified": false,
+  "parent_units_reused": 432,
+  "schema_version": "gradient_reuse.mean_matched_event_identity_recovery.v2",
+  "scientific_outcomes_modified": false,
+  "status": "PASS",
+  "target_representation_only_mismatches": 20736,
+  "unit_artifacts_modified": false
+}

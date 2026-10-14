@@ -1,0 +1,128 @@
+{
+  "schema_version": "fmmt.reviewer_diagnostics.lock.v1",
+  "created_utc": "2026-08-23T00:00:00Z",
+  "status": "POSTHOC_REVIEWER_DIAGNOSTICS_LOCKED_BEFORE_RUN",
+  "scope": "Reviewer-requested post-hoc diagnostics on newly replayed fixed live trajectories. This lock does not modify or replace the frozen workshop run, its prespecification, units, confidence intervals, or verdict.",
+  "runtime": {
+    "datasets": [
+      "METRO",
+      "BEIJING",
+      "APPLIANCES",
+      "TETOUAN"
+    ],
+    "seeds": [
+      100,
+      101,
+      102,
+      103,
+      104,
+      105,
+      106,
+      107
+    ],
+    "model": "functional_units",
+    "optimizer": "adamw",
+    "packet_size": 32,
+    "n_permutations": 16,
+    "permutation_salt": 1597463007,
+    "radius_multipliers": [
+      0.25,
+      0.5,
+      1.0,
+      2.0,
+      4.0
+    ],
+    "multistep_counts": [
+      1,
+      2,
+      4
+    ],
+    "branch_radius_history": 16,
+    "torch_threads_per_worker": 1,
+    "allowed_devices": [
+      "cpu",
+      "cuda"
+    ]
+  },
+  "model_hyperparameters": {
+    "functional_units": 16,
+    "learning_rate": 0.001,
+    "sgd_learning_rate": 0.001,
+    "adamw_betas": [
+      0.9,
+      0.999
+    ],
+    "sgd_momentum": 0.9,
+    "weight_decay": 0.0001,
+    "gradient_clip": 1.0,
+    "diagnostic_relative_tolerance": 0.00005
+  },
+  "packet_strength_definitions": {
+    "loss_convention": "half mean squared loss for the theoretical decomposition; actuator gradients are the equivalent PyTorch mean-squared-loss gradients and therefore twice as large",
+    "S_J": "sum_i ||J_i - mean(J)||_2^2 (a sum, not a mean)",
+    "S_y": "sum_i (y_i - mean(y))^2 (a sum, not a mean)",
+    "covariance": "n^{-1} sum_i (J_i - mean(J))(y_i - mean(y))",
+    "permutation_gradient_l2_variance": "S_J*S_y/[n^2*(n-1)]",
+    "covariance_to_permutation_sd": "||Cov(J,y)|| divided by sqrt(S_J*S_y/[n^2*(n-1)])",
+    "covariance_to_true_gradient": "||Cov(J,y)|| divided by the norm of the raw half-squared-loss gradient",
+    "empirical_permutation_moment": "mean squared L2 distance of the 16 realized half-gradients from the exact permutation expectation"
+  },
+  "actuators": {
+    "normalized_equal_radius": "theta minus multiplier*median_recent_live_update_norm*g/||g||; true, exact expected-permutation, and every permutation direction are normalized separately",
+    "raw_calibrated": "theta minus multiplier*eta*g with one eta=median_recent_live_update_norm/||true_previous_gradient|| shared by true, expected, and permuted directions",
+    "replay_sgd": "from the current center, perform 1, 2, or 4 virtual SGD steps on the immediately preceding packet; eta is calibrated once so the first true replay step has the median recent live-update norm, and is then held fixed for all replicas and steps",
+    "trajectory": "all actuator states are discarded; the live learner receives exactly one ordinary update on each current packet"
+  },
+  "locality_diagnostics": {
+    "activation_crossing": "for observed current-packet inputs, record whether a ReLU preactivation reaches or crosses zero on each one-step center-to-endpoint segment; for multi-step replay this is explicitly only the straight center-to-final-endpoint chord, not every segment of its curved optimization path",
+    "taylor_remainder": "on the radius grid, compare the observed current-packet MSE change with the directional first-order term and report the finite-grid remainder and curvature quotient",
+    "claim_limit": "these are empirical finite-grid diagnostics and do not verify global differentiability or prove a uniform Lipschitz-gradient condition"
+  },
+  "inference": {
+    "bootstrap_draws": 4000,
+    "bootstrap_seed": 271828,
+    "primary_block_length": 3,
+    "block_length_sensitivity": [
+      1,
+      2,
+      3,
+      6,
+      12
+    ],
+    "axes": [
+      "initialization seed",
+      "ordered temporal cluster",
+      "permutation replica within seed"
+    ],
+    "primary_estimand_for_block_sensitivity": "normalized equal-radius true-versus-permutation pairing increment at radius multiplier 1"
+  },
+  "smoke": {
+    "datasets": [
+      "BEIJING"
+    ],
+    "seeds": [
+      100,
+      101
+    ],
+    "packet_size": 16,
+    "n_permutations": 4,
+    "functional_units": 4
+  },
+  "execution": {
+    "maximum_workers": 16,
+    "default_workers": 8,
+    "unit_artifact_format": "atomic gzip-compressed strict JSON",
+    "resume_requires_exact_task_config_and_source_identity": true,
+    "source_hash_validation_before_data_or_compute": true,
+    "scientific_null_is_not_technical_failure": true,
+    "failure_policy": "any missing, non-finite, source-mismatched, state-mutating, decomposition-inconsistent, or incomplete unit fails the campaign"
+  },
+  "interpretation_limits": [
+    "This campaign is post-hoc and cannot retrospectively strengthen the original prespecification.",
+    "Repeated permutations integrate conditional Monte Carlo variability only for the locked within-packet permutation distribution.",
+    "Packet-strength metrics quantify whether the permutation intervention had raw-gradient variation; they do not by themselves establish prospective task value.",
+    "Finite observed-input ReLU crossing and Taylor diagnostics do not prove differentiability or uniform smoothness.",
+    "The multi-step replay actuator deliberately stores one previous packet and is a sensitivity analysis, not the original no-replay method.",
+    "Breadth beyond scalar squared-loss regression is handled by a separate campaign and must not be inferred from this one."
+  ]
+}

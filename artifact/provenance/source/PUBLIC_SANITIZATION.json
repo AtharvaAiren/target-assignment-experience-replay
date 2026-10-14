@@ -1,0 +1,77 @@
+{
+  "schema_version": "gradient_reuse.public_source_sanitization.v1",
+  "status": "PASS",
+  "scientific_effect": "NONE_IDENTIFIER_ONLY_SENTINEL_RENAME",
+  "historical_manifests": {
+    "mechanisms": {
+      "path": "provenance/source/mechanisms.json",
+      "sha256": "f79beba797f9c841b15cb09138fe60e49ef1e2322f87311837c43077a990b85d"
+    },
+    "mechanisms_rtx_7day": {
+      "path": "provenance/source/mechanisms_rtx_7day.json",
+      "sha256": "f0e701b6f7ef05d91838bd420f24edc6043f5ba1ff1513b11bd8779c5eb7cfb7"
+    }
+  },
+  "sanitized_files": [
+    {
+      "path": "configs/mechanisms.json",
+      "historical_sha256": "be5247f6f94ba5835be7b87377fda106487306b2215ba30e3955377b4a402012",
+      "public_sha256": "4d38847ce83ae36850c78573707095568fa8c31cbd9b5b93feb9be3514c61cbc",
+      "historical_manifests": [
+        "mechanisms",
+        "mechanisms_rtx_7day"
+      ],
+      "transformation": "rename an inert linked-project isolation sentinel"
+    },
+    {
+      "path": "configs/mechanisms_rtx_7day.json",
+      "historical_sha256": "1beabac5e7006a945d126f8b7e67b0d899f1c9d5d09f5f9c47564b9e027cfa92",
+      "public_sha256": "9a42c31bef3f956751a32e63540d027c8d937cce71d8773d5f019f4d93224536",
+      "historical_manifests": [
+        "mechanisms_rtx_7day"
+      ],
+      "transformation": "rename an inert linked-project isolation sentinel"
+    },
+    {
+      "path": "experiments/gradient_reuse_mechanisms/protocol.py",
+      "historical_sha256": "966384c3ecd0106a27967b980b543cae6f2937b48f083dba0d49107c4bf5ef63",
+      "public_sha256": "925dff2d1e0806d20f9cf1107e69bd7763fdb76d707daf7911739fe2769bf821",
+      "historical_manifests": [
+        "mechanisms",
+        "mechanisms_rtx_7day"
+      ],
+      "transformation": "rename the same validation sentinel and neutralize its diagnostic"
+    }
+  ],
+  "public_verification_updates": [
+    {
+      "path": "experiments/gradient_reuse_primary_seed_completion/aggregate.py",
+      "historical_sha256": "1f4f9365c6826ed46d6fa5731b70506df955609276ccc433412c5a4bf1417004",
+      "public_sha256": "b0769b33af63eb074e5d8dbcf09fe1be00d5c2c028bc44f09661a3bee34f85e9",
+      "historical_manifests": [
+        "mechanisms"
+      ],
+      "role": "distinguish the public lock from historical unit bindings"
+    },
+    {
+      "path": "tests/test_primary_seed_completion.py",
+      "historical_sha256": "239c39f1ee4c49a56db1c1ee21961b1d68a069c63e8ddb889858239434274b42",
+      "public_sha256": "5be664ac4ff14dfbecff3103f4a847081a1b994cfffed9230eb78dd38a85169d",
+      "historical_manifests": [
+        "mechanisms"
+      ],
+      "role": "test the public lock identity without relabelling historical units"
+    },
+    {
+      "path": "tests/test_mechanism_rtx_7day_profile.py",
+      "historical_sha256": "e59fc46b35eac1a3ddb77a829aa8d184e198defc1e6b58108ffe49e80ea26ac4",
+      "public_sha256": "ccb7044d19232e3364bf831b6e79ba00f8048f8d734473671306f059d15f56c2",
+      "historical_manifests": [
+        "mechanisms_rtx_7day"
+      ],
+      "role": "test the historical-to-public source boundary"
+    }
+  ],
+  "historical_reconstruction": "The original identifier is intentionally absent. Exact byte reconstruction requires an external maintainer-only token and is not part of the anonymous release.",
+  "result_policy": "Historical lock, source-manifest, source-bundle, and result hashes remain unchanged."
+}

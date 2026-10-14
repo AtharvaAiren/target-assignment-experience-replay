@@ -1,0 +1,23 @@
+.DS_Store
+._*
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+build/
+dist/
+*.egg-info/
+results/reproduction/
+data/
+checkpoints/
+*.log
+*.pid
+
+# Author-side crossover closure: container headers retain local ownership
+# metadata. The anonymous release carries the manifest plus reconstruction
+# patch instead, and the release inventory excludes these three files.
+provenance/crossover/crossover_source_closure.tar.gz
+provenance/crossover/HANDOFF_SHA256SUMS
+provenance/crossover/SHA256SUMS

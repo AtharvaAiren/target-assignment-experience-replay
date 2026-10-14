@@ -1,0 +1,158 @@
+{
+  "schema_version": "gradient_reuse.exact_reference_pmnist_lock.v1",
+  "status": "PROSPECTIVELY_LOCKED_BEFORE_EXACT_REFERENCE_OUTCOMES",
+  "scientific_question": "Do the paired and reassigned replay conclusions survive comparison with a current-only control whose current-loss coefficient exactly matches replay at every optimizer step?",
+  "interpretation": {
+    "fresh_seed_followup": true,
+    "not_a_replacement_for_frozen_results": true,
+    "all_original_results_immutable": true,
+    "fixed_current_is_learning_rate_rescaling_only": true,
+    "exact_current_matches_stepwise_current_loss_coefficient": true,
+    "exact_current_samples_no_replay_examples": true,
+    "exact_current_uses_no_replay_sampling_rng": true,
+    "exact_current_is_not_a_full_replay_trajectory_match": true,
+    "all_comparator_arms_are_rerun_on_the_fresh_seeds": true,
+    "task_banks_are_generated_before_training": true,
+    "task_bank_rng_isolated_from_training_rng": true,
+    "same_seed_task_bank_identical_across_arms": true,
+    "assignment_replicas_are_nested_monte_carlo": true,
+    "split_cifar100_is_a_separately_locked_campaign": true,
+    "no_optional_stopping": true
+  },
+  "upstream": {
+    "name": "Mammoth",
+    "repository": "https://github.com/aimagelab/mammoth.git",
+    "commit": "e75a491c69fd729edeb01431afb753d9157d9a81",
+    "license_sha256": "309ca56cfbbe29aa036d1c53f8f05d5ee0a1dd78dcc37f53f94e840b22b60275",
+    "assignment_intervention": "assignment_strength_overlay/models/utils/assignment_strength_intervention.py",
+    "exact_reference_model": "exact_reference_overlay/models/sgd_exact_current_coefficient.py",
+    "exact_reference_helper": "exact_reference_overlay/models/utils/exact_current_coefficient.py"
+  },
+  "runtime": {
+    "device": "cuda:0",
+    "gpu_device": 0,
+    "run_seeds": [4101, 4102, 4103, 4104, 4105, 4106, 4107, 4108, 4109, 4110, 4111, 4112],
+    "deterministic_algorithms": true,
+    "num_workers": 4,
+    "numerical_threads": 1,
+    "maximum_concurrent_gpu_processes": 20,
+    "minimum_free_disk_gib": 80,
+    "minimum_total_gpu_memory_mib": 32000,
+    "reserve_free_gpu_memory_mib": 1024,
+    "per_process_launch_reservation_mib": 1536,
+    "maximum_concurrent_startups": 1,
+    "launch_stagger_seconds": 5,
+    "scheduler_poll_seconds": 5,
+    "scheduler_shutdown_grace_seconds": 10,
+    "adaptive_concurrency": true,
+    "cross_campaign_concurrency": false,
+    "cuda_mps": false,
+    "permutation_seed_offset": 100003,
+    "selection_seed_salt": 2779096485,
+    "audit_interval": 100,
+    "audit_permutations": 4
+  },
+  "benchmarks": {
+    "permuted_mnist": {
+      "mammoth_dataset": "perm-mnist",
+      "setting": "domain-il",
+      "dataset_config": null,
+      "backbone": "mnistmlp",
+      "tasks": 20,
+      "batch_size": 128,
+      "replay_batch_size": 32,
+      "buffer_size": 500,
+      "epochs": 1,
+      "expected_optimizer_updates": 9380,
+      "expected_seen_examples": 1200000,
+      "standard_learning_rate": 0.1,
+      "current_gradient_coefficient": 0.8,
+      "fixed_current_learning_rate": 0.08,
+      "order_variants": ["fixed_bank"],
+      "primary_endpoint": "domain_il"
+    }
+  },
+  "arms": {
+    "standard_no_replay": {
+      "mammoth_model": "sgd",
+      "lambda_bp": null,
+      "replicas": [null]
+    },
+    "fixed_current_no_replay": {
+      "mammoth_model": "sgd",
+      "lambda_bp": null,
+      "replicas": [null]
+    },
+    "exact_current_coefficient": {
+      "mammoth_model": "sgd_exact_current_coefficient",
+      "lambda_bp": null,
+      "replicas": [null],
+      "reference_buffer_size": 500,
+      "reference_minibatch_size": 32
+    },
+    "er_paired": {
+      "mammoth_model": "er_assignment_strength",
+      "lambda_bp": 0,
+      "replicas": [null]
+    },
+    "er_reassigned": {
+      "mammoth_model": "er_assignment_strength",
+      "lambda_bp": [2500, 5000, 7500, 10000],
+      "replicas": [0, 1, 2, 3]
+    }
+  },
+  "task_and_order_banks": {
+    "permuted_mnist_generator": "numpy.random.Generator(PCG64(SeedSequence))",
+    "permuted_mnist_domains": 20,
+    "permuted_mnist_pixels": 784,
+    "permuted_mnist_task_bank_sha256_by_seed": {
+      "4101": "df6bd39dcebf8d7cc6b2c76b4736290a129ef5f9314fee35346608583be675ad",
+      "4102": "c20eb8c3c136c079325c6c7ade433f493de68a43912298f4ab6d922ebe4c0490",
+      "4103": "a6472074c5d11fa61b4583220879b10c0f4f69004b48f87f4d217ace890dc550",
+      "4104": "b0eebec66d968bc956c6e3f51e2ad3cd8d3b053133defb4192197602b69a5625",
+      "4105": "72e5eab33bdda020aff14ff2a1eb1e739a9eb3eb0a006ff83a1cfc90cb42fe00",
+      "4106": "29e1bf6a512ccd46a51c8c3ddc8f55c299f30399ba69efa3282d664b661baf6f",
+      "4107": "3795c86ff9e67de1ae3e5441331dc1272ff5796d9ea8752e53b3a0a7d4891b0d",
+      "4108": "da0bc019c83ecd9a9a96a064c8c8f304b598b20e1fbdbf697295f5e00fe1fd0a",
+      "4109": "be88c56f0d6f36b9f48f094606c570ab72f50766179c1daeef3cd3cbfdec216b",
+      "4110": "74aa7542d4a8d68be542c490b46e566c8a7bb5ff9cd45017301ac8bdf04e210f",
+      "4111": "67e2207ce262b77176ff9df75f444313308ac731f830aef9c85f60d3c130cf61",
+      "4112": "bc380276becf9b46b9a9f0fbf3a02c3d275a396c22d4c8a6a17075934ef0d994"
+    }
+  },
+  "inference": {
+    "independent_unit": "run_seed",
+    "all_planned_units_required": true,
+    "assignment_replicas_are_not_independent_units": true,
+    "nested_assignment_replica_reduction": "mean the four assignment replicas within run seed and nonzero lambda before any contrast or inference",
+    "primary_panel": "permuted_mnist",
+    "split_cifar100_role": "separate prospectively locked campaign",
+    "all_arms_orders_strengths_replicas_reported": true,
+    "contrast_sign_convention": {
+      "paired_minus_exact": "positive favors paired ER over the exact stepwise coefficient-matched current-only control",
+      "reassigned_minus_exact": "positive favors replica-mean reassigned ER over the exact stepwise coefficient-matched current-only control",
+      "paired_minus_reassigned": "positive favors paired ER over replica-mean reassigned ER",
+      "dose_slope": "accuracy points per unit lambda; positive means accuracy increases with reassignment strength"
+    },
+    "dose_slope": "within-seed ordinary-least-squares slope over lambda=[0,0.25,0.5,0.75,1], using paired ER at lambda=0 and assignment-replica means at nonzero lambda",
+    "confirmatory_family": [
+      "paired_minus_exact",
+      "lambda_07500bp_minus_exact",
+      "lambda_10000bp_minus_exact"
+    ],
+    "confirmatory_tests": 3,
+    "multiplicity": "two-sided Holm correction over the three prospectively locked run-seed tests",
+    "other_lambda_specific_contrasts": "descriptive summaries include all rerun standard, nominal fixed-current, paired, and reassigned arms and the dose slope; they are not added to the confirmatory family after outcomes are viewed"
+  },
+  "execution": {
+    "units_per_seed_order_panel": 20,
+    "expected_units": 240,
+    "mandatory_permuted_mnist_units": 240,
+    "partial_scientific_aggregate_forbidden": true,
+    "output_must_be_outside_frozen_results": true,
+    "completed_units_immutable": true,
+    "failed_attempts_preserved": true,
+    "monitoring_must_not_print_scientific_outcomes": true,
+    "queue_requires_explicit_execute_flag": true
+  }
+}

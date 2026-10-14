@@ -1,0 +1,21 @@
+{
+  "compatibility_rules": [
+    "unused_classifier_dropout_field_for_authenticated_gpt_neox_causal_lm_only",
+    "authenticated_base_effective_and_padded_vocabulary_dimensions",
+    "complete_effective_tokenizer_id_validation_without_remapping"
+  ],
+  "historical_bridge": {
+    "path": "provenance/transformer_correction_history.json",
+    "sha256": "1785f8a388e7e083a6d539795bf6773bba3d73cfb188aacbd9dafde7947f6416"
+  },
+  "implementation": {
+    "path": "experiments/gradient_reuse_reviewer_extension/transformer_correction.py",
+    "sha256": "0d1b13ee2f96bab5933d443d49b60235a9808f4aaf20cbb6d2534ccbc024c810"
+  },
+  "historical_patch_bytes_distributed": false,
+  "no_private_paths": true,
+  "scientific_scope": "no token remapping, record skipping, input change, model-weight change, logit truncation, stream change, optimizer change, seed change, intervention change, or estimand change",
+  "semantic_equivalence_verified": false,
+  "schema_version": "gradient_reuse.portable_transformer_correction.v1",
+  "status": "PORTABLE_DOCUMENTED_RULE_REIMPLEMENTATION"
+}

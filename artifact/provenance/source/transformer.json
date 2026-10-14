@@ -1,0 +1,58 @@
+{
+  "configuration_path": "configs/transformer.json",
+  "configuration_sha256": "6e31173e883332350c47f15f6fca98b4ecd8df9638cf249212ac62224f7b3467",
+  "experiment": "transformer",
+  "files": [
+    {
+      "path": "configs/transformer.json",
+      "sha256": "6e31173e883332350c47f15f6fca98b4ecd8df9638cf249212ac62224f7b3467"
+    },
+    {
+      "path": "experiments/__init__.py",
+      "sha256": "a7a75debd0bf3e0c0fc1b388605323013217ffda0c0fb840d980d7c0dfd96cdd"
+    },
+    {
+      "path": "experiments/gradient_reuse_transformer/__init__.py",
+      "sha256": "d76c37ef050d05f744698603e10d2afd19940dd2e3189c353f37ffbb7d7878d6"
+    },
+    {
+      "path": "experiments/gradient_reuse_transformer/acquire.py",
+      "sha256": "1c003ff1aa6deb92eecbead3abdea2f00b6efe3e7b5d345ebbbb5a0568f8a3d4"
+    },
+    {
+      "path": "experiments/gradient_reuse_transformer/assets.py",
+      "sha256": "8fa8ab049afff9537554ca045c6e71cbdb7067f5491abe789b0e782dc2992206"
+    },
+    {
+      "path": "experiments/gradient_reuse_transformer/audit.py",
+      "sha256": "3133d1d07d15ec110a6935bbebc3d34d04e04e12533e059a67d3c028b30ddf47"
+    },
+    {
+      "path": "experiments/gradient_reuse_transformer/data.py",
+      "sha256": "52087a957498027d392c1ce59eba674e6b008f784737991543f8979e33629e36"
+    },
+    {
+      "path": "experiments/gradient_reuse_transformer/model.py",
+      "sha256": "0ee3ab567fe057b2476416092d60380ce6774584226004cf8f281bffa72f00ec"
+    },
+    {
+      "path": "experiments/gradient_reuse_transformer/run.py",
+      "sha256": "f6a60c55e4bb7ae7371c60cdfe8451553a581a2a95f31952aa3d39edfd5bfaa6"
+    },
+    {
+      "path": "experiments/source_provenance.py",
+      "sha256": "55eb9a323948f9d1525356da300079830a36fe702e22040e00fef6d6d626d5b3"
+    },
+    {
+      "path": "scripts/build_iclr_source_manifests.py",
+      "sha256": "4bebdb2b6adccc9ae239fc41d07649ff57b1aeb073097a258d11f13480f2899a"
+    },
+    {
+      "path": "tests/test_gradient_reuse_transformer.py",
+      "sha256": "864b31cb3fd714d5110dad7a3cc0787b352ce5e9cdef012b09bc2a0d362c195c"
+    }
+  ],
+  "schema_version": "gradient_reuse.iclr_source_manifest.v1",
+  "source_bundle_sha256": "63b6bf3207646417a5c1748e64653aa6c07ecd4efb7b8d94c6fd768c620c8002",
+  "status": "LOCKED_BEFORE_SCIENTIFIC_RUN"
+}

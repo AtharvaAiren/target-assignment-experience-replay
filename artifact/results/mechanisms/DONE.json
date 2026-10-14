@@ -1,0 +1,17 @@
+{
+  "complete_original_protocol": false,
+  "complete_protocol": true,
+  "complete_selected_profile": true,
+  "identity_sha256": "33a25b0a9aad7185d103fb5fba3a34f9bf8f7a8a21cc073d6e840be3c780815a",
+  "output_bundle_sha256": "1e5dd4ed83f03d88f7bf2e95c9ac04691d4806abb85fda33ea7c45eb6aacf26a",
+  "outputs": {
+    "RUN_MANIFEST.json": "5afbc6dc267ad2c95fb0399ac849b9cd01ac86f22c3eb05dba522abbfe32e6b5",
+    "SUMMARY.json": "06015597a934d8dba380b8e2e5b278eaf220c96e7c4288444cc0145bd84b7e86"
+  },
+  "paper_eligible": true,
+  "profile_id": "rtx_7day_v1",
+  "protocol_profile_id": "rtx_7day_v1",
+  "schema_version": "gradient_reuse.mechanism_aggregate_done.v3",
+  "status": "PASS",
+  "unit_count": 288
+}

@@ -1,0 +1,59 @@
+{
+  "identity_summaries": {
+    "exact_mean_logit_cotangent_identity": {
+      "diagnostic_rows": 504,
+      "maximum_absolute_residual": 6.609386024591934e-10
+    },
+    "exact_mean_parameter_gradient_identity": {
+      "diagnostic_rows": 504,
+      "maximum_absolute_residual": 4.873821331605882e-07,
+      "maximum_normalized_l2_residual": 0.0002482558532556787,
+      "maximum_normalized_residual": 0.023849692084065295
+    },
+    "exact_mean_target_identity": {
+      "diagnostic_rows": 504,
+      "maximum_absolute_residual": 0.0
+    },
+    "finite_k_logit_cotangent_identity": {
+      "diagnostic_rows": 504,
+      "maximum_absolute_residual": 3.469446951953614e-18
+    },
+    "finite_k_parameter_gradient_identity": {
+      "diagnostic_rows": 504,
+      "maximum_absolute_residual": 4.1211023926734924e-07,
+      "maximum_normalized_l2_residual": 0.0002667077006462849,
+      "maximum_normalized_residual": 0.018697913610275247
+    },
+    "finite_k_target_identity": {
+      "diagnostic_rows": 504,
+      "maximum_absolute_residual": 0.0
+    },
+    "repeated_same_target_gradient": {
+      "diagnostic_rows": 504,
+      "maximum_absolute_residual": 0.0,
+      "maximum_normalized_l2_residual": 0.0,
+      "maximum_normalized_residual": 0.0
+    }
+  },
+  "policy": {
+    "audit_only_cudnn_tf32_disabled": true,
+    "fail_closed_without_adaptive_widening": true,
+    "fixed_before_v2_outcomes": true,
+    "logit_cotangent_absolute_tolerance": 2e-08,
+    "one_common_functional_forward": true,
+    "parameter_gradient_absolute_tolerance": 2e-05,
+    "parameter_gradient_relative_tolerance": 0.0001,
+    "target_absolute_tolerance": 2e-06,
+    "training_precision_unchanged": true
+  },
+  "schema_version": "gradient_reuse.explanatory_followup_numerical_validation_report.v2",
+  "scientific_result": false,
+  "status": "PASS",
+  "v1_numerical_diagnosis_sha256": "be4bf3c276dc49d2e2d6b1b4dfc621a30791891186a8e5b23a148fe303461577",
+  "v1_results_modified": false,
+  "v2_aggregate_sha256": "31617bfeadd84a776ab00df6b6ab8d44a5094b54ae6c1a2f19eada3c058fa08b",
+  "v2_common_state_diagnostic_rows": 504,
+  "v2_completed_units": 72,
+  "v2_done_sha256": "917e83a677346cd8ef649fa231533451b59e63e74025a71ee061ca336bed38ac",
+  "v2_variance_units": 48
+}

@@ -1,0 +1,150 @@
+{
+  "schema_version": "fmmt.workshop.lock.v1",
+  "created_utc": "2026-08-10T00:00:00Z",
+  "status": "LOCKED_BEFORE_WORKSHOP_RUN",
+  "purpose": "CPU-first confirmation and mechanism decomposition for a NeurIPS-2026 workshop boundary paper. This lock does not revive FMMT as a method.",
+  "claim_boundary": {
+    "primary_question": "Does the previous revealed gradient contain target-specific prospective information beyond parameter shrinkage, output-bias persistence, and shuffled-past-label controls?",
+    "transport_question": "Can the locked functional-OT solver succeed in a positive environment with deliberately heterogeneous, geometrically local mobility utility, despite having no oracle allocation headroom on the audited natural streams?",
+    "forbidden_claims": [
+      "FMMT is an established end-to-end method",
+      "universal forward transfer",
+      "biological plausibility",
+      "negative results prove impossibility outside the audited models and streams",
+      "a latent-optimum drift correlation is the same as observed gradient predictability"
+    ]
+  },
+  "runtime": {
+    "device": "cpu",
+    "datasets": ["METRO", "BEIJING", "APPLIANCES", "TETOUAN"],
+    "primary_model": "functional_units",
+    "primary_optimizer": "adamw",
+    "primary_packet_size": 32,
+    "development_seeds": [40, 41, 42, 43],
+    "confirmation_seeds": [100, 101, 102, 103, 104, 105, 106, 107],
+    "calibration_fraction": 0.05,
+    "model": {
+      "functional_units": 16,
+      "learning_rate": 0.001,
+      "sgd_learning_rate": 0.001,
+      "adamw_betas": [0.9, 0.999],
+      "sgd_momentum": 0.9,
+      "weight_decay": 0.0001,
+      "gradient_clip": 1.0
+    },
+    "branch_radius_history": 16,
+    "cluster_bootstrap_draws": 4000,
+    "cluster_bootstrap_seed": 161803,
+    "cluster_bootstrap_block_length": 3,
+    "worker_default": 8,
+    "worker_environment_override": "FMMT_WORKERS",
+    "torch_threads_per_worker": 1
+  },
+  "specificity": {
+    "rows": [
+      "K0_ZERO",
+      "K1_PREVIOUS_GRADIENT",
+      "K2_RADIAL_SHRINKAGE",
+      "K3_PREVIOUS_OUTPUT_BIAS",
+      "K4_PREVIOUS_SHUFFLED_LABEL_GRADIENT",
+      "K5_PREVIOUS_GRADIENT_RESIDUAL",
+      "K6_MATCHED_RANDOM_DIRECTION",
+      "K7_ORACLE_XFIT",
+      "K8_CURRENT_SHUFFLED_TARGET_XFIT",
+      "K9_ANTI_ORACLE_XFIT"
+    ],
+    "causal_rows": [
+      "K0_ZERO",
+      "K1_PREVIOUS_GRADIENT",
+      "K2_RADIAL_SHRINKAGE",
+      "K3_PREVIOUS_OUTPUT_BIAS",
+      "K4_PREVIOUS_SHUFFLED_LABEL_GRADIENT",
+      "K5_PREVIOUS_GRADIENT_RESIDUAL",
+      "K6_MATCHED_RANDOM_DIRECTION"
+    ],
+    "primary_dataset": "BEIJING",
+    "negative_control_dataset": "METRO",
+    "trivial_explanation_rows": [
+      "K2_RADIAL_SHRINKAGE",
+      "K3_PREVIOUS_OUTPUT_BIAS",
+      "K4_PREVIOUS_SHUFFLED_LABEL_GRADIENT"
+    ],
+    "target_specific_gate": {
+      "K1_must_beat_every_trivial_control_relative": 0.01,
+      "K1_vs_every_trivial_control_ci_lower_above_zero": true,
+      "K5_residual_vs_K0_relative": 0.01,
+      "K5_residual_vs_K0_ci_lower_above_zero": true,
+      "minimum_seed_wins": 3,
+      "negative_control_ci_lower_noninferiority": -0.01
+    },
+    "oracle_specificity_diagnostic": {
+      "K7_must_beat_K8_relative_for_oracle_to_be_called_target_specific": 0.01,
+      "paired_ci_lower_above_zero": true
+    },
+    "possible_dataset_verdicts": [
+      "TARGET_SPECIFIC_TEMPORAL_SIGNAL",
+      "TRIVIAL_CORRECTION_EXPLAINS_GAIN"
+    ]
+  },
+  "corrected_synthetic": {
+    "observed_gradient_correlations": [0.9, 0.0, -0.9],
+    "development_seeds": [10, 11, 12, 13, 14, 15, 16, 17],
+    "confirmation_seeds": [110, 111, 112, 113, 114, 115, 116, 117],
+    "dimension": 32,
+    "steps": 2000,
+    "burn_in": 200,
+    "selector_eta": 0.2,
+    "correlation_tolerance": 0.08,
+    "minimum_persistent_relative_gain": 0.5,
+    "selector_noninferiority": 0.01,
+    "correct_action_mass_minimum": 0.7
+  },
+  "robustness": {
+    "datasets": ["BEIJING", "TETOUAN"],
+    "seeds": [40, 41, 42, 43],
+    "configurations": [
+      {"model": "linear", "optimizer": "adamw", "packet_size": 32},
+      {"model": "functional_units", "optimizer": "sgd", "packet_size": 32},
+      {"model": "linear", "optimizer": "sgd", "packet_size": 32},
+      {"model": "functional_units", "optimizer": "adamw", "packet_size": 16},
+      {"model": "functional_units", "optimizer": "adamw", "packet_size": 64}
+    ],
+    "interpretation": "characterization only; no configuration may replace the locked primary configuration"
+  },
+  "ot_positive_control": {
+    "seeds": [20, 21, 22, 23, 24, 25, 26, 27],
+    "atoms": 8,
+    "steps": 32,
+    "burn_in": 4,
+    "state_residence_steps": 4,
+    "minimum_ratio": 0.25,
+    "maximum_ratio": 4.0,
+    "target_sharpness": 1.0,
+    "demand_noise": 0.005,
+    "kl_weight": 0.1,
+    "proximal_step": 0.25,
+    "sinkhorn_epsilon": 0.1,
+    "sinkhorn_iterations": 24,
+    "allocation_iterations": 16,
+    "gate": {
+      "functional_cost_must_beat_uniform_relative": 0.2,
+      "functional_cost_must_beat_shuffled_cost_relative": 0.05,
+      "paired_seed_ci_lower_above_zero": true,
+      "minimum_seed_wins": 6
+    }
+  },
+  "execution": {
+    "order": [
+      "corrected_synthetic",
+      "primary_development",
+      "primary_confirmation",
+      "robustness",
+      "ot_positive_control",
+      "combined_verdict"
+    ],
+    "confirmation_runs_without_conditioning_on_development_sign": true,
+    "technical_or_integrity_failure_stops_immediately": true,
+    "scientific_no_go_exit_code": 0,
+    "resume_completed_units_by_verified_json": true
+  }
+}

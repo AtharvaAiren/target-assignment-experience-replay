@@ -1,0 +1,108 @@
+{
+  "schema_version": "gradient_reuse.assignment_strength_sweep_lock.v1",
+  "status": "OUTCOME_INFORMED_FOLLOWUP_LOCKED_BEFORE_ASSIGNMENT_STRENGTH_OUTCOMES",
+  "scientific_question": "How does experience-replay performance change as the expected replay target-Jacobian covariance is progressively erased while preserving every replay target multiset?",
+  "interpretation": {
+    "analysis_role": "outcome-informed but prospectively locked fresh-seed dose-response follow-up",
+    "not_a_replacement_for_original_primary": true,
+    "benchmark_and_method_selection_informed_by_prior_results": true,
+    "current_stream_targets_always_correct": true,
+    "replay_inputs_and_target_multiset_held_fixed_within_each_update": true,
+    "path_level_arms_diverge_after_the_first_intervened_update": true,
+    "strength_parameter": "For replay batch size n and lambda>0, m=1+round_half_up(lambda*(n-1)); uniformly select m positions and uniformly permute targets within them. The exact expected covariance-erasure strength is lambda_n=(m-1)/(n-1). Lambda=0 is identity and lambda=1 is the original full uniform permutation distribution.",
+    "fixed_points_and_equal_label_collisions_retained": true,
+    "no_causal_mechanism_decomposition_claim": true
+  },
+  "upstream": {
+    "name": "Mammoth",
+    "repository": "https://github.com/aimagelab/mammoth.git",
+    "commit": "e75a491c69fd729edeb01431afb753d9157d9a81",
+    "license_sha256": "309ca56cfbbe29aa036d1c53f8f05d5ee0a1dd78dcc37f53f94e840b22b60275"
+  },
+  "runtime": {
+    "device": "cuda:0",
+    "run_seeds": [3501, 3502, 3503, 3504, 3505, 3506, 3507, 3508, 3509, 3510, 3511, 3512],
+    "lambda_basis_points": [0, 2500, 5000, 7500, 10000],
+    "permutation_replicas_for_nonzero_lambda": [0, 1, 2, 3],
+    "permutation_seed_offset": 100003,
+    "selection_seed_salt": 2779096485,
+    "audit_interval": 100,
+    "audit_permutations": 4,
+    "num_workers": 4,
+    "numerical_threads": 1,
+    "deterministic_algorithms": true,
+    "maximum_concurrent_gpu_processes": 2,
+    "minimum_free_gpu_memory_mib_before_first_launch": 28000,
+    "minimum_free_gpu_memory_mib_per_additional_launch": 14000,
+    "minimum_free_disk_gib": 100
+  },
+  "benchmarks": {
+    "split_cifar100": {
+      "mammoth_dataset": "seq-cifar100",
+      "setting": "class-il",
+      "followup_primary_setting": "task-il",
+      "mandatory_secondary_settings": ["class-il"],
+      "dataset_config": "20tasks",
+      "backbone": "resnet18",
+      "tasks": 20,
+      "batch_size": 32,
+      "epochs": 1,
+      "learning_rate": 0.03
+    },
+    "permuted_mnist": {
+      "mammoth_dataset": "perm-mnist",
+      "setting": "domain-il",
+      "followup_primary_setting": "domain-il",
+      "mandatory_secondary_settings": [],
+      "dataset_config": null,
+      "backbone": "mnistmlp",
+      "tasks": 20,
+      "batch_size": 128,
+      "epochs": 1,
+      "learning_rate": 0.1
+    }
+  },
+  "methods": {
+    "reference": {
+      "mammoth_model": "sgd",
+      "buffer_size": null
+    },
+    "experience_replay": {
+      "mammoth_model": "er_assignment_strength",
+      "buffer_size": 500,
+      "minibatch_size": 32
+    }
+  },
+  "inference": {
+    "independent_unit": "run_seed",
+    "nonzero_strength_replicas_are_nested_monte_carlo": true,
+    "primary_statistic": "within-replica OLS slope of final accuracy over the five requested lambda levels, followed by averaging four slopes within seed; lambda=0 is shared across replicas",
+    "primary_intervals": "two-sided Student-t 95 percent interval over 12 seed-level slopes with a nested Monte Carlo variance floor",
+    "nested_variance_floor_role": "conservative finite-Monte-Carlo guard, not an exact hierarchical variance model",
+    "primary_family": "two benchmark-specific slope tests with Holm correction",
+    "directional_decisions_require_estimate_sign_and_two_sided_holm_rejection": true,
+    "negative_supported_slope_interpretation": "graded negative trend, not proof of monotonicity",
+    "monotonicity_claim_rule": "all four pooled adjacent point-estimate differences must be nonpositive",
+    "secondary_usefulness_family": "ten benchmark-by-strength contrasts of ER against the same-seed no-replay reference, Holm corrected",
+    "secondary_outputs": [
+      "all strength-specific accuracies and pointwise intervals",
+      "all adjacent differences",
+      "V_total, V_perm, and V_pair at the binary endpoints",
+      "CIFAR-100 class-IL results",
+      "selected-row, displaced-row, and target-value-change fractions",
+      "accuracy trajectories and backward transfer"
+    ],
+    "nonfamily_intervals_are_descriptive_unadjusted": true,
+    "no_optional_stopping": true,
+    "all_planned_units_required": true,
+    "all_strengths_seeds_replicas_and_endpoints_reported": true
+  },
+  "execution": {
+    "expected_units_per_benchmark_seed": 18,
+    "expected_units": 432,
+    "completed_units_immutable": true,
+    "failed_attempts_preserved": true,
+    "monitoring_must_not_print_scientific_outcomes": true,
+    "correction_after_readable_outcome_requires_new_versioned_sensitivity_run": true
+  }
+}

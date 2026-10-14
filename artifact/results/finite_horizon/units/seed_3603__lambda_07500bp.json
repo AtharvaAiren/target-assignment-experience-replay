@@ -1,0 +1,29 @@
+{
+  "analytic_assignment_noise_penalty": 0.00025313993796974624,
+  "analytic_mean_path_risk": 0.5953693691359898,
+  "analytic_predicted_expected_risk": 0.5956225090739595,
+  "analytic_terminal_covariance_sha256": "66f981cb443a3ac048801e93db4fd7b4cb0e14b8cf3f30c6fa0d43172ca33a52",
+  "analytic_terminal_mean_sha256": "e3ac940c53121d999d5e0d32ec388ec822885787477dd9ea69248793b59cef24",
+  "assignment_law_sha256": "7f7739a71464b94639d9ca0e2baa20a089364f60a705abc2a266bf4c59ad9ff3",
+  "assignment_law_size_with_multiplicity": 720,
+  "empirical_ensemble_mean_risk": 0.5953059686371595,
+  "empirical_ensemble_standard_error": 0.0002572949975810473,
+  "empirical_minus_predicted_risk": -0.0003165404368000724,
+  "empirical_prediction_z": -1.2302626937018584,
+  "ensemble_trajectories": 1024,
+  "mean_target_identity_max_abs_residual": 7.66053886991358e-15,
+  "minimum_assignment_covariance_eigenvalue": -1.574201716192931e-16,
+  "realized_lambda": 0.8,
+  "requested_lambda_bp": 7500,
+  "row_range": [
+    27266,
+    30594
+  ],
+  "schedule_seed": 3603,
+  "step_size_max": 0.006627844401536432,
+  "step_size_min": 0.00420952054360402,
+  "support_rows": 5,
+  "terminal_covariance_frobenius_error": 1.3715045117431162e-05,
+  "terminal_mean_l2_error": 0.00041727933131400016,
+  "updates": 128
+}

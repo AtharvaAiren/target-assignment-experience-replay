@@ -1,0 +1,34 @@
+{
+  "artifacts": {
+    "external_campaign": {
+      "path": "artifact://local/RTX_7DAY_PROFILE_DONE.json",
+      "sha256": "333c60ceccd6807f5c15e68a6c0d3a5fcf95239cebddb4dfbcd4d13a385fb12b"
+    },
+    "campaign_profile": {
+      "path": "artifact://local/CAMPAIGN_PROFILE.json",
+      "sha256": "03ce873b80cde13e62fac084f53ec8c73ddbf1b711d66ceff1c06d34f16aadb1"
+    },
+    "controller_beijing": {
+      "path": "artifact://local/RESULT.json",
+      "sha256": "89e53a341bc42710db7271dcc0f684b6d89541e849ac7e6e0f22f073947550e2"
+    },
+    "controller_synthetic": {
+      "path": "artifact://local/RESULT.json",
+      "sha256": "6cd12f5b0e48e676613bbc3049043f3b5c33695d3a52bdca978282ee8ca6686d"
+    },
+    "mechanism_audit": {
+      "path": "artifact://local/DONE.json",
+      "sha256": "14316b3c1b5ae2bac509aa4e75c3fd255020f0e97f8072b0247260625c08e1f3"
+    },
+    "transformer_audit": {
+      "path": "artifact://local/RESULT.json",
+      "sha256": "7a616988c515ad59758bf10f3bd80822e27bce74512eeeeef0a8964339126d9d"
+    }
+  },
+  "manifest_sha256": "bfeea6b95b69c37841c06fa6dde3e99cd01dcb543c0e291208fd8dc8a5bb088b",
+  "mechanism_unit_count": 288,
+  "profile_id": "rtx_7day_v1",
+  "schema_version": "gradient_reuse.iclr_rtx_7day_queue_done.v1",
+  "status": "PASS",
+  "transformer_attempt_index": 0
+}

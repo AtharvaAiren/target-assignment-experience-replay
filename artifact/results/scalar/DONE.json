@@ -1,0 +1,8 @@
+{
+  "combined_verdict_sha256": "d862545b3acdc66857068e224846b47758440e967c36778652b7752f93a63b98",
+  "run_manifest_sha256": "0aa7153ba33b66371061e4bb35ad3b092fe7dbf4616ad35317450dedf3839f1a",
+  "scientific_verdict": "WORKSHOP_BOUNDARY_EVIDENCE_COMPLETE",
+  "source_freeze_sha256": "26cf92f422bb4397965735589ae40120bab41a62cf6cacec88b32d939fc53af3",
+  "status": "COMPLETE",
+  "verdict": "WORKSHOP_BOUNDARY_EVIDENCE_COMPLETE"
+}

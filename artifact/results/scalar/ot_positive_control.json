@@ -1,0 +1,222 @@
+{
+  "all_pass": true,
+  "functional_vs_shuffled": {
+    "ci95_absolute": [
+      0.0001802875579164412,
+      0.00018474908924163335
+    ],
+    "relative_improvement": 0.15163150591141308,
+    "wins": 8
+  },
+  "functional_vs_uniform": {
+    "ci95_absolute": [
+      0.009948983865575455,
+      0.009958817708053139
+    ],
+    "relative_improvement": 0.906994539071493,
+    "wins": 8
+  },
+  "gates": {
+    "beats_shuffled_relative": true,
+    "beats_uniform_relative": true,
+    "integrity": true,
+    "minimum_seed_wins_shuffled": true,
+    "minimum_seed_wins_uniform": true,
+    "shuffled_ci_lower_above_zero": true,
+    "uniform_ci_lower_above_zero": true
+  },
+  "means": {
+    "functional_cost": 0.0010207238881803054,
+    "shuffled_cost": 0.0012031610029046187,
+    "uniform": 0.010974881238048285
+  },
+  "schema_version": "fmmt.workshop.ot_positive.v1",
+  "smoke": false,
+  "units": [
+    {
+      "audit": {
+        "all_pass": true,
+        "allocations_finite": true,
+        "allocations_sum_to_one": true,
+        "engineered_optimum_explicitly_flagged": true,
+        "same_box_simplex_bounds": true,
+        "same_demand_all_rows": true,
+        "same_initial_allocation": true,
+        "shuffled_cost_has_identical_edge_spectrum": true
+      },
+      "mean_allocation_tv": {
+        "functional_cost": 0.039890995393946874,
+        "shuffled_cost": 0.06643006749010928
+      },
+      "mean_functional_target_error": 0.0010285865356595653,
+      "metrics": {
+        "functional_cost": 0.0010285865356595653,
+        "shuffled_cost": 0.001208724537505102,
+        "uniform": 0.010974881238048285
+      },
+      "seed": 20
+    },
+    {
+      "audit": {
+        "all_pass": true,
+        "allocations_finite": true,
+        "allocations_sum_to_one": true,
+        "engineered_optimum_explicitly_flagged": true,
+        "same_box_simplex_bounds": true,
+        "same_demand_all_rows": true,
+        "same_initial_allocation": true,
+        "shuffled_cost_has_identical_edge_spectrum": true
+      },
+      "mean_allocation_tv": {
+        "functional_cost": 0.040113192870372384,
+        "shuffled_cost": 0.06674177064849289
+      },
+      "mean_functional_target_error": 0.001017227924350256,
+      "metrics": {
+        "functional_cost": 0.001017227924350256,
+        "shuffled_cost": 0.0011986514866250172,
+        "uniform": 0.010974881238048285
+      },
+      "seed": 21
+    },
+    {
+      "audit": {
+        "all_pass": true,
+        "allocations_finite": true,
+        "allocations_sum_to_one": true,
+        "engineered_optimum_explicitly_flagged": true,
+        "same_box_simplex_bounds": true,
+        "same_demand_all_rows": true,
+        "same_initial_allocation": true,
+        "shuffled_cost_has_identical_edge_spectrum": true
+      },
+      "mean_allocation_tv": {
+        "functional_cost": 0.03971255450089787,
+        "shuffled_cost": 0.0663487873024453
+      },
+      "mean_functional_target_error": 0.0010300543712236038,
+      "metrics": {
+        "functional_cost": 0.0010300543712236038,
+        "shuffled_cost": 0.001208265433083827,
+        "uniform": 0.010974881238048285
+      },
+      "seed": 22
+    },
+    {
+      "audit": {
+        "all_pass": true,
+        "allocations_finite": true,
+        "allocations_sum_to_one": true,
+        "engineered_optimum_explicitly_flagged": true,
+        "same_box_simplex_bounds": true,
+        "same_demand_all_rows": true,
+        "same_initial_allocation": true,
+        "shuffled_cost_has_identical_edge_spectrum": true
+      },
+      "mean_allocation_tv": {
+        "functional_cost": 0.04002452412921635,
+        "shuffled_cost": 0.06662247134017418
+      },
+      "mean_functional_target_error": 0.0010185517826550555,
+      "metrics": {
+        "functional_cost": 0.0010185517826550555,
+        "shuffled_cost": 0.0012066328912162998,
+        "uniform": 0.010974881238048285
+      },
+      "seed": 23
+    },
+    {
+      "audit": {
+        "all_pass": true,
+        "allocations_finite": true,
+        "allocations_sum_to_one": true,
+        "engineered_optimum_explicitly_flagged": true,
+        "same_box_simplex_bounds": true,
+        "same_demand_all_rows": true,
+        "same_initial_allocation": true,
+        "shuffled_cost_has_identical_edge_spectrum": true
+      },
+      "mean_allocation_tv": {
+        "functional_cost": 0.039926619834067575,
+        "shuffled_cost": 0.06640753067965309
+      },
+      "mean_functional_target_error": 0.0010118573701876012,
+      "metrics": {
+        "functional_cost": 0.0010118573701876012,
+        "shuffled_cost": 0.0011916229222555205,
+        "uniform": 0.010974881238048285
+      },
+      "seed": 24
+    },
+    {
+      "audit": {
+        "all_pass": true,
+        "allocations_finite": true,
+        "allocations_sum_to_one": true,
+        "engineered_optimum_explicitly_flagged": true,
+        "same_box_simplex_bounds": true,
+        "same_demand_all_rows": true,
+        "same_initial_allocation": true,
+        "shuffled_cost_has_identical_edge_spectrum": true
+      },
+      "mean_allocation_tv": {
+        "functional_cost": 0.04002239347202429,
+        "shuffled_cost": 0.06660329383964282
+      },
+      "mean_functional_target_error": 0.0010159161058173139,
+      "metrics": {
+        "functional_cost": 0.0010159161058173139,
+        "shuffled_cost": 0.0012000472193121612,
+        "uniform": 0.010974881238048285
+      },
+      "seed": 25
+    },
+    {
+      "audit": {
+        "all_pass": true,
+        "allocations_finite": true,
+        "allocations_sum_to_one": true,
+        "engineered_optimum_explicitly_flagged": true,
+        "same_box_simplex_bounds": true,
+        "same_demand_all_rows": true,
+        "same_initial_allocation": true,
+        "shuffled_cost_has_identical_edge_spectrum": true
+      },
+      "mean_allocation_tv": {
+        "functional_cost": 0.03999394385329812,
+        "shuffled_cost": 0.06655306487157965
+      },
+      "mean_functional_target_error": 0.00101396559944913,
+      "metrics": {
+        "functional_cost": 0.00101396559944913,
+        "shuffled_cost": 0.001200632853552366,
+        "uniform": 0.010974881238048285
+      },
+      "seed": 26
+    },
+    {
+      "audit": {
+        "all_pass": true,
+        "allocations_finite": true,
+        "allocations_sum_to_one": true,
+        "engineered_optimum_explicitly_flagged": true,
+        "same_box_simplex_bounds": true,
+        "same_demand_all_rows": true,
+        "same_initial_allocation": true,
+        "shuffled_cost_has_identical_edge_spectrum": true
+      },
+      "mean_allocation_tv": {
+        "functional_cost": 0.03994046216649228,
+        "shuffled_cost": 0.06659179524231355
+      },
+      "mean_functional_target_error": 0.0010296314160999176,
+      "metrics": {
+        "functional_cost": 0.0010296314160999176,
+        "shuffled_cost": 0.0012107106796866564,
+        "uniform": 0.010974881238048285
+      },
+      "seed": 27
+    }
+  ],
+  "verdict": "OT_POSITIVE_CONTROL_PASS"
+}

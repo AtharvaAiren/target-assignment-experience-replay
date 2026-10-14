@@ -1,0 +1,10 @@
+{
+  "aggregate_sha256": "709a3bcdd9f92c7c1626f33cd14816df548a658188bb42b76eafdfabeaf1388c",
+  "campaign": "pmnist",
+  "campaign_binding_sha256": "0fba94f1226f5a457987cbac4a910b8f1fa15f1c2f04b54e56708812e6f99243",
+  "completed_units": 336,
+  "required_units": 336,
+  "schema_version": "gradient_reuse.crossover_queue_done.v1",
+  "status": "PASS",
+  "unit_ids_sha256": "8541b18d678d1269d81dc591673faf4c06f1cac9f72b753d9886c3a43eb7b330"
+}

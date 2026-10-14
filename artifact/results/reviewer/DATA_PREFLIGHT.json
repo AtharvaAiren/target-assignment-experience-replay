@@ -1,0 +1,483 @@
+{
+  "datasets": {
+    "APPLIANCES": {
+      "chronology": {
+        "n_acquisition_events": 19735,
+        "n_rows": 19735,
+        "no_event_crosses_calibration": true,
+        "time_cluster": "ISO calendar week",
+        "timestamp_sha256": "8291934513a7a39b3d15f87907e1853feb43e427c972356b5b3eceb05ff1f65e",
+        "timestamps_nondecreasing": true
+      },
+      "manifest": {
+        "dataset": "APPLIANCES",
+        "dataset_page": "https://archive.ics.uci.edu/dataset/374/appliances+energy+prediction",
+        "license": "CC BY 4.0",
+        "members": [
+          "energydata_complete.csv"
+        ],
+        "sha256": "2fccf354445d886e7917620b0195db1f3e3e34d5a067a93b844694a4c561255a",
+        "source_url": "https://archive.ics.uci.edu/static/public/374/appliances+energy+prediction.zip",
+        "uci_id": 374,
+        "zip_bytes": 11979507
+      },
+      "name": "APPLIANCES",
+      "shape": [
+        19735,
+        31
+      ]
+    },
+    "BEIJING": {
+      "chronology": {
+        "calibration_event_id": 1744,
+        "duplicate_event_row_fraction": 0.9999757298636747,
+        "event_aligned_scoring_boundary": 20610,
+        "maximum_rows_per_event": 12,
+        "median_positive_event_interval_seconds": 3.6,
+        "n_acquisition_events": 34983,
+        "n_rows": 412029,
+        "no_acquisition_event_crosses_scoring_boundary": true,
+        "row_count_calibration_boundary": 20601,
+        "support_query_group_key": "exact acquisition timestamp",
+        "timestamp_sha256": "b0b5d84c043729b9ef1a0ecd6b555d3102ddd3473696784c2c582545d9d28803",
+        "timestamps_nondecreasing": true
+      },
+      "manifest": {
+        "dataset": "BEIJING",
+        "dataset_page": "https://archive.ics.uci.edu/dataset/501/beijing+multi+site+air+quality+data",
+        "downloaded_ts": 1787512879.5279796,
+        "license": "CC BY 4.0 (Creative Commons Attribution 4.0 International)",
+        "members": [
+          "beijing.zip!PRSA2017_Data_20130301-20170228.zip!PRSA_Data_20130301-20170228/PRSA_Data_Aotizhongxin_20130301-20170228.csv",
+          "beijing.zip!PRSA2017_Data_20130301-20170228.zip!PRSA_Data_20130301-20170228/PRSA_Data_Changping_20130301-20170228.csv",
+          "beijing.zip!PRSA2017_Data_20130301-20170228.zip!PRSA_Data_20130301-20170228/PRSA_Data_Dingling_20130301-20170228.csv",
+          "beijing.zip!PRSA2017_Data_20130301-20170228.zip!PRSA_Data_20130301-20170228/PRSA_Data_Dongsi_20130301-20170228.csv",
+          "beijing.zip!PRSA2017_Data_20130301-20170228.zip!PRSA_Data_20130301-20170228/PRSA_Data_Guanyuan_20130301-20170228.csv",
+          "beijing.zip!PRSA2017_Data_20130301-20170228.zip!PRSA_Data_20130301-20170228/PRSA_Data_Gucheng_20130301-20170228.csv",
+          "beijing.zip!PRSA2017_Data_20130301-20170228.zip!PRSA_Data_20130301-20170228/PRSA_Data_Huairou_20130301-20170228.csv",
+          "beijing.zip!PRSA2017_Data_20130301-20170228.zip!PRSA_Data_20130301-20170228/PRSA_Data_Nongzhanguan_20130301-20170228.csv",
+          "beijing.zip!PRSA2017_Data_20130301-20170228.zip!PRSA_Data_20130301-20170228/PRSA_Data_Shunyi_20130301-20170228.csv",
+          "beijing.zip!PRSA2017_Data_20130301-20170228.zip!PRSA_Data_20130301-20170228/PRSA_Data_Tiantan_20130301-20170228.csv",
+          "beijing.zip!PRSA2017_Data_20130301-20170228.zip!PRSA_Data_20130301-20170228/PRSA_Data_Wanliu_20130301-20170228.csv",
+          "beijing.zip!PRSA2017_Data_20130301-20170228.zip!PRSA_Data_20130301-20170228/PRSA_Data_Wanshouxigong_20130301-20170228.csv"
+        ],
+        "n_rows_raw": 420768,
+        "parse_provenance": {
+          "inspected_csv_members": [
+            {
+              "columns": [
+                "No",
+                "year",
+                "month",
+                "day",
+                "hour",
+                "PM2.5",
+                "PM10",
+                "SO2",
+                "NO2",
+                "CO",
+                "O3",
+                "TEMP",
+                "PRES",
+                "DEWP",
+                "RAIN",
+                "wd",
+                "WSPM",
+                "station"
+              ],
+              "member": "beijing.zip!PRSA2017_Data_20130301-20170228.zip!PRSA_Data_20130301-20170228/PRSA_Data_Aotizhongxin_20130301-20170228.csv"
+            },
+            {
+              "columns": [
+                "No",
+                "year",
+                "month",
+                "day",
+                "hour",
+                "PM2.5",
+                "PM10",
+                "SO2",
+                "NO2",
+                "CO",
+                "O3",
+                "TEMP",
+                "PRES",
+                "DEWP",
+                "RAIN",
+                "wd",
+                "WSPM",
+                "station"
+              ],
+              "member": "beijing.zip!PRSA2017_Data_20130301-20170228.zip!PRSA_Data_20130301-20170228/PRSA_Data_Changping_20130301-20170228.csv"
+            },
+            {
+              "columns": [
+                "No",
+                "year",
+                "month",
+                "day",
+                "hour",
+                "PM2.5",
+                "PM10",
+                "SO2",
+                "NO2",
+                "CO",
+                "O3",
+                "TEMP",
+                "PRES",
+                "DEWP",
+                "RAIN",
+                "wd",
+                "WSPM",
+                "station"
+              ],
+              "member": "beijing.zip!PRSA2017_Data_20130301-20170228.zip!PRSA_Data_20130301-20170228/PRSA_Data_Dingling_20130301-20170228.csv"
+            },
+            {
+              "columns": [
+                "No",
+                "year",
+                "month",
+                "day",
+                "hour",
+                "PM2.5",
+                "PM10",
+                "SO2",
+                "NO2",
+                "CO",
+                "O3",
+                "TEMP",
+                "PRES",
+                "DEWP",
+                "RAIN",
+                "wd",
+                "WSPM",
+                "station"
+              ],
+              "member": "beijing.zip!PRSA2017_Data_20130301-20170228.zip!PRSA_Data_20130301-20170228/PRSA_Data_Dongsi_20130301-20170228.csv"
+            },
+            {
+              "columns": [
+                "No",
+                "year",
+                "month",
+                "day",
+                "hour",
+                "PM2.5",
+                "PM10",
+                "SO2",
+                "NO2",
+                "CO",
+                "O3",
+                "TEMP",
+                "PRES",
+                "DEWP",
+                "RAIN",
+                "wd",
+                "WSPM",
+                "station"
+              ],
+              "member": "beijing.zip!PRSA2017_Data_20130301-20170228.zip!PRSA_Data_20130301-20170228/PRSA_Data_Guanyuan_20130301-20170228.csv"
+            },
+            {
+              "columns": [
+                "No",
+                "year",
+                "month",
+                "day",
+                "hour",
+                "PM2.5",
+                "PM10",
+                "SO2",
+                "NO2",
+                "CO",
+                "O3",
+                "TEMP",
+                "PRES",
+                "DEWP",
+                "RAIN",
+                "wd",
+                "WSPM",
+                "station"
+              ],
+              "member": "beijing.zip!PRSA2017_Data_20130301-20170228.zip!PRSA_Data_20130301-20170228/PRSA_Data_Gucheng_20130301-20170228.csv"
+            },
+            {
+              "columns": [
+                "No",
+                "year",
+                "month",
+                "day",
+                "hour",
+                "PM2.5",
+                "PM10",
+                "SO2",
+                "NO2",
+                "CO",
+                "O3",
+                "TEMP",
+                "PRES",
+                "DEWP",
+                "RAIN",
+                "wd",
+                "WSPM",
+                "station"
+              ],
+              "member": "beijing.zip!PRSA2017_Data_20130301-20170228.zip!PRSA_Data_20130301-20170228/PRSA_Data_Huairou_20130301-20170228.csv"
+            },
+            {
+              "columns": [
+                "No",
+                "year",
+                "month",
+                "day",
+                "hour",
+                "PM2.5",
+                "PM10",
+                "SO2",
+                "NO2",
+                "CO",
+                "O3",
+                "TEMP",
+                "PRES",
+                "DEWP",
+                "RAIN",
+                "wd",
+                "WSPM",
+                "station"
+              ],
+              "member": "beijing.zip!PRSA2017_Data_20130301-20170228.zip!PRSA_Data_20130301-20170228/PRSA_Data_Nongzhanguan_20130301-20170228.csv"
+            },
+            {
+              "columns": [
+                "No",
+                "year",
+                "month",
+                "day",
+                "hour",
+                "PM2.5",
+                "PM10",
+                "SO2",
+                "NO2",
+                "CO",
+                "O3",
+                "TEMP",
+                "PRES",
+                "DEWP",
+                "RAIN",
+                "wd",
+                "WSPM",
+                "station"
+              ],
+              "member": "beijing.zip!PRSA2017_Data_20130301-20170228.zip!PRSA_Data_20130301-20170228/PRSA_Data_Shunyi_20130301-20170228.csv"
+            },
+            {
+              "columns": [
+                "No",
+                "year",
+                "month",
+                "day",
+                "hour",
+                "PM2.5",
+                "PM10",
+                "SO2",
+                "NO2",
+                "CO",
+                "O3",
+                "TEMP",
+                "PRES",
+                "DEWP",
+                "RAIN",
+                "wd",
+                "WSPM",
+                "station"
+              ],
+              "member": "beijing.zip!PRSA2017_Data_20130301-20170228.zip!PRSA_Data_20130301-20170228/PRSA_Data_Tiantan_20130301-20170228.csv"
+            },
+            {
+              "columns": [
+                "No",
+                "year",
+                "month",
+                "day",
+                "hour",
+                "PM2.5",
+                "PM10",
+                "SO2",
+                "NO2",
+                "CO",
+                "O3",
+                "TEMP",
+                "PRES",
+                "DEWP",
+                "RAIN",
+                "wd",
+                "WSPM",
+                "station"
+              ],
+              "member": "beijing.zip!PRSA2017_Data_20130301-20170228.zip!PRSA_Data_20130301-20170228/PRSA_Data_Wanliu_20130301-20170228.csv"
+            },
+            {
+              "columns": [
+                "No",
+                "year",
+                "month",
+                "day",
+                "hour",
+                "PM2.5",
+                "PM10",
+                "SO2",
+                "NO2",
+                "CO",
+                "O3",
+                "TEMP",
+                "PRES",
+                "DEWP",
+                "RAIN",
+                "wd",
+                "WSPM",
+                "station"
+              ],
+              "member": "beijing.zip!PRSA2017_Data_20130301-20170228.zip!PRSA_Data_20130301-20170228/PRSA_Data_Wanshouxigong_20130301-20170228.csv"
+            },
+            {
+              "columns": [
+                "Date",
+                "Open",
+                "High",
+                "Low",
+                "Close",
+                "Adj Close",
+                "Volume"
+              ],
+              "member": "beijing.zip!data.csv"
+            },
+            {
+              "columns": [
+                "Date",
+                "Open",
+                "High",
+                "Low",
+                "Close",
+                "Adj Close",
+                "Volume"
+              ],
+              "member": "beijing.zip!test.csv"
+            }
+          ],
+          "parser": "recursive-schema-select-v1",
+          "selected_members": [
+            "beijing.zip!PRSA2017_Data_20130301-20170228.zip!PRSA_Data_20130301-20170228/PRSA_Data_Aotizhongxin_20130301-20170228.csv",
+            "beijing.zip!PRSA2017_Data_20130301-20170228.zip!PRSA_Data_20130301-20170228/PRSA_Data_Changping_20130301-20170228.csv",
+            "beijing.zip!PRSA2017_Data_20130301-20170228.zip!PRSA_Data_20130301-20170228/PRSA_Data_Dingling_20130301-20170228.csv",
+            "beijing.zip!PRSA2017_Data_20130301-20170228.zip!PRSA_Data_20130301-20170228/PRSA_Data_Dongsi_20130301-20170228.csv",
+            "beijing.zip!PRSA2017_Data_20130301-20170228.zip!PRSA_Data_20130301-20170228/PRSA_Data_Guanyuan_20130301-20170228.csv",
+            "beijing.zip!PRSA2017_Data_20130301-20170228.zip!PRSA_Data_20130301-20170228/PRSA_Data_Gucheng_20130301-20170228.csv",
+            "beijing.zip!PRSA2017_Data_20130301-20170228.zip!PRSA_Data_20130301-20170228/PRSA_Data_Huairou_20130301-20170228.csv",
+            "beijing.zip!PRSA2017_Data_20130301-20170228.zip!PRSA_Data_20130301-20170228/PRSA_Data_Nongzhanguan_20130301-20170228.csv",
+            "beijing.zip!PRSA2017_Data_20130301-20170228.zip!PRSA_Data_20130301-20170228/PRSA_Data_Shunyi_20130301-20170228.csv",
+            "beijing.zip!PRSA2017_Data_20130301-20170228.zip!PRSA_Data_20130301-20170228/PRSA_Data_Tiantan_20130301-20170228.csv",
+            "beijing.zip!PRSA2017_Data_20130301-20170228.zip!PRSA_Data_20130301-20170228/PRSA_Data_Wanliu_20130301-20170228.csv",
+            "beijing.zip!PRSA2017_Data_20130301-20170228.zip!PRSA_Data_20130301-20170228/PRSA_Data_Wanshouxigong_20130301-20170228.csv"
+          ]
+        },
+        "sha256": "b04da438b2f331ac0ffd45aebdfec0d20d2367feb5f6948c4b1f7ce1191e33c4",
+        "source_url": "https://archive.ics.uci.edu/static/public/501/beijing+multi+site+air+quality+data.zip",
+        "uci_id": 501,
+        "zip_bytes": 8192212
+      },
+      "name": "BEIJING",
+      "shape": [
+        412029,
+        42
+      ]
+    },
+    "METRO": {
+      "chronology": {
+        "calibration_event_id": 1986,
+        "duplicate_event_row_fraction": 0.2712223052028877,
+        "event_aligned_scoring_boundary": 2410,
+        "maximum_rows_per_event": 6,
+        "median_positive_event_interval_seconds": 3.6,
+        "n_acquisition_events": 40575,
+        "n_rows": 48204,
+        "no_acquisition_event_crosses_scoring_boundary": true,
+        "row_count_calibration_boundary": 2410,
+        "support_query_group_key": "exact acquisition timestamp",
+        "timestamp_sha256": "745ad4447c14e07f00774e74a4959265eeb2a0f643613015d1aa7198e43fa500",
+        "timestamps_nondecreasing": true
+      },
+      "manifest": {
+        "dataset": "METRO",
+        "dataset_page": "https://archive.ics.uci.edu/dataset/492/metro+interstate+traffic+volume",
+        "downloaded_ts": 1787512877.861924,
+        "license": "CC BY 4.0 (Creative Commons Attribution 4.0 International)",
+        "members": [
+          "metro.zip!Metro_Interstate_Traffic_Volume.csv.gz"
+        ],
+        "n_rows_raw": 48204,
+        "parse_provenance": {
+          "inspected_csv_members": [
+            {
+              "columns": [
+                "holiday",
+                "temp",
+                "rain_1h",
+                "snow_1h",
+                "clouds_all",
+                "weather_main",
+                "weather_description",
+                "date_time",
+                "traffic_volume"
+              ],
+              "member": "metro.zip!Metro_Interstate_Traffic_Volume.csv.gz"
+            }
+          ],
+          "parser": "recursive-schema-select-v1",
+          "selected_members": [
+            "metro.zip!Metro_Interstate_Traffic_Volume.csv.gz"
+          ]
+        },
+        "sha256": "b99aeabcbd6cc86f642da3a79d90883425798f58abd3b3302da2fa19dda73768",
+        "source_url": "https://archive.ics.uci.edu/static/public/492/metro+interstate+traffic+volume.zip",
+        "uci_id": 492,
+        "zip_bytes": 405547
+      },
+      "name": "METRO",
+      "shape": [
+        48204,
+        42
+      ]
+    },
+    "TETOUAN": {
+      "chronology": {
+        "n_acquisition_events": 52416,
+        "n_rows": 52416,
+        "no_event_crosses_calibration": true,
+        "time_cluster": "ISO calendar week",
+        "timestamp_sha256": "b2c4dbd5ba738919a26c3f52cc0bedba63de3f9c0b31b95c396b70e3925468cb",
+        "timestamps_nondecreasing": true
+      },
+      "manifest": {
+        "dataset": "TETOUAN",
+        "dataset_page": "https://archive.ics.uci.edu/dataset/849/power+consumption+of+tetouan+city",
+        "license": "CC BY 4.0",
+        "members": [
+          "Tetuan City power consumption.csv"
+        ],
+        "sha256": "3c4bf684161180937043a9fb65701a83d44b740b0d42f0492b6e7aec57ddbbfe",
+        "source_url": "https://archive.ics.uci.edu/static/public/849/power+consumption+of+tetouan+city.zip",
+        "uci_id": 849,
+        "zip_bytes": 1401688
+      },
+      "name": "TETOUAN",
+      "shape": [
+        52416,
+        11
+      ]
+    }
+  },
+  "schema_version": "fmmt.reviewer_diagnostics.data_preflight.v1",
+  "smoke": false,
+  "status": "PASS"
+}
